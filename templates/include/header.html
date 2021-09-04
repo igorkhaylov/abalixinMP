@@ -1,5 +1,5 @@
 {% load static i18n %}
-    <header class="header">
+<header class="header" xmlns="http://www.w3.org/1999/html">
         <div class="header_container">
             <div class="header_logo">
                 <div class="header_logo__img">
@@ -103,7 +103,38 @@
                     <a href="./six.html">{% trans 'Тесты' %}</a>
                     <a href="./seven.html">{% trans 'Подкасты' %}</a>
                     <a href="#">{% trans 'Видео' %}</a>
-                    <a href="#">O'zbekcha</a>
+                <a>
+                    <h3>
+                    {% for language in languages %}
+                                {% if language.code != LANGUAGE_CODE %}
+                                    <form action="{% url 'set_language' %}" method="post">
+                                        {% csrf_token %}
+                                        <select name="language" id="" hidden>
+                                            <option value="{{ language.code }}"></option>
+                                        </select>
+                                    <button style="
+                                            background: transparent;
+                                            border: none;
+                                            {#font-size: large;#}
+                                            position: center;
+                                            font-size: smaller"
+                                            type="submit">
+                                        {% if language.code == "uz" %}
+{#                                            <p  style="font-family: Comic Neue; font-weight: bold">#}
+                                                O'zbekcha
+{#                                            </p>#}
+                                            {% elif language.code == "ru" %}
+{#                                             <p  style="font-family: Comic Neue; font-weight: bold">#}
+                                                Русский
+{#                                             </p>#}
+                                        {% endif %}
+                                    </button>
+                                    </form>
+                                {% endif %}
+                            {% endfor %}
+                </h3>
+                </a>
+{#                    <a href="#">O'zbekcha</a>#}
 
                 </div>
 
