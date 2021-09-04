@@ -1,0 +1,70 @@
+{% load static i18n %}
+    <footer>
+        <div class="footer_container">
+            <div class="left_side">
+
+            </div>
+            <div class="right_side">
+                <div class="top_cont">
+                    <div class="item">
+                        <div class="footer_right_elem_content">
+                            <a href="#">
+                                <h2>{% trans 'Разделы' %}</h2>
+                            </a>
+                            <a href="#">
+                                <h3>{% trans 'Авторы' %}</h3>
+                            </a>
+                            <a href="#">
+                                <h3>{% trans 'Реклама' %}</h3>
+                            </a>
+                            <a href="#">
+                                <h3>{% trans 'Контакты' %}</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item2">
+
+                        <div class="footer_right_elem_content">
+                            <h2><strong>{% trans 'Пишите нам' %}:</strong> </h2>
+                            <h3>{% trans 'По всем вопросам' %}: <strong>Mainpostwork@gmail.com</strong></h3>
+                            <h3>{% trans 'По поводу родкастов' %}: <strong>Mainpostwork@gmail.com</strong></h3>
+                        </div>
+                    </div>
+                    <div class="item3">
+                        <div class="footer_third_item">
+                            <div class="footer_third_form_content">
+                                <h2 class="h2_right_foot">{% trans 'Подписка на бесплатную рассылку' %}</h2>
+                                <form action="#" class="registration__form">
+                                    <input maxlength="25" type="text" placeholder="Email">
+                                    <a class="subscribe" href="#">
+                                        <h4>Подписаться</h4>
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="footer_down">
+                            <div class="footer_third_title">
+                                <h2>{% trans 'Мы в соц сетях' %}:</h2>
+                            </div>
+                            <div class="footer_third__links">
+                                <a href="#"><img class="footer__link" src="{% static 'img/Vector.svg' %}" alt="teleg"></a>
+                                <a href="#"><img class="footer__link"
+                                                 src="{% static 'img/ic_instagram.svg' %}"
+                                                 alt="inst"></a>
+                                <a href="#"><img class="footer__link" src="{% static 'img/facebook.svg' %}" alt="face"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="bottom_cont">
+                    <div class="footer_bottom__content">
+                        <h3 class="logo_foot">{% trans '© 2021 - 2022. Новостной сайт «Main post». Все права защищены' %}</h3>
+                        <h3 class="logo_foot">{% trans 'Разработано командой «UX IT»' %} <img src="{% static 'img/Group 28.png' %}" alt="">
+                        </h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>

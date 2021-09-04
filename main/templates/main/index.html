@@ -1,0 +1,1253 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Post</title>
+    <link rel="stylesheet" href="{% static 'css/style-dist-dist.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="icon" type="img/svg" href="{% static 'img/sitelogo.svg' %}">
+</head>
+
+<body>
+    <!-- Верстка хедера -->
+    <div class="adv">
+        <a href="#"><img src="{% static 'img/reklama.png' %}" alt="da"></a>
+    </div>
+    {% include "include/header.html" %}
+    
+    <!-- Конец хедера -->
+
+    <!-- Верстка верхнего блока с новостями -->
+    <div class="top_posts__wrap">
+        <div class="top_post__container">
+            <div class="top_post_item_1" style="background-image: url({% static 'img/Rectangle 288.png' %}); ">
+
+                <div class="news_link">
+                    <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
+                </div>
+                <div class="news_content__row">
+                    <div class="news_content__title">
+                        <a href="#">
+                            <h3>Музыка</h3>
+                        </a>
+                    </div>
+                    <div class="news_content__subtitle">
+                        <h1>Выставка Плакатов</h1>
+                    </div>
+                    <div class="news_content__endtitle">
+                        <h1>Впервые в Узбекистане</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="other">
+                <div class="top_post_item_2" style="background-image: url({% static 'img/Rectangle 289.png' %}); ">
+                    <div class="news_link">
+                        <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
+                    </div>
+                    <div class="news_content__title">
+                        <a href="#">
+                            <h3>Музыка</h3>
+                        </a>
+                    </div>
+                    <div class="news_content__subtitle second">
+                        <h3>С дефектом в глазах</h3>
+                    </div>
+                    <div class="news_content__endtitle third">
+                        <h1>Женшина-ящерица</h1>
+                    </div>
+                </div>
+                <div class="top_post_item_3" style="background-image: url({% static 'img/Rectangle 289.svg' %});">
+                    <div class="news_link">
+                        <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
+                    </div>
+                    <div class="news_content__title">
+                        <a href="#">
+                            <h3>Музыка</h3>
+                        </a>
+                    </div>
+                    <div class="news_content__subtitle second">
+                        <h3>С дефектом в глазах</h3>
+                    </div>
+                    <div class="news_content__endtitle third">
+                        <h1>Женшина-ящерица</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Новостная линия -->
+        <div class="news_bottomline">
+            <div class="news_bottomline__content">
+                <h3>{{ ticker.ticker }}</h3>
+            </div>
+        </div>
+
+        <div class="content_box">
+            <div class="content_container">
+                <div class="content_header">
+                    <div class="content_header__right">
+                        <div class="right_item_f">
+                            <h1>
+                                {% trans "Горячие нoвoсти" %}
+                            </h1>
+                        </div>
+                        <div class="right_item_t">
+                            <a href="#">
+                                <h3>{% trans 'Обновить новости' %}</h3>
+                            </a>
+                            <img src="{% static 'img/ic_refresh button.svg' %}" alt="refr">
+                        </div>
+                    </div>
+                </div>
+                <div class="content_items">
+
+
+                    <div class="content_items_elem">
+                        <div class="content_block">
+                            <div class="content__image"
+                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">
+                            </div>
+                            <div class="content_date">
+                                <div class="content_num">20.05.2021</div>
+                                <div class="content_year">20:06</div>
+                            </div>
+                        </div>
+                        <div class="content_text">
+                            <div class="content_text__text">
+                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>
+                            </div>
+                            <div class="content_text__image">
+                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content_items_elem">
+                        <div class="second_content__content">
+                            <div class="second_logo">
+                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>
+                            </div>
+                            <div class="second_text">
+                                <h2>Не следует забывать, что цены на бензин начинают падать</h2>
+                            </div>
+                            <div class="second_date">
+                                <div class="second_num">20.05.2021</div>
+                                <div class="second_year">20:06</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content_items_elem">
+                        <div class="content_block">
+                            <div class="content__image"
+                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">
+                            </div>
+                            <div class="content_date">
+                                <div class="content_num">20.05.2021</div>
+                                <div class="content_year">20:06</div>
+                            </div>
+                        </div>
+                        <div class="content_text">
+                            <div class="content_text__text">
+                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>
+                            </div>
+                            <div class="content_text__image">
+                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content_items_elem">
+                        <div class="content_block">
+                            <div class="content__image"
+                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">
+                            </div>
+                            <div class="content_date">
+                                <div class="content_num">20.05.2021</div>
+                                <div class="content_year">20:06</div>
+                            </div>
+                        </div>
+                        <div class="content_text">
+                            <div class="content_text__text">
+                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>
+                            </div>
+                            <div class="content_text__image">
+                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content_items_elem">
+                        <div class="content_block">
+                            <div class="content__image"
+                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">
+                            </div>
+                            <div class="content_date">
+                                <div class="content_num">20.05.2021</div>
+                                <div class="content_year">20:06</div>
+                            </div>
+                        </div>
+                        <div class="content_text">
+                            <div class="content_text__text">
+                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>
+                            </div>
+                            <div class="content_text__image">
+                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content_items_elem">
+                        <div class="second_content__content">
+                            <div class="second_logo">
+                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>
+                            </div>
+                            <div class="second_text">
+                                <h2>Не следует забывать, что цены на бензин начинают падать</h2>
+                            </div>
+                            <div class="second_date">
+                                <div class="second_num">20.05.2021</div>
+                                <div class="second_year">20:06</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Статьи -->
+        <div class="states_wrap">
+            <div class="states_wrap__container">
+                <div class="states_container__header">
+                    <div class="states_title">
+                        <h1>{% trans 'СТАТЬИ' %}</h1>
+                    </div>
+                    <div class="states_look__btn">
+                        <a href="#">{% trans 'Смотреть больше' %}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="states_content">
+                <div class="state_item">
+                    <a href="./forth.html">
+                        <div class="state_pict1" style="
+                            background-image: url({% static 'img/Rectangle 257.svg' %});">
+                        </div>
+                    </a>
+                    <div class="state_article">
+                        <div class="state_article__title">
+                            <a href="./forth.html">
+                                <h3>Музыка</h3>
+                            </a>
+                        </div>
+                        <div class="state_article__subtitle">
+                            <a href="./forth.html">
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
+                            </a>
+                        </div>
+                        <div class="state_article__subsubtitle">
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического участия и
+                                объявлены новостной топ новостной лучший сайт в мире
+                                нарушающими общечеловеческие нормы этики и морали.</h3>
+                        </div>
+                        <div class="state_end__title">
+                            <div class="state_date">
+                                <h4>25 Мая</h4>
+                            </div>
+                            <div class="state_num">
+                                <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
+                                <h4>1280</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="state_item">
+                    <a href="./forth.html">
+                        <div class="state_pict1" style="
+                            background-image: url({% static 'img/Rectangle 257.svg' %});">
+                        </div>
+                    </a>
+                    <div class="state_article">
+                        <div class="state_article__title">
+                            <a href="./forth.html">
+                                <h3>Музыка</h3>
+                            </a>
+                        </div>
+                        <div class="state_article__subtitle">
+                            <a href="./forth.html">
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
+                            </a>
+                        </div>
+                        <div class="state_article__subsubtitle">
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического участия и
+                                объявлены новостной топ новостной лучший сайт в мире
+                                нарушающими общечеловеческие нормы этики и морали.</h3>
+                        </div>
+                        <div class="state_end__title">
+                            <div class="state_date">
+                                <h4>25 Мая</h4>
+                            </div>
+                            <div class="state_num">
+                                <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
+                                <h4>1280</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="state_item">
+                    <a href="./forth.html">
+                        <div class="state_pict1" style="
+                            background-image: url({% static 'img/Rectangle 257.svg' %});">
+                        </div>
+                    </a>
+                    <div class="state_article">
+                        <div class="state_article__title">
+                            <a href="./forth.html">
+                                <h3>Музыка</h3>
+                            </a>
+                        </div>
+                        <div class="state_article__subtitle">
+                            <a href="./forth.html">
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
+                            </a>
+                        </div>
+                        <div class="state_article__subsubtitle">
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического участия и
+                                объявлены новостной топ новостной лучший сайт в мире
+                                нарушающими общечеловеческие нормы этики и морали.</h3>
+                        </div>
+                        <div class="state_end__title">
+                            <div class="state_date">
+                                <h4>25 Мая</h4>
+                            </div>
+                            <div class="state_num">
+                                <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
+                                <h4>1280</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="state_item">
+                    <a href="./forth.html">
+                        <div class="state_pict1" style="
+                            background-image: url({% static 'img/Rectangle 257.svg' %});">
+                        </div>
+                    <div class="state_article">
+                        <div class="state_article__title">
+                            <a href="./forth.html">
+                                <h3>Музыка</h3>
+                            </a>
+                        </div>
+                        <div class="state_article__subtitle">
+                            <a href="./forth.html">
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
+                            </a>
+                        </div>
+                        <div class="state_article__subsubtitle">
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического участия и
+                                объявлены новостной топ новостной лучший сайт в мире
+                                нарушающими общечеловеческие нормы этики и морали.</h3>
+                        </div>
+                        <div class="state_end__title">
+                            <div class="state_date">
+                                <h4>25 Мая</h4>
+                            </div>
+                            <div class="state_num">
+                                <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
+                                <h4>1280</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="state_item">
+                    <a href="./forth.html">
+                        <div class="state_pict1" style="
+                            background-image: url({% static 'img/Rectangle 257.svg' %});">
+                        </div>
+                    </a>
+                    <div class="state_article">
+                        <div class="state_article__title">
+                            <a href="./forth.html">
+                                <h3>Музыка</h3>
+                            </a>
+                        </div>
+                        <div class="state_article__subtitle">
+                            <a href="./forth.html">
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
+                            </a>
+                        </div>
+                        <div class="state_article__subsubtitle">
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического участия и
+                                объявлены новостной топ новостной лучший сайт в мире
+                                нарушающими общечеловеческие нормы этики и морали.</h3>
+                        </div>
+                        <div class="state_end__title">
+                            <div class="state_date">
+                                <h4>25 Мая</h4>
+                            </div>
+                            <div class="state_num">
+                                <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
+                                <h4>1280</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="state_item">
+                    <a href="./forth.html">
+                        <div class="state_pict1" style="
+                            background-image: url({% static 'img/Rectangle 257.svg' %});">
+                        </div>
+                    </a>
+                    <div class="state_article">
+                        <div class="state_article__title">
+                            <a href="./forth.html">
+                                <h3>Музыка</h3>
+                            </a>
+                        </div>
+                        <div class="state_article__subtitle">
+                            <a href="./forth.html">
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
+                            </a>
+                        </div>
+                        <div class="state_article__subsubtitle">
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического участия и
+                                объявлены новостной топ новостной лучший сайт в мире
+                                нарушающими общечеловеческие нормы этики и морали.</h3>
+                        </div>
+                        <div class="state_end__title">
+                            <div class="state_date">
+                                <h4>25 Мая</h4>
+                            </div>
+                            <div class="state_num">
+                                <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
+                                <h4>1280</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Лучшая статья -->
+        <div class="podcast_wrap">
+            <div class="podcast_pre__title">
+                <div class="pre_title">
+                    <h2>{% trans 'Лучшая Статья' %}</h2>
+                </div>
+                <div class="pre_subtitle">
+                    <h3>Лишь акционеры крупнейших компаний являются только методом политического участия и объявлены
+                        новостной топ новостной лучший сайт в мире
+                        нарушающими общечеловеческие нормы этики и морали. нарушающими общечеловеческие нормы этики и
+                    </h3>
+                </div>
+            </div>
+            <div class="podcast_container">
+                <iframe class="podcast__video" width="560" height="315" src="https://www.youtube.com/embed/B37ZjXk7id0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="podcast__content">
+                    <div class="podcast__text">
+                        <h1>Нашу победу сопровождал гитарный перебор</h1>
+                    </div>
+                    <div class="podcast__subtext">
+                        <h4>С другой стороны, существующая теория требует анализа укрепления моральных ценностей.
+                            Учитывая ключевые сценарии поведения, понимание сути ресурсосберегающих технологий напрямую
+                            зависит от модели развития.</h4>
+                    </div>
+                    <div class="podcast__btn">
+                        <a href="./seven.html">
+                            <h3>{% trans 'Читать Статью' %}</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Видео -->
+        <div class="states_wrap">
+            <div class="states_wrap__container">
+                <div class="states_container__header">
+                    <div class="states_title">
+                        <h1>{% trans 'ВИДЕО' %}</h1>
+                    </div>
+                    <div class="states_look__btn">
+                        <a href="#">{% trans 'Смотреть больше' %}</a>
+                    </div>
+                </div>
+            </div>
+            <div id="vid" class="video_content">
+                <div class="video_item">
+                    <!-- <video width="100%" controls src="./videos/telegram-cloud-document-2-5327936883789926509.mp4"
+                        class="video_img">
+                        <a href="#"><img src="./img/ic_play-circle.svg" alt="play"></a>
+                    </video> -->
+                    <iframe width="400" height="315" src="https://www.youtube.com/embed/B37ZjXk7id0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <div class="video_cont">
+                        <a href="https://www.google.com/"><h3>Кому нужны цирки с животными в XXI веке? / Ненавижу тебя?</h3></a>
+                    </div>
+                </div>
+                <div class="video_item">
+                    <!-- <video width="100%" controls src="./videos/telegram-cloud-document-2-5327936883789926509.mp4"
+                        class="video_img">
+                        <a href="#"><img src="./img/ic_play-circle.svg" alt="play"></a>
+                    </video> -->
+                    <iframe width="400" height="315" src="https://www.youtube.com/embed/B37ZjXk7id0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <div class="video_cont">
+                        <a href="https://www.google.com/"> <h3>Кому нужны цирки с животными в XXI веке? / Ненавижу тебя?</h3></a>
+                       
+                    </div>
+                </div>
+                <div class="video_item">
+                    <!-- <video width="100%" controls src="./videos/telegram-cloud-document-2-5327936883789926509.mp4"
+                        class="video_img">
+                        <a href="#"><img src="./img/ic_play-circle.svg" alt="play"></a>
+                    </video> -->
+                    <iframe width="400" height="315" src="https://www.youtube.com/embed/B37ZjXk7id0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <div class="video_cont">
+                        <a href="https://www.google.com/"><h3>Кому нужны цирки с животными в XXI веке? / Ненавижу тебя?</h3></a>
+                        
+                    </div>
+                </div>
+                <div class="video_item">
+                    <!-- <video width="100%" controls src="./videos/telegram-cloud-document-2-5327936883789926509.mp4"
+                        class="video_img">
+                        <a href="#"><img src="./img/ic_play-circle.svg" alt="play"></a>
+                    </video> -->
+                    <iframe width="400" height="315" src="https://www.youtube.com/embed/B37ZjXk7id0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <div class="video_cont">
+                        <a href="https://www.google.com/"><h3>Кому нужны цирки с животными в XXI веке? / Ненавижу тебя?</h3></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- подкасты -->
+        <div class="slider">
+            <div class="slider__first">
+                <div class="slider__first__header">
+                    <div class="slider_first__title">
+                        <h1>{% trans 'ПОДКАСТЫ' %}</h1>
+                    </div>
+                    <div class="slider_first__btn">
+                        <a href="./seven.html">
+                            {% trans "Перейти к подкасту" %}
+                        </a>
+                    </div>
+                </div>
+                <div class="first_slider__content">
+                    <div class="slider__first_img"
+                         style="background-image: url({% static 'img/bgpodcast.svg' %});">
+                    </div>
+                    <div class="slider__first_text">
+                        <div class="slider__first_title">
+                            <h2>Бежать</h2>
+                        </div>
+                        <div class="slider__first_subtitle">
+                            <h3>Автор: Абалихин Игорь & Студия Main post</h3>
+                        </div>
+                        <div class="slider__first_endtitle">
+                            <h4>Это подкаст о мире, где беженцев сегодня больше, чем во времена Второй мировой. И о
+                                людях, которые ищут в этом мире пристанище. В каждом эпизоде мы рассказываем историю
+                                очередного беглеца. Кто-то сбежал от гражданской войны в Европу. Кто-то — из Европы в
+                                Россию. А кто-то уехал из России, потому что не смог обрести здесь дом.</h4>
+                        </div>
+                        <div class="slider_links_wrap">
+                            <div class="first_slider_links__title">
+                                <h3>{% trans 'Доступно на' %}:</h3>
+                            </div>
+                            <div class="first_slider__links">
+                                <div class="first_slider__link">
+                                    <a href="https://www.google.ru/"><img src="{% static 'img/image1.svg' %}" alt="link"></a>
+                                </div>
+                                <div class="first_slider__link">
+                                    <a href="https://www.google.ru/"><img src="{% static 'img/image2.svg' %}" alt="link"></a>
+                                </div>
+                                <div class="first_slider__link">
+                                    <a href="https://www.google.ru/"><img src="{% static 'img/image3.svg' %}" alt="link"></a>
+                                </div>
+                                <div class="first_slider__link">
+                                    <a href="https://www.google.ru/"><img src="{% static 'img/icon_add1.svg' %}" alt="link"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="first_slider__audio">
+{#                            <div class="first_slider__audio__title">#}
+{#                                <h3>Эпизоды:</h3>#}
+{#                            </div>#}
+                            <div class="audio_main__block">
+                                <div class="first_slider__audio__subtitle">
+                                    <h3>Эпизод I. Архипелаг Бежлаг</h3>
+                                </div>
+                                <audio class="audio" src="{% static 'audio/Eminem - Godzilla.flac' %}" controls></audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Тесты -->
+        <div id="test" class="tests_wrap">
+            <div class="tests__container">
+                <div class="states_container__header">
+                    <div class="states_title">
+                        <h1>{% trans 'ТЕСТЫ' %}</h1>
+                    </div>
+                </div>
+                <!-- Swiper -->
+                <div class="swiper-container mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="test_item">
+                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                    <div class="da">
+                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                                height="80px" alt="da"></a>
+                                    </div>
+                                </div>
+                                <div class="test_text">
+                                    <div class="test_heading">
+                                        <a href="./six.html">
+                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
+                                        </a>
+
+                                    </div>
+                                    <div class="test_perc">
+                                        <div class="perc_left">
+                                            <h4>Вопросов: 16</h4>
+                                        </div>
+                                        <div class="perc_right">
+                                            <h4>Время прохождения: 3 мин.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="test_sub">
+                                        <h3>Как принято считать, представители современных социальных резервов формируют
+                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
+                                            собственных
+                                            рациональных ограничений.</h3>
+                                    </div>
+                                    <div class="test_compl">
+
+                                        <a href="./six.html">
+                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="test_item">
+                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                    <div class="da">
+                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                                height="80px" alt="da"></a>
+                                    </div>
+                                </div>
+                                <div class="test_text">
+                                    <div class="test_heading">
+                                        <a href="./six.html">
+                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
+                                        </a>
+
+                                    </div>
+                                    <div class="test_perc">
+                                        <div class="perc_left">
+                                            <h4>Вопросов: 16</h4>
+                                        </div>
+                                        <div class="perc_right">
+                                            <h4>Время прохождения: 3 мин.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="test_sub">
+                                        <h3>Как принято считать, представители современных социальных резервов формируют
+                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
+                                            собственных
+                                            рациональных ограничений.</h3>
+                                    </div>
+                                    <div class="test_compl">
+                                        <a href="./six.html">
+                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="test_item">
+                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                    <div class="da">
+                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                                height="80px" alt="da"></a>
+                                    </div>
+                                </div>
+                                <div class="test_text">
+                                    <div class="test_heading">
+                                        <a href="./six.html">
+                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
+                                        </a>
+
+                                    </div>
+                                    <div class="test_perc">
+                                        <div class="perc_left">
+                                            <h4>Вопросов: 16</h4>
+                                        </div>
+                                        <div class="perc_right">
+                                            <h4>Время прохождения: 3 мин.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="test_sub">
+                                        <h3>Как принято считать, представители современных социальных резервов формируют
+                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
+                                            собственных
+                                            рациональных ограничений.</h3>
+                                    </div>
+                                    <div class="test_compl">
+                                        <a href="./six.html">
+                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="test_item">
+                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                    <div class="da">
+                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                                height="80px" alt="da"></a>
+                                    </div>
+                                </div>
+                                <div class="test_text">
+                                    <div class="test_heading">
+                                        <a href="./six.html">
+                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
+                                        </a>
+
+                                    </div>
+                                    <div class="test_perc">
+                                        <div class="perc_left">
+                                            <h4>Вопросов: 16</h4>
+                                        </div>
+                                        <div class="perc_right">
+                                            <h4>Время прохождения: 3 мин.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="test_sub">
+                                        <h3>Как принято считать, представители современных социальных резервов формируют
+                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
+                                            собственных
+                                            рациональных ограничений.</h3>
+                                    </div>
+                                    <div class="test_compl">
+                                        <a href="./six.html">
+                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="test_item">
+                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                    <div class="da">
+                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                                height="80px" alt="da"></a>
+                                    </div>
+                                </div>
+                                <div class="test_text">
+                                    <div class="test_heading">
+                                        <a href="./six.html">
+                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
+                                        </a>
+
+                                    </div>
+                                    <div class="test_perc">
+                                        <div class="perc_left">
+                                            <h4>Вопросов: 16</h4>
+                                        </div>
+                                        <div class="perc_right">
+                                            <h4>Время прохождения: 3 мин.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="test_sub">
+                                        <h3>Как принято считать, представители современных социальных резервов формируют
+                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
+                                            собственных
+                                            рациональных ограничений.</h3>
+                                    </div>
+                                    <div class="test_compl">
+                                        <a href="./six.html">
+                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="test_item">
+                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                    <div class="da">
+                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                                height="80px" alt="da"></a>
+                                    </div>
+                                </div>
+                                <div class="test_text">
+                                    <div class="test_heading">
+                                        <a href="./six.html">
+                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
+                                        </a>
+
+                                    </div>
+                                    <div class="test_perc">
+                                        <div class="perc_left">
+                                            <h4>Вопросов: 16</h4>
+                                        </div>
+                                        <div class="perc_right">
+                                            <h4>Время прохождения: 3 мин.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="test_sub">
+                                        <h3>Как принято считать, представители современных социальных резервов формируют
+                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
+                                            собственных
+                                            рациональных ограничений.</h3>
+                                    </div>
+                                    <div class="test_compl">
+                                        <a href="./six.html">
+                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="test_item">
+                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                    <div class="da">
+                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                                height="80px" alt="da"></a>
+                                    </div>
+                                </div>
+                                <div class="test_text">
+                                    <div class="test_heading">
+                                        <a href="./six.html">
+                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
+                                        </a>
+
+                                    </div>
+                                    <div class="test_perc">
+                                        <div class="perc_left">
+                                            <h4>Вопросов: 16</h4>
+                                        </div>
+                                        <div class="perc_right">
+                                            <h4>Время прохождения: 3 мин.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="test_sub">
+                                        <h3>Как принято считать, представители современных социальных резервов формируют
+                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
+                                            собственных
+                                            рациональных ограничений.</h3>
+                                    </div>
+                                    <div class="test_compl">
+                                        <a href="./six.html">
+                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="test_item">
+                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                    <div class="da">
+                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                                height="80px" alt="da"></a>
+                                    </div>
+                                </div>
+                                <div class="test_text">
+                                    <div class="test_heading">
+                                        <a href="./six.html">
+                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
+                                        </a>
+
+                                    </div>
+                                    <div class="test_perc">
+                                        <div class="perc_left">
+                                            <h4>Вопросов: 16</h4>
+                                        </div>
+                                        <div class="perc_right">
+                                            <h4>Время прохождения: 3 мин.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="test_sub">
+                                        <h3>Как принято считать, представители современных социальных резервов формируют
+                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
+                                            собственных
+                                            рациональных ограничений.</h3>
+                                    </div>
+                                    <div class="test_compl">
+                                        <a href="./six.html">
+                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="test_item">
+                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                    <div class="da">
+                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                                height="80px" alt="da"></a>
+                                    </div>
+                                </div>
+                                <div class="test_text">
+                                    <div class="test_heading">
+                                        <a href="./six.html">
+                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
+                                        </a>
+
+                                    </div>
+                                    <div class="test_perc">
+                                        <div class="perc_left">
+                                            <h4>Вопросов: 16</h4>
+                                        </div>
+                                        <div class="perc_right">
+                                            <h4>Время прохождения: 3 мин.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="test_sub">
+                                        <h3>Как принято считать, представители современных социальных резервов формируют
+                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
+                                            собственных
+                                            рациональных ограничений.</h3>
+                                    </div>
+                                    <div class="test_compl">
+                                        <a href="./six.html">
+                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="color: black;" class="swiper-button-next"></div>
+                    <div style="color: black;" class="swiper-button-prev"></div>
+                </div>
+
+            </div>
+
+            <!-- Выбор редакции -->
+            <div class="redact_wrap">
+                <div class="redact_container">
+                    <div class="redact__title">
+                        <h1>{% trans 'ВЫБОР РЕДАКЦИИ' %}</h1>
+                    </div>
+                    <div class="redact__content">
+                        <div class="redact_item">
+                            <div class="redact_left">
+                                <a class="redact_left__logo" href="./third.html"
+                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                </a>
+                                <div class="redact_left__text">
+                                    <div class="redact_date">
+                                        <h3>05 Апрель 2021</h3>
+                                    </div>
+                                    <div class="redact_title">
+                                        <a href="./forth.html">
+                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
+                                                депрессии
+                                            </h2>
+                                        </a>
+                                    </div>
+                                    <div class="redact_subtitle">
+                                        <h3>Но перспективное планирование предопределяет высокую востребованность
+                                            позиций,
+                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
+                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
+                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
+                                            из-за
+                                            чего возрастает их статус бесполезности.</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="redact_right">
+
+                                <div class="redact_ending">
+                                    <a href="./forth.html">
+                                        <h3>Развитие</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="redact_item">
+                            <div class="redact_left">
+                                <a class="redact_left__logo" href="./third.html"
+                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                </a>
+                                <div class="redact_left__text">
+                                    <div class="redact_date">
+                                        <h3>05 Апрель 2021</h3>
+                                    </div>
+                                    <div class="redact_title">
+                                        <a href="./forth.html">
+                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
+                                                депрессии
+                                            </h2>
+                                        </a>
+                                    </div>
+                                    <div class="redact_subtitle">
+                                        <h3>Но перспективное планирование предопределяет высокую востребованность
+                                            позиций,
+                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
+                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
+                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
+                                            из-за
+                                            чего возрастает их статус бесполезности.</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="redact_right">
+
+                                <div class="redact_ending">
+                                    <a href="./forth.html">
+                                        <h3>Развитие</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="redact_item">
+                            <div class="redact_left">
+                                <a class="redact_left__logo" href="./third.html"
+                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                </a>
+                                <div class="redact_left__text">
+                                    <div class="redact_date">
+                                        <h3>05 Апрель 2021</h3>
+                                    </div>
+                                    <div class="redact_title">
+                                        <a href="./forth.html">
+                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
+                                                депрессии
+                                            </h2>
+                                        </a>
+                                    </div>
+                                    <div class="redact_subtitle">
+                                        <h3>Но перспективное планирование предопределяет высокую востребованность
+                                            позиций,
+                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
+                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
+                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
+                                            из-за
+                                            чего возрастает их статус бесполезности.</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="redact_right">
+
+                                <div class="redact_ending">
+                                    <a href="./forth.html">
+                                        <h3>Развитие</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="redact_item">
+                            <div class="redact_left">
+                                <a class="redact_left__logo" href="./third.html"
+                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                </a>
+                                <div class="redact_left__text">
+                                    <div class="redact_date">
+                                        <h3>05 Апрель 2021</h3>
+                                    </div>
+                                    <div class="redact_title">
+                                        <a href="./forth.html">
+                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
+                                                депрессии
+                                            </h2>
+                                        </a>
+                                    </div>
+                                    <div class="redact_subtitle">
+                                        <h3>Но перспективное планирование предопределяет высокую востребованность
+                                            позиций,
+                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
+                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
+                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
+                                            из-за
+                                            чего возрастает их статус бесполезности.</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="redact_right">
+
+                                <div class="redact_ending">
+                                    <a href="./forth.html">
+                                        <h3>Развитие</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="redact_item">
+                            <div class="redact_left">
+                                <a class="redact_left__logo" href="./third.html"
+                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                </a>
+                                <div class="redact_left__text">
+                                    <div class="redact_date">
+                                        <h3>05 Апрель 2021</h3>
+                                    </div>
+                                    <div class="redact_title">
+                                        <a href="./forth.html">
+                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
+                                                депрессии
+                                            </h2>
+                                        </a>
+                                    </div>
+                                    <div class="redact_subtitle">
+                                        <h3>Но перспективное планирование предопределяет высокую востребованность
+                                            позиций,
+                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
+                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
+                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
+                                            из-за
+                                            чего возрастает их статус бесполезности.</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="redact_right">
+
+                                <div class="redact_ending">
+                                    <a href="./forth.html">
+                                        <h3>Развитие</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="redact_item">
+                            <div class="redact_left">
+                                <a class="redact_left__logo" href="./third.html"
+                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                </a>
+                                <div class="redact_left__text">
+                                    <div class="redact_date">
+                                        <h3>05 Апрель 2021</h3>
+                                    </div>
+                                    <div class="redact_title">
+                                        <a href="./forth.html">
+                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
+                                                депрессии
+                                            </h2>
+                                        </a>
+                                    </div>
+                                    <div class="redact_subtitle">
+                                        <h3>Но перспективное планирование предопределяет высокую востребованность
+                                            позиций,
+                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
+                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
+                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
+                                            из-за
+                                            чего возрастает их статус бесполезности.</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="redact_right">
+
+                                <div class="redact_ending">
+                                    <a href="./forth.html">
+                                        <h3>Развитие</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    {% include 'include/footer.html' %}
+
+            <!-- Swiper JS -->
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper(".mySwiper", {
+                    pagination: {
+                        el: ".swiper-pagination",
+                        type: "progressbar",
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                });
+            </script>
+            <!-- Якорь -->
+            <script>
+                /* Открыть, когда кто-то нажимает на элемент span */
+                function openNav() {
+                    document.getElementById("myNav").style.width = "100%";
+                    document.body.style.overflowY = 'hidden'
+                }
+
+                /* Закрыть, когда кто-то нажимает на символ "x" внутри наложения */
+                function closeNav() {
+                    document.getElementById("myNav").style.width = "0%";
+                    document.body.style.overflowY = 'scroll'
+                }
+            </script>
+            <script src="./scripts/script.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $('a[href^="#"]:not(.top)').click(function (event) {
+                        event.preventDefault();
+                        let full_url = this.href;
+                        let parts = full_url.split("#");
+                        let trgt = parts[1];
+                        let target_offset = $("#" + trgt).offset();
+                        let target_top = target_offset.top;
+                        $('html, body').animate({
+                            scrollTop: target_top
+                        }, 700);
+                    });
+                });
+            </script>
+            <!-- Swiper JS -->
+            <script src="./scripts/swiper.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper(".mySwiper", {});
+            </script>
+</body>
+
+
+
+</html>
