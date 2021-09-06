@@ -21,13 +21,16 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'modeltranslation',
-    'main',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
+    'ckeditor_uploader',
+    'sorl.thumbnail',
+    'main',
 ]
 
 MIDDLEWARE = [
@@ -119,7 +122,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -136,3 +139,70 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+
+CKEDITOR_CONFIGS = {
+    'skin': 'moono',
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter',
+             'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source', "Youtube", "Image"]
+        ],
+        'extraPlugins': ','.join([
+            'youtube',
+        ]),
+    },
+    'my_config': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ["Source", "Templates", 'Format', 'Font', 'FontSize', 'Maximize', 'ShowBlocks'], '/',
+            ['Image', 'Youtube', 'Table', 'Bold', 'Italic', 'Underline', 'Strike', 'Indent', 'Outdent',
+             'HorizontalRule'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', 'Blockquote', 'NumberedList'],
+            ['BulletedList', 'TextColor', 'BGColor', 'Link', 'Smiley', 'SpecialChar'], '/',
+            ['Find', 'Subscript', 'Superscript'], '/',
+            [], '/',
+            [], '/',
+        ],
+        'extraPlugins': ','.join([
+            'uploadimage',
+            # 'youtube',
+        ]),
+    },
+    'for_church': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ["Source", 'Font', 'FontSize', 'Maximize', 'ShowBlocks'], '/',
+            ['Image', 'Youtube', 'Table', 'Bold', 'Italic', 'Underline', 'Strike', 'Indent', 'Outdent',
+             'HorizontalRule'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', 'Blockquote', 'NumberedList'],
+            ['BulletedList', 'TextColor', 'BGColor', 'Link', 'Smiley', 'SpecialChar'], '/',
+            ['Find', 'Subscript', 'Superscript'], '/',
+            [], '/',
+            [], '/',
+        ],
+        'extraPlugins': ','.join([
+            # 'uploadimage',
+            'youtube',
+        ]),
+    },
+    'schedule': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Font',  'Maximize'], '/',
+            ['Table', 'Bold', 'Italic', 'Underline',
+             'HorizontalRule'],
+            ['BulletedList', 'TextColor', 'BGColor', 'Link', 'Smiley', 'SpecialChar'], '/',
+            ['Find', 'Subscript', 'Superscript'], '/',
+            [], '/',
+            [], '/',
+        ],
+    },
+}
+

@@ -20,63 +20,150 @@
     {% include "include/header.html" %}
     
     <!-- Конец хедера -->
+{#    {% for article in firstArticle %}#}
+{#        {{ article.image.url }}#}
+{#    {% endfor %}#}
+
+
+{#    {% if secondArticle %}#}
+{#            true#}
+{#        {% else %}#}
+{#        false#}
+{#    {% endif %}#}
+
+
 
     <!-- Верстка верхнего блока с новостями -->
     <div class="top_posts__wrap">
         <div class="top_post__container">
-            <div class="top_post_item_1" style="background-image: url({% static 'img/Rectangle 288.png' %}); ">
 
-                <div class="news_link">
-                    <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
-                </div>
-                <div class="news_content__row">
-                    <div class="news_content__title">
-                        <a href="#">
-                            <h3>Музыка</h3>
-                        </a>
+                {% for article in firstArticle %}
+                    <div class="top_post_item_1" style="background-image: url({{ article.image.url }}); ">
+                        <div class="news_link">
+                            <a href="{% url 'article_detail' article.slug %}"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
+                        </div>
+                        <div class="news_content__row">
+                            <div class="news_content__title">
+                                <a href="#">
+                                    <h3>{{ article.categories }}</h3>
+                                </a>
+                            </div>
+                            <div class="news_content__subtitle">
+                                <h1>{{ article.title2 }}</h1>
+                            </div>
+                            <div class="news_content__endtitle">
+                                <h1>{{ article.title1 }}</h1>
+                            </div>
+                        </div>
                     </div>
-                    <div class="news_content__subtitle">
-                        <h1>Выставка Плакатов</h1>
-                    </div>
-                    <div class="news_content__endtitle">
-                        <h1>Впервые в Узбекистане</h1>
-                    </div>
-                </div>
-            </div>
+                {% endfor %}
+
+
+
+{#        <div class="top_post_item_1" style="background-image: url({% static 'img/Rectangle 288.png' %}); ">#}
+{##}
+{#                <div class="news_link">#}
+{#                    <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>#}
+{#                </div>#}
+{#                <div class="news_content__row">#}
+{#                    <div class="news_content__title">#}
+{#                        <a href="#">#}
+{#                            <h3>Музыка</h3>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="news_content__subtitle">#}
+{#                        <h1>Выставка Плакатов</h1>#}
+{#                    </div>#}
+{#                    <div class="news_content__endtitle">#}
+{#                        <h1>Впервые в Узбекистане</h1>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+
+
             <div class="other">
-                <div class="top_post_item_2" style="background-image: url({% static 'img/Rectangle 289.png' %}); ">
+                {% for article in secondArticle %}
+                    <div class="top_post_item_2" style="background-image: url({{ article.image.url }}); ">
+                        <div class="news_link">
+                            <a href="{% url 'article_detail' article.slug %}"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
+                        </div>
+                        <div class="news_content__title">
+                            <a href="#">
+                                <h3>{{ article.categories }}</h3>
+                            </a>
+                        </div>
+                        <div class="news_content__subtitle second">
+                            <h3>{{ article.title2 }}</h3>
+                        </div>
+                        <div class="news_content__endtitle third">
+                            <h1>{{ article.title1 }}</h1>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+{#            <div class="top_post_item_2" style="background-image: url({% static 'img/Rectangle 289.png' %}); ">#}
+{#                    <div class="news_link">#}
+{#                        <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>#}
+{#                    </div>#}
+{#                    <div class="news_content__title">#}
+{#                        <a href="#">#}
+{#                            <h3>Музыка</h3>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="news_content__subtitle second">#}
+{#                        <h3>С дефектом в глазах</h3>#}
+{#                    </div>#}
+{#                    <div class="news_content__endtitle third">#}
+{#                        <h1>Женшина-ящерица</h1>#}
+{#                    </div>#}
+{#                </div>#}
+
+
+            {% for article in thirdArticle %}
+
+                <div class="top_post_item_3" style="background-image: url({{ article.image.url }});">
                     <div class="news_link">
-                        <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
+                        <a href="{% url 'article_detail' article.slug %}"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
                     </div>
                     <div class="news_content__title">
                         <a href="#">
-                            <h3>Музыка</h3>
+                            <h3>{{ article.categories }}</h3>
                         </a>
                     </div>
                     <div class="news_content__subtitle second">
-                        <h3>С дефектом в глазах</h3>
+                        <h3>{{ article.title2 }}</h3>
                     </div>
                     <div class="news_content__endtitle third">
-                        <h1>Женшина-ящерица</h1>
+                        <h1>{{ article.title1 }}</h1>
                     </div>
                 </div>
-                <div class="top_post_item_3" style="background-image: url({% static 'img/Rectangle 289.svg' %});">
-                    <div class="news_link">
-                        <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
-                    </div>
-                    <div class="news_content__title">
-                        <a href="#">
-                            <h3>Музыка</h3>
-                        </a>
-                    </div>
-                    <div class="news_content__subtitle second">
-                        <h3>С дефектом в глазах</h3>
-                    </div>
-                    <div class="news_content__endtitle third">
-                        <h1>Женшина-ящерица</h1>
-                    </div>
-                </div>
+
+            {% endfor %}
+
+
+{#            <div class="top_post_item_3" style="background-image: url({% static 'img/Rectangle 289.svg' %});">#}
+{#                    <div class="news_link">#}
+{#                        <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>#}
+{#                    </div>#}
+{#                    <div class="news_content__title">#}
+{#                        <a href="#">#}
+{#                            <h3>Музыка</h3>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="news_content__subtitle second">#}
+{#                        <h3>С дефектом в глазах</h3>#}
+{#                    </div>#}
+{#                    <div class="news_content__endtitle third">#}
+{#                        <h1>Женшина-ящерица</h1>#}
+{#                    </div>#}
+{#                </div>#}
+
+
+
             </div>
+
         </div>
 
         <!-- Новостная линия -->
@@ -133,7 +220,7 @@
                                 <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>
                             </div>
                             <div class="second_text">
-                                <h2>Не следует забывать, что цены на бензин начинают падать</h2>
+                                <h2 style="margin: 0">Не следует забывать, что цены на бензин начинают падать</h2>
                             </div>
                             <div class="second_date">
                                 <div class="second_num">20.05.2021</div>
@@ -212,7 +299,7 @@
                                 <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>
                             </div>
                             <div class="second_text">
-                                <h2>Не следует забывать, что цены на бензин начинают падать</h2>
+                                <h2 style="margin: 0">Не следует забывать, что цены на бензин начинают падать</h2>
                             </div>
                             <div class="second_date">
                                 <div class="second_num">20.05.2021</div>
