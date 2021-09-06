@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Articles(models.Model):
-    short_title = models.CharField(max_length=120)
+    short_title = models.CharField("Короткое название", max_length=120)
     title = models.CharField("Название статьи", max_length=250)
     title1 = models.CharField("Короткое название 1", max_length=120)
     title2 = models.CharField("Короткое название 2", max_length=120)
@@ -80,6 +80,14 @@ class MainBlock(models.Model):
     firstArticle = models.ForeignKey("Articles", verbose_name="Первая статья", related_name="firstArticle", on_delete=models.PROTECT)
     secondArticle = models.ForeignKey("Articles", verbose_name="Вторая статья", related_name="secondArticle", on_delete=models.PROTECT)
     thirdArticle = models.ForeignKey("Articles", verbose_name="Третья статья", related_name="thirdArticle", on_delete=models.PROTECT)
+
+    article1 = models.ForeignKey("Articles", verbose_name="Статья 1", related_name="article1", on_delete=models.PROTECT)
+    article2 = models.ForeignKey("Articles", verbose_name="Статья 2", related_name="article2", on_delete=models.PROTECT)
+    article3 = models.ForeignKey("Articles", verbose_name="Статья 3", related_name="article3", on_delete=models.PROTECT)
+    article4 = models.ForeignKey("Articles", verbose_name="Статья 4", related_name="article4", on_delete=models.PROTECT)
+    article5 = models.ForeignKey("Articles", verbose_name="Статья 5", related_name="article5", on_delete=models.PROTECT)
+    article6 = models.ForeignKey("Articles", verbose_name="Статья 6", related_name="article6", on_delete=models.PROTECT)
+
 
     def __str__(self):
         return "Главная страница"

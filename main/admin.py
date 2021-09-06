@@ -41,7 +41,7 @@ class ArticlesAdmin(TranslationAdmin):
     #     ('author'), )
     fieldsets = (
         ("Первый блок", {
-            'fields': ('short_title', 'title', 'image', 'slug', 'categories')
+            'fields': ('title', 'short_title', 'image', 'slug', 'categories')
         }),
         ("Название из двух частей", {
             'fields': (('title1', 'title2',),)
@@ -68,12 +68,18 @@ class CategoriesAdmin(TranslationAdmin):
     prepopulated_fields = {'url': ('name', )}
 
 
-
-
-
-
 @admin.register(MainBlock)
 class MainBlockAdmin(admin.ModelAdmin):
+    fieldsets = (
+        ("Главный блок статей", {
+            'fields': ('firstArticle', 'secondArticle', 'thirdArticle',)
+        }),
+        ("6 статей на выбор", {
+            'fields': ('article1', 'article2', 'article3',
+                       'article4', 'article5', 'article6',)
+        }),
+    )
+
     def has_add_permission(self, request):
         return False
 
