@@ -1,6 +1,4 @@
-from datetime import timezone, time
 from django.utils import timezone
-
 from django.db import models
 # from ckeditor.fields import RichTextField
 # from ckeditor_uploader.fields import RichTextUploadingField
@@ -17,7 +15,7 @@ class Articles(models.Model):
                                    verbose_name="Категории",
                                    on_delete=models.CASCADE,
                                    related_name="category")
-    short_description = models.TextField("Короткое описание", max_length=250)
+    short_description = models.TextField("Короткое описание", max_length=300)
     # description = RichTextUploadingField("Описание статьи", config_name="default")
     description = models.TextField("Описание статьи", )
     date_created = models.DateTimeField("Дата создания", default=timezone.now)   # auto_now_add=True
@@ -44,6 +42,9 @@ class News(models.Model):
 class Ticker(models.Model):
     title = models.CharField("Бегущая строка", default="Бегущая строка", max_length=120, editable=False)
     ticker = models.CharField("Бегущая строка", max_length=500)
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         verbose_name = "Бегущая строка"

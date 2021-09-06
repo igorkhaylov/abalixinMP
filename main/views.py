@@ -7,13 +7,16 @@ def index(request):
     firstArticle = Articles.objects.filter(id=mainBlock.firstArticle.id)
     secondArticle = Articles.objects.filter(id=mainBlock.secondArticle.id)
     thirdArticle = Articles.objects.filter(id=mainBlock.thirdArticle.id)
+    blockArticles = Articles.objects.all()[:6]
+
 
     ticker = Ticker.objects.first()
     return render(request, "main/index.html", {"ticker": ticker,
                                                "firstArticle": firstArticle,
                                                "secondArticle": secondArticle,
                                                "thirdArticle": thirdArticle,
-                                               "mainblock": mainBlock,
+                                               # "mainblock": mainBlock,
+                                               "blockArticles": blockArticles,
                                                })
 
 

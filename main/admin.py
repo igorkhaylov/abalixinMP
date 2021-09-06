@@ -41,7 +41,7 @@ class ArticlesAdmin(TranslationAdmin):
     #     ('author'), )
     fieldsets = (
         ("Первый блок", {
-            'fields': ('title', 'image', 'slug', 'categories')
+            'fields': ('short_title', 'title', 'image', 'slug', 'categories')
         }),
         ("Название из двух частей", {
             'fields': (('title1', 'title2',),)
