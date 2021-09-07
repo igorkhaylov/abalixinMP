@@ -32,6 +32,7 @@ class ArticlesAdmin(TranslationAdmin):
     list_display = ('title', 'short_title',)
     form = ArticlesAdminForm
     save_on_top = True
+    save_as = True
     # fields = (
     #     ('title', 'title1', 'title2', 'slug', ),
     #     ('image', 'categories', ),

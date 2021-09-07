@@ -327,6 +327,44 @@
             </div>
             <div class="states_content">
 
+                {% for article in article1 %}
+
+                    <div class="state_item">
+                        <a href="{% url 'article_detail' article.slug %}">
+                            <div class="state_pict1" style="
+                                    background-image: url({{ article.image.url }});">
+                            </div>
+                        </a>
+                        <div class="state_article">
+                            <div class="state_article__title">
+                                <a href="./forth.html">
+                                    <h3>{{ article.categories }}</h3>
+                                </a>
+                            </div>
+                            <div class="state_article__subtitle">
+                                <a href="{% url 'article_detail' article.slug %}">
+                                    <h2>{{ article.short_title }}</h2>
+                                </a>
+                            </div>
+                            <div class="state_article__subsubtitle">
+                                <h3>{{ article.short_description }}</h3>
+                            </div>
+                            <div class="state_end__title">
+                                <div class="state_date">
+                                    <h4>
+                                        {{ article.date_created }}
+                                    </h4>
+                                </div>
+                                <div class="state_num">
+                                    <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
+                                    <h4>{{ article.views }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                {% endfor %}
 
 
                {% for article in article1 %}

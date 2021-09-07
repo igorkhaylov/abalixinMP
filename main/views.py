@@ -47,3 +47,5 @@ def article_detail(request, slug):
     # F(article.views) + 1
     # print()
     return render(request, "main/article_detail.html", {"article": article})
+
+
