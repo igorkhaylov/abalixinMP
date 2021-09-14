@@ -141,7 +141,7 @@ class Video(models.Model):
         return "ВИДЕО"
 
     class Meta:
-        verbose_name = "Видео"
-        verbose_name_plural = "Видео"
+        verbose_name = "ВИДЕО"
+        verbose_name_plural = "ВИДЕО"
 
 

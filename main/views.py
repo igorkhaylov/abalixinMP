@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Ticker, MainBlock, Articles, UzbNews
+from .models import Ticker, MainBlock, Articles, UzbNews, Video
 
 
 def index(request):
@@ -16,6 +16,7 @@ def index(request):
     article4 = Articles.objects.filter(id=mainBlock.article4.id)
     article5 = Articles.objects.filter(id=mainBlock.article5.id)
     article6 = Articles.objects.filter(id=mainBlock.article6.id)
+    video = Video.objects.first()
 
     bestArticle = Articles.objects.filter(id=mainBlock.bestArticle.id)
 
@@ -36,6 +37,7 @@ def index(request):
                                                "article6": article6,
                                                "bestArticle": bestArticle,
                                                "news": news,
+                                               "video": video,
                                                })
 
 
