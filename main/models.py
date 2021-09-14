@@ -6,6 +6,7 @@ from django.db import models
 
 class Articles(models.Model):
     short_title = models.CharField("Короткое название", max_length=120)
+    video = models.CharField("Ссылка YouTube", max_length=500, blank=True)
     title = models.CharField("Название статьи", max_length=250)
     title1 = models.CharField("Короткое название 1", max_length=120)
     title2 = models.CharField("Короткое название 2", max_length=120)
@@ -32,11 +33,38 @@ class Articles(models.Model):
         verbose_name_plural = "Статьи"
 
 
-class News(models.Model):
+class UzbNews(models.Model):
     short_title = models.CharField(max_length=120)
     title = models.CharField("Название статьи", max_length=250)
+    image = models.ImageField("Картинка", upload_to="uzbnews/%Y/%m/%d/", blank=True)
+    description = models.TextField("Описание")
+    views = models.IntegerField("Просмотры", default=0)
+    date_created = models.DateTimeField("Дата создания", default=timezone.now)   # auto_now_add=True
+    date_updated = models.DateTimeField("Дата обновления", auto_now=True)        # auto_now=True
+
+    def __str__(self):
+        return self.short_title
+
+    class Meta:
+        verbose_name = "Новости Узбекистана"
+        verbose_name_plural = "Новости Узбекистана"
 
 
+class WorldNews(models.Model):
+    short_title = models.CharField(max_length=120)
+    title = models.CharField("Название новости", max_length=250)
+    image = models.ImageField("Картинка", upload_to="worldnews/%Y/%m/%d/", blank=True)
+    description = models.TextField("Описание")
+    views = models.IntegerField("Просмотры", default=0)
+    date_created = models.DateTimeField("Дата создания", default=timezone.now)   # auto_now_add=True
+    date_updated = models.DateTimeField("Дата обновления", auto_now=True)        # auto_now=True
+
+    def __str__(self):
+        return self.short_title
+
+    class Meta:
+        verbose_name = "Мировые Новости"
+        verbose_name_plural = "Мировые новости"
 
 
 class Ticker(models.Model):
@@ -88,6 +116,8 @@ class MainBlock(models.Model):
     article5 = models.ForeignKey("Articles", verbose_name="Статья 5", related_name="article5", on_delete=models.PROTECT)
     article6 = models.ForeignKey("Articles", verbose_name="Статья 6", related_name="article6", on_delete=models.PROTECT)
 
+    bestArticle = models.ForeignKey("Articles", verbose_name="Лучшая статья", related_name="bestArticle", on_delete=models.PROTECT)
+
 
     def __str__(self):
         return "Главная страница"
@@ -95,3 +125,23 @@ class MainBlock(models.Model):
     class Meta:
         verbose_name = "Главная страница"
         verbose_name_plural = "Главная страница"
+
+
+class Video(models.Model):
+    title1 = models.CharField("Название видео 1", max_length=250)
+    link1 = models.CharField("Ссылка на видео 1", max_length=250)
+    title2 = models.CharField("Название видео 2", max_length=250)
+    link2 = models.CharField("Ссылка на видео 2", max_length=250)
+    title3 = models.CharField("Название видео 3", max_length=250)
+    link3 = models.CharField("Ссылка на видео 3", max_length=250)
+    title4 = models.CharField("Название видео 4", max_length=250)
+    link4 = models.CharField("Ссылка на видео 4", max_length=250)
+
+    def __str__(self):
+        return "ВИДЕО"
+
+    class Meta:
+        verbose_name = "Видео"
+        verbose_name_plural = "Видео"
+
+

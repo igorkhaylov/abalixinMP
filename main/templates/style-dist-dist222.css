@@ -693,12 +693,7 @@ body {
 }
 
 .state_end__title {
-    /*margin-top: 15px;*/
-    background: whitesmoke;
-    /*background-color: whitesmoke;*/
-    border: solid 1px darkgray;
-    /*border: grey;*/
-
+    margin-top: 15px;
 }
 
 .podcast_wrap {

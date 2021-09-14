@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Ticker, MainBlock, Articles
+from .models import Ticker, MainBlock, Articles, UzbNews
 
 
 def index(request):
@@ -8,6 +8,8 @@ def index(request):
     secondArticle = Articles.objects.filter(id=mainBlock.secondArticle.id)
     thirdArticle = Articles.objects.filter(id=mainBlock.thirdArticle.id)
 
+    news = UzbNews.objects.all()[:6]
+
     article1 = Articles.objects.filter(id=mainBlock.article1.id)
     article2 = Articles.objects.filter(id=mainBlock.article2.id)
     article3 = Articles.objects.filter(id=mainBlock.article3.id)
@@ -15,7 +17,9 @@ def index(request):
     article5 = Articles.objects.filter(id=mainBlock.article5.id)
     article6 = Articles.objects.filter(id=mainBlock.article6.id)
 
-    blockArticles = Articles.objects.all()[:6]
+    bestArticle = Articles.objects.filter(id=mainBlock.bestArticle.id)
+
+    # blockArticles = Articles.objects.all()[:6]
 
     ticker = Ticker.objects.first()
     return render(request, "main/index.html", {"ticker": ticker,
@@ -23,13 +27,15 @@ def index(request):
                                                "secondArticle": secondArticle,
                                                "thirdArticle": thirdArticle,
                                                # "mainblock": mainBlock,
-                                               "blockArticles": blockArticles,
+                                               # "blockArticles": blockArticles,
                                                "article1": article1,
                                                "article2": article2,
                                                "article3": article3,
                                                "article4": article4,
                                                "article5": article5,
                                                "article6": article6,
+                                               "bestArticle": bestArticle,
+                                               "news": news,
                                                })
 
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
-from .models import Ticker, Articles, Author, Categories, MainBlock
+from .models import Ticker, Articles, Author, Categories, MainBlock, UzbNews, WorldNews, Video
 from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
@@ -13,6 +13,24 @@ class ArticlesAdminForm(forms.ModelForm):
 
     class Meta:
         model = Articles
+        fields = '__all__'
+
+
+class UzbNewsAdminForm(forms.ModelForm):
+    description_ru = forms.CharField(label="Описание [ru]", widget=CKEditorUploadingWidget(config_name="my_config"))
+    description_uz = forms.CharField(label="Описание [uz]", widget=CKEditorUploadingWidget(config_name="my_config"))
+
+    class Meta:
+        model = UzbNews
+        fields = '__all__'
+
+
+class WorldNewsAdminForm(forms.ModelForm):
+    description_ru = forms.CharField(label="Описание [ru]", widget=CKEditorUploadingWidget(config_name="my_config"))
+    description_uz = forms.CharField(label="Описание [uz]", widget=CKEditorUploadingWidget(config_name="my_config"))
+
+    class Meta:
+        model = WorldNews
         fields = '__all__'
 
 
@@ -33,16 +51,9 @@ class ArticlesAdmin(TranslationAdmin):
     form = ArticlesAdminForm
     save_on_top = True
     save_as = True
-    # fields = (
-    #     ('title', 'title1', 'title2', 'slug', ),
-    #     ('image', 'categories', ),
-    #     ('short_description', ),
-    #     ('description', ),
-    #     ('date_created',),
-    #     ('author'), )
     fieldsets = (
         ("Первый блок", {
-            'fields': ('title', 'short_title', 'image', 'slug', 'categories')
+            'fields': ('title', 'short_title', 'image', 'slug', 'categories', 'video')
         }),
         ("Название из двух частей", {
             'fields': (('title1', 'title2',),)
@@ -56,6 +67,24 @@ class ArticlesAdmin(TranslationAdmin):
     )
     readonly_fields = ('date_created', )
     prepopulated_fields = {'slug': ('title', )}
+
+
+@admin.register(UzbNews)
+class UzbNewsAdmin(TranslationAdmin):
+    list_display = ('short_title', 'title', )
+    form = UzbNewsAdminForm
+    save_on_top = True
+    readonly_fields = ('date_created', 'views', )
+    save_as = True
+
+
+@admin.register(WorldNews)
+class WorldNewsAdmin(TranslationAdmin):
+    list_display = ('short_title', 'title', )
+    form = UzbNewsAdminForm
+    save_on_top = True
+    readonly_fields = ('date_created', 'views', )
+    save_as = True
 
 
 @admin.register(Author)
@@ -79,6 +108,9 @@ class MainBlockAdmin(admin.ModelAdmin):
             'fields': ('article1', 'article2', 'article3',
                        'article4', 'article5', 'article6',)
         }),
+        ("Лучшая статья", {
+            'fields': ('bestArticle',)
+        }),
     )
 
     def has_add_permission(self, request):
@@ -87,6 +119,23 @@ class MainBlockAdmin(admin.ModelAdmin):
     def has_delete_permission(self, request, obj=None):
         return False
 
+
+@admin.register(Video)
+class VideoAdmin(TranslationAdmin):
+    fieldsets = (
+        ("Видео 1", {
+            'fields': ('title1', 'link1', )
+        }),
+        ("Видео 2", {
+            'fields': ('title2', 'link2',)
+        }),
+        ("Видео 3", {
+            'fields': ('title3', 'link3',)
+        }),
+        ("Видео 4", {
+            'fields': ('title4', 'link4',)
+        }),
+    )
 
 # admin.site.register(MainBlock)
 

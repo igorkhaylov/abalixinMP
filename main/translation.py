@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import Ticker, Articles, Author, Categories
+from .models import Ticker, Articles, Author, Categories, UzbNews, WorldNews, Video
 
 
 @register(Ticker)
@@ -17,6 +17,29 @@ class ArticlesTranslationOptions(TranslationOptions):
         'short_description',
         'description',
     )
+
+
+@register(UzbNews)
+class UzbNewsTranslationOptions(TranslationOptions):
+    fields = (
+        'short_title',
+        'title',
+        'description',
+    )
+
+
+@register(WorldNews)
+class WorldNewsTranslationOptions(TranslationOptions):
+    fields = (
+        'short_title',
+        'title',
+        'description',
+    )
+
+
+@register(Video)
+class VideoTranslationOptions(TranslationOptions):
+    fields = ('title1', 'title2', 'title3', 'title4', )
 
 
 @register(Author)

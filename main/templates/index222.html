@@ -1,167 +1,78 @@
-{% load static i18n %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Post</title>
-    <link rel="stylesheet" href="{% static 'css/style-dist-dist.css' %}">
-    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
-    <link rel="stylesheet" href="{% static 'css/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <link rel="icon" type="img/svg" href="{% static 'img/sitelogo.svg' %}">
+    <link rel="stylesheet" href="css/style-dist-dist.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="icon" type="img/svg" href="./img/sitelogo.svg">
 </head>
 
 <body>
     <!-- Верстка хедера -->
+    
     <div class="adv">
-        <a href="#"><img src="{% static 'img/reklama.png' %}" alt="da"></a>
+        <a href="#"><img src="./img/reklama.png" alt="da"></a>
     </div>
-    {% include "include/header.html" %}
     
     <!-- Конец хедера -->
-{#    {% for article in firstArticle %}#}
-{#        {{ article.image.url }}#}
-{#    {% endfor %}#}
-
-
-{#    {% if secondArticle %}#}
-{#            true#}
-{#        {% else %}#}
-{#        false#}
-{#    {% endif %}#}
-
-
 
     <!-- Верстка верхнего блока с новостями -->
     <div class="top_posts__wrap">
         <div class="top_post__container">
-
-                {% for article in firstArticle %}
-                    <div class="top_post_item_1" style="background-image: url({{ article.image.url }}); ">
-                        <div class="news_link">
-                            <a href="{% url 'article_detail' article.slug %}"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
-                        </div>
-                        <div class="news_content__row">
-                            <div class="news_content__title">
-                                <a href="#">
-                                    <h3>{{ article.categories }}</h3>
-                                </a>
-                            </div>
-                            <div class="news_content__subtitle">
-                                <h1>{{ article.title2 }}</h1>
-                            </div>
-                            <div class="news_content__endtitle">
-                                <h1>{{ article.title1 }}</h1>
-                            </div>
-                        </div>
+            <div class="top_post_item_1">
+                <div class="news_link">
+                    <a href="./third.html"><img src="./img/ic_arrow-up-right.svg" alt="arrow"></a>
+                </div>
+                <div class="news_content__row">
+                    <div class="news_content__title">
+                        <a href="#">
+                            <h3>Музыка</h3>
+                        </a>
                     </div>
-                {% endfor %}
-
-
-
-{#        <div class="top_post_item_1" style="background-image: url({% static 'img/Rectangle 288.png' %}); ">#}
-{##}
-{#                <div class="news_link">#}
-{#                    <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>#}
-{#                </div>#}
-{#                <div class="news_content__row">#}
-{#                    <div class="news_content__title">#}
-{#                        <a href="#">#}
-{#                            <h3>Музыка</h3>#}
-{#                        </a>#}
-{#                    </div>#}
-{#                    <div class="news_content__subtitle">#}
-{#                        <h1>Выставка Плакатов</h1>#}
-{#                    </div>#}
-{#                    <div class="news_content__endtitle">#}
-{#                        <h1>Впервые в Узбекистане</h1>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-
-
-
+                    <div class="news_content__subtitle">
+                        <h1>Выставка Плакатов</h1>
+                    </div>
+                    <div class="news_content__endtitle">
+                        <h1>Впервые в Узбекистане</h1>
+                    </div>
+                </div>
+            </div>
             <div class="other">
-                {% for article in secondArticle %}
-                    <div class="top_post_item_2" style="background-image: url({{ article.image.url }}); ">
-                        <div class="news_link">
-                            <a href="{% url 'article_detail' article.slug %}"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
-                        </div>
-                        <div class="news_content__title">
-                            <a href="#">
-                                <h3>{{ article.categories }}</h3>
-                            </a>
-                        </div>
-                        <div class="news_content__subtitle second">
-                            <h3>{{ article.title2 }}</h3>
-                        </div>
-                        <div class="news_content__endtitle third">
-                            <h1>{{ article.title1 }}</h1>
-                        </div>
-                    </div>
-                {% endfor %}
-
-
-{#            <div class="top_post_item_2" style="background-image: url({% static 'img/Rectangle 289.png' %}); ">#}
-{#                    <div class="news_link">#}
-{#                        <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>#}
-{#                    </div>#}
-{#                    <div class="news_content__title">#}
-{#                        <a href="#">#}
-{#                            <h3>Музыка</h3>#}
-{#                        </a>#}
-{#                    </div>#}
-{#                    <div class="news_content__subtitle second">#}
-{#                        <h3>С дефектом в глазах</h3>#}
-{#                    </div>#}
-{#                    <div class="news_content__endtitle third">#}
-{#                        <h1>Женшина-ящерица</h1>#}
-{#                    </div>#}
-{#                </div>#}
-
-
-            {% for article in thirdArticle %}
-
-                <div class="top_post_item_3" style="background-image: url({{ article.image.url }});">
+                <div class="top_post_item_2">
                     <div class="news_link">
-                        <a href="{% url 'article_detail' article.slug %}"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>
+                        <a href="./third.html"><img src="./img/ic_arrow-up-right.svg" alt="arrow"></a>
                     </div>
                     <div class="news_content__title">
                         <a href="#">
-                            <h3>{{ article.categories }}</h3>
+                            <h3>Музыка</h3>
                         </a>
                     </div>
                     <div class="news_content__subtitle second">
-                        <h3>{{ article.title2 }}</h3>
+                        <h3>С дефектом в глазах</h3>
                     </div>
                     <div class="news_content__endtitle third">
-                        <h1>{{ article.title1 }}</h1>
+                        <h1>Женшина-ящерица</h1>
                     </div>
                 </div>
-
-            {% endfor %}
-
-
-{#            <div class="top_post_item_3" style="background-image: url({% static 'img/Rectangle 289.svg' %});">#}
-{#                    <div class="news_link">#}
-{#                        <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>#}
-{#                    </div>#}
-{#                    <div class="news_content__title">#}
-{#                        <a href="#">#}
-{#                            <h3>Музыка</h3>#}
-{#                        </a>#}
-{#                    </div>#}
-{#                    <div class="news_content__subtitle second">#}
-{#                        <h3>С дефектом в глазах</h3>#}
-{#                    </div>#}
-{#                    <div class="news_content__endtitle third">#}
-{#                        <h1>Женшина-ящерица</h1>#}
-{#                    </div>#}
-{#                </div>#}
-
-
-
+                <div class="top_post_item_3">
+                    <div class="news_link">
+                        <a href="./third.html"><img src="./img/ic_arrow-up-right.svg" alt="arrow"></a>
+                    </div>
+                    <div class="news_content__title">
+                        <a href="#">
+                            <h3>Музыка</h3>
+                        </a>
+                    </div>
+                    <div class="news_content__subtitle second">
+                        <h3>С дефектом в глазах</h3>
+                    </div>
+                    <div class="news_content__endtitle third">
+                        <h1>Женшина-ящерица</h1>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -169,197 +80,138 @@
         <!-- Новостная линия -->
         <div class="news_bottomline">
             <div class="news_bottomline__content">
-                <h3>{{ ticker.ticker }}</h3>
+                <h3>Задача организации, в особенности же реализация намеченных плановых заданий однозначно фиксирует
+                    необходимость инновационных методов управления процессами необходимость инновационных методов
+                    управления процессами.</h3>
             </div>
         </div>
 
 
-{#        Горячие новости#}
+<!-- Горячие новости -->
         <div class="content_box">
             <div class="content_container">
                 <div class="content_header">
                     <div class="content_header__right">
                         <div class="right_item_f">
-                            <h1>
-                                {% trans "Горячие нoвoсти" %}
-                            </h1>
+                            <h1>Горячие новости</h1>
                         </div>
                         <div class="right_item_t">
                             <a href="#">
-                                <h3>{% trans 'Обновить новости' %}</h3>
+                                <h3>Обновить новости</h3>
                             </a>
-                            <img src="{% static 'img/ic_refresh button.svg' %}" alt="refr">
+                            <img src="./img/ic_refresh button.svg" alt="refr">
                         </div>
                     </div>
                 </div>
                 <div class="content_items">
 
 
-                    {% for new in news %}
-
-                        {% if new.image %}
-
-                            <div class="content_items_elem">
-                                <div class="content_block">
-                                    <div class="content__image"
-                                         style="background-image: url({{ new.image.url }});">
-                                    </div>
-                                    <div class="content_date">
-                                        <div class="content_num">{{ new.date_created|date:"j.n.Y"}}</div>
-                                        <div class="content_year">{{ new.date_created|date:"H:m" }}</div>
-                                    </div>
-                                </div>
-                                <div class="content_text">
-                                    <div class="content_text__text">
-                                        <h3>{{ new.title }}</h3>
-                                    </div>
-                                    <div class="content_text__image">
-                                        <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}"
-                                                                     alt="arr"></a>
-                                    </div>
-                                </div>
+                    <div class="content_items_elem">
+                        <div class="content_block">
+                            <div class="content__image"></div>
+                            <div class="content_date">
+                                <div class="content_num">20.05.2021</div>
+                                <div class="content_year">20:06</div>
                             </div>
-
-                        {% else %}
-
-                            <div class="content_items_elem">
-                                <div class="second_content__content">
-                                    <div class="second_logo">
-                                        <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}"
-                                                                     alt="arr"></a>
-                                    </div>
-                                    <div class="second_text">
-                                        <h2>{{ new.title }}</h2>
-                                    </div>
-                                    <div class="second_date">
-                                        <div class="second_num">{{ new.date_created|date:"j.n.Y"}}</div>
-                                        <div class="second_year">{{ new.date_created|date:"H:m" }}</div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="content_text">
+                            <div class="content_text__text">
+                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>
                             </div>
-
-                        {% endif %}
-
-                    {% endfor %}
-
-
-
+                            <div class="content_text__image">
+                                <a href="./second.html"><img src="./img/ic_arrow-up-right12.svg" alt="arr"></a>
+                            </div>
+                        </div>
+                    </div>
 
 
-{#                    <div class="content_items_elem">#}
-{#                        <div class="content_block">#}
-{#                            <div class="content__image"#}
-{#                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">#}
-{#                            </div>#}
-{#                            <div class="content_date">#}
-{#                                <div class="content_num">20.05.2021</div>#}
-{#                                <div class="content_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="content_text">#}
-{#                            <div class="content_text__text">#}
-{#                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>#}
-{#                            </div>#}
-{#                            <div class="content_text__image">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{##}
-{#                    <div class="content_items_elem">#}
-{#                        <div class="second_content__content">#}
-{#                            <div class="second_logo">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                            <div class="second_text">#}
-{#                                <h2>Не следует забывать, что цены на бензин начинают падать</h2>#}
-{#                            </div>#}
-{#                            <div class="second_date">#}
-{#                                <div class="second_num">20.05.2021</div>#}
-{#                                <div class="second_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{##}
-{#                    <div class="content_items_elem">#}
-{#                        <div class="content_block">#}
-{#                            <div class="content__image"#}
-{#                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">#}
-{#                            </div>#}
-{#                            <div class="content_date">#}
-{#                                <div class="content_num">20.05.2021</div>#}
-{#                                <div class="content_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="content_text">#}
-{#                            <div class="content_text__text">#}
-{#                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>#}
-{#                            </div>#}
-{#                            <div class="content_text__image">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{##}
-{#                    <div class="content_items_elem">#}
-{#                        <div class="content_block">#}
-{#                            <div class="content__image"#}
-{#                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">#}
-{#                            </div>#}
-{#                            <div class="content_date">#}
-{#                                <div class="content_num">20.05.2021</div>#}
-{#                                <div class="content_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="content_text">#}
-{#                            <div class="content_text__text">#}
-{#                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>#}
-{#                            </div>#}
-{#                            <div class="content_text__image">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{##}
-{#                    <div class="content_items_elem">#}
-{#                        <div class="content_block">#}
-{#                            <div class="content__image"#}
-{#                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">#}
-{#                            </div>#}
-{#                            <div class="content_date">#}
-{#                                <div class="content_num">20.05.2021</div>#}
-{#                                <div class="content_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="content_text">#}
-{#                            <div class="content_text__text">#}
-{#                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>#}
-{#                            </div>#}
-{#                            <div class="content_text__image">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{##}
-{#                    <div class="content_items_elem">#}
-{#                        <div class="second_content__content">#}
-{#                            <div class="second_logo">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                            <div class="second_text">#}
-{#                                <h2>Не следует забывать, что цены на бензин начинают падать</h2>#}
-{#                            </div>#}
-{#                            <div class="second_date">#}
-{#                                <div class="second_num">20.05.2021</div>#}
-{#                                <div class="second_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
+                    <div class="content_items_elem">
+                        <div class="second_content__content">
+                            <div class="second_logo">
+                                <a href="./second.html"><img src="./img/ic_arrow-up-right12.svg" alt="arr"></a>
+                            </div>
+                            <div class="second_text">
+                                <h2>Не следует забывать, что цены на бензин начинают падать</h2>
+                            </div>
+                            <div class="second_date">
+                                <div class="second_num">20.05.2021</div>
+                                <div class="second_year">20:06</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content_items_elem">
+                        <div class="content_block">
+                            <div class="content__image"></div>
+                            <div class="content_date">
+                                <div class="content_num">20.05.2021</div>
+                                <div class="content_year">20:06</div>
+                            </div>
+                        </div>
+                        <div class="content_text">
+                            <div class="content_text__text">
+                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>
+                            </div>
+                            <div class="content_text__image">
+                                <a href="./second.html"><img src="./img/ic_arrow-up-right12.svg" alt="arr"></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content_items_elem">
+                        <div class="content_block">
+                            <div class="content__image"></div>
+                            <div class="content_date">
+                                <div class="content_num">20.05.2021</div>
+                                <div class="content_year">20:06</div>
+                            </div>
+                        </div>
+                        <div class="content_text">
+                            <div class="content_text__text">
+                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>
+                            </div>
+                            <div class="content_text__image">
+                                <a href="./second.html"><img src="./img/ic_arrow-up-right12.svg" alt="arr"></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content_items_elem">
+                        <div class="content_block">
+                            <div class="content__image"></div>
+                            <div class="content_date">
+                                <div class="content_num">20.05.2021</div>
+                                <div class="content_year">20:06</div>
+                            </div>
+                        </div>
+                        <div class="content_text">
+                            <div class="content_text__text">
+                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>
+                            </div>
+                            <div class="content_text__image">
+                                <a href="./second.html"><img src="./img/ic_arrow-up-right12.svg" alt="arr"></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="content_items_elem">
+                        <div class="second_content__content">
+                            <div class="second_logo">
+                                <a href="./second.html"><img src="./img/ic_arrow-up-right12.svg" alt="arr"></a>
+                            </div>
+                            <div class="second_text">
+                                <h2>Не следует забывать, что цены на бензин начинают падать</h2>
+                            </div>
+                            <div class="second_date">
+                                <div class="second_num">20.05.2021</div>
+                                <div class="second_year">20:06</div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -371,60 +223,27 @@
             <div class="states_wrap__container">
                 <div class="states_container__header">
                     <div class="states_title">
-                        <h1>{% trans 'СТАТЬИ' %}</h1>
+                        <h1>СТАТЬИ</h1>
                     </div>
                     <div class="states_look__btn">
-                        <a href="#">{% trans 'Смотреть больше' %}</a>
+                        <a href="#">Смотреть больше</a>
                     </div>
                 </div>
             </div>
             <div class="states_content">
 
 
-                {% for article in article1 %}
-                    <div class="state_item">
-                    <a href="./forth.html">
-                        <div class="state_pict1" style="background-image: url({{ article.image.url }});">
-                            <div class="state_end__title">
-                                <div class="state_date">
-                                    <h4>{{ article.date_created|date:"j F" }}</h4>
-                                </div>
-                                <div class="state_num">
-                                    <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
-                                    <h4>{{ article.views }}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="state_article">
-                        <div class="state_article__title">
-                            <a href="./forth.html">
-                                <h3>{{ article.categories }}</h3>
-                            </a>
-                        </div>
-                        <div class="state_article__subtitle">
-                            <a href="./forth.html">
-                                <h2>{{ article.short_title }}</h2>
-                            </a>
-                        </div>
-                        <div class="state_article__subsubtitle">
-                            <h3>{{ article.short_description }}</h3>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
 
-                {% for article in article2 %}
-                    <div class="state_item">
+                <div class="state_item">
                     <a href="./forth.html">
-                        <div class="state_pict1" style="background-image: url({{ article.image.url }});">
+                        <div class="state_pict1">
                             <div class="state_end__title">
                                 <div class="state_date">
-                                    <h4>{{ article.date_created|date:"j F" }}</h4>
+                                    <h4>25 Мая</h4>
                                 </div>
                                 <div class="state_num">
-                                    <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
-                                    <h4>{{ article.views }}</h4>
+                                    <img src="./img/ic_eye.svg" alt="ic_eye">
+                                    <h4>1280</h4>
                                 </div>
                             </div>
                         </div>
@@ -432,208 +251,234 @@
                     <div class="state_article">
                         <div class="state_article__title">
                             <a href="./forth.html">
-                                <h3>{{ article.categories }}</h3>
+                                <h3>Музыка</h3>
                             </a>
                         </div>
                         <div class="state_article__subtitle">
                             <a href="./forth.html">
-                                <h2>{{ article.short_title }}</h2>
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
                             </a>
                         </div>
                         <div class="state_article__subsubtitle">
-                            <h3>{{ article.short_description }}</h3>
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического у нормы этики и морали.</h3>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
 
-                {% for article in article3 %}
-                    <div class="state_item">
-                    <a href="./forth.html">
-                        <div class="state_pict1" style="background-image: url({{ article.image.url }});">
-                            <div class="state_end__title">
-                                <div class="state_date">
-                                    <h4>{{ article.date_created|date:"j F" }}</h4>
-                                </div>
-                                <div class="state_num">
-                                    <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
-                                    <h4>{{ article.views }}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="state_article">
-                        <div class="state_article__title">
-                            <a href="./forth.html">
-                                <h3>{{ article.categories }}</h3>
-                            </a>
-                        </div>
-                        <div class="state_article__subtitle">
-                            <a href="./forth.html">
-                                <h2>{{ article.short_title }}</h2>
-                            </a>
-                        </div>
-                        <div class="state_article__subsubtitle">
-                            <h3>{{ article.short_description }}</h3>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-                {% for article in article4 %}
-                    <div class="state_item">
-                    <a href="./forth.html">
-                        <div class="state_pict1" style="background-image: url({{ article.image.url }});">
-                            <div class="state_end__title">
-                                <div class="state_date">
-                                    <h4>{{ article.date_created|date:"j F" }}</h4>
-                                </div>
-                                <div class="state_num">
-                                    <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
-                                    <h4>{{ article.views }}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="state_article">
-                        <div class="state_article__title">
-                            <a href="./forth.html">
-                                <h3>{{ article.categories }}</h3>
-                            </a>
-                        </div>
-                        <div class="state_article__subtitle">
-                            <a href="./forth.html">
-                                <h2>{{ article.short_title }}</h2>
-                            </a>
-                        </div>
-                        <div class="state_article__subsubtitle">
-                            <h3>{{ article.short_description }}</h3>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-                {% for article in article5 %}
-                    <div class="state_item">
-                    <a href="./forth.html">
-                        <div class="state_pict1" style="background-image: url({{ article.image.url }});">
-                            <div class="state_end__title">
-                                <div class="state_date">
-                                    <h4>{{ article.date_created|date:"j F" }}</h4>
-                                </div>
-                                <div class="state_num">
-                                    <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
-                                    <h4>{{ article.views }}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="state_article">
-                        <div class="state_article__title">
-                            <a href="./forth.html">
-                                <h3>{{ article.categories }}</h3>
-                            </a>
-                        </div>
-                        <div class="state_article__subtitle">
-                            <a href="./forth.html">
-                                <h2>{{ article.short_title }}</h2>
-                            </a>
-                        </div>
-                        <div class="state_article__subsubtitle">
-                            <h3>{{ article.short_description }}</h3>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-                {% for article in article6 %}
-                    <div class="state_item">
-                    <a href="./forth.html">
-                        <div class="state_pict1" style="background-image: url({{ article.image.url }});">
-                            <div class="state_end__title">
-                                <div class="state_date">
-                                    <h4>{{ article.date_created|date:"j F" }}</h4>
-                                </div>
-                                <div class="state_num">
-                                    <img src="{% static 'img/ic_eye.svg' %}" alt="ic_eye">
-                                    <h4>{{ article.views }}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="state_article">
-                        <div class="state_article__title">
-                            <a href="./forth.html">
-                                <h3>{{ article.categories }}</h3>
-                            </a>
-                        </div>
-                        <div class="state_article__subtitle">
-                            <a href="./forth.html">
-                                <h2>{{ article.short_title }}</h2>
-                            </a>
-                        </div>
-                        <div class="state_article__subsubtitle">
-                            <h3>{{ article.short_description }}</h3>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
 
+
+                <div class="state_item">
+                    <a href="./forth.html">
+                        <div class="state_pict1">
+                            <div class="state_end__title">
+                                <div class="state_date">
+                                    <h4>25 Мая</h4>
+                                </div>
+                                <div class="state_num">
+                                    <img src="./img/ic_eye.svg" alt="ic_eye">
+                                    <h4>1280</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="state_article">
+                        <div class="state_article__title">
+                            <a href="./forth.html">
+                                <h3>Музыка</h3>
+                            </a>
+                        </div>
+                        <div class="state_article__subtitle">
+                            <a href="./forth.html">
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
+                            </a>
+                        </div>
+                        <div class="state_article__subsubtitle">
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического у нормы этики и морали.</h3>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="state_item">
+                    <a href="./forth.html">
+                        <div class="state_pict1">
+                            <div class="state_end__title">
+                                <div class="state_date">
+                                    <h4>25 Мая</h4>
+                                </div>
+                                <div class="state_num">
+                                    <img src="./img/ic_eye.svg" alt="ic_eye">
+                                    <h4>1280</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="state_article">
+                        <div class="state_article__title">
+                            <a href="./forth.html">
+                                <h3>Музыка</h3>
+                            </a>
+                        </div>
+                        <div class="state_article__subtitle">
+                            <a href="./forth.html">
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
+                            </a>
+                        </div>
+                        <div class="state_article__subsubtitle">
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического у нормы этики и морали.</h3>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="state_item">
+                    <a href="./forth.html">
+                        <div class="state_pict1">
+                            <div class="state_end__title">
+                                <div class="state_date">
+                                    <h4>25 Мая</h4>
+                                </div>
+                                <div class="state_num">
+                                    <img src="./img/ic_eye.svg" alt="ic_eye">
+                                    <h4>1280</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="state_article">
+                        <div class="state_article__title">
+                            <a href="./forth.html">
+                                <h3>Музыка</h3>
+                            </a>
+                        </div>
+                        <div class="state_article__subtitle">
+                            <a href="./forth.html">
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
+                            </a>
+                        </div>
+                        <div class="state_article__subsubtitle">
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического у нормы этики и морали.</h3>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="state_item">
+                    <a href="./forth.html">
+                        <div class="state_pict1">
+                            <div class="state_end__title">
+                                <div class="state_date">
+                                    <h4>25 Мая</h4>
+                                </div>
+                                <div class="state_num">
+                                    <img src="./img/ic_eye.svg" alt="ic_eye">
+                                    <h4>1280</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="state_article">
+                        <div class="state_article__title">
+                            <a href="./forth.html">
+                                <h3>Музыка</h3>
+                            </a>
+                        </div>
+                        <div class="state_article__subtitle">
+                            <a href="./forth.html">
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
+                            </a>
+                        </div>
+                        <div class="state_article__subsubtitle">
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического у нормы этики и морали.</h3>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="state_item">
+                    <a href="./forth.html">
+                        <div class="state_pict1">
+                            <div class="state_end__title">
+                                <div class="state_date">
+                                    <h4>25 Мая</h4>
+                                </div>
+                                <div class="state_num">
+                                    <img src="./img/ic_eye.svg" alt="ic_eye">
+                                    <h4>1280</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="state_article">
+                        <div class="state_article__title">
+                            <a href="./forth.html">
+                                <h3>Музыка</h3>
+                            </a>
+                        </div>
+                        <div class="state_article__subtitle">
+                            <a href="./forth.html">
+                                <h2>Никте не вправе осуждать ласковый перезвон вертикали</h2>
+                            </a>
+                        </div>
+                        <div class="state_article__subsubtitle">
+                            <h3>Лишь акционеры крупнейших компаний являются только методом политического у нормы этики и морали.</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!--Лучшая статья -->
-    {% for article in bestArticle %}
+
 
 
         <div class="podcast_wrap">
             <div class="podcast_pre__title">
                 <div class="pre_title">
-                    <h2>{% trans 'Лучшая Статья' %}</h2>
+                    <h2>Лучшая Статья</h2>
                 </div>
                 <div class="pre_subtitle">
-                    <h3>{{ article.title1 }} {{ article.title2 }}</h3>
+                    <h3>Лишь акционеры крупнейших компаний являются только методом политического участия и объявлены новостной топ новостной лучший сайт в мире нарушающими общечеловеческие нормы этики и морали. нарушающими общечеловеческие нормы этики и</h3>
                 </div>
             </div>
             <div class="podcast_container">
-                {% if article.video %}
+                <!-- <img class="best_state__image" src="./img/harasho.svg" width="700" height="400"  alt="bestimages"> -->
                 <iframe class="podcast__video"
                         width="560"
                         height="315"
-                        src="https://www.youtube.com/embed/{{ article.video| cut:"https://www.youtube.com/watch?v=" }}"
+                        src="https://www.youtube.com/embed/B37ZjXk7id0"
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                 </iframe>
-                {% else %}
-                    <img class="best_state__image" src="{{ article.image.url }}" width="700" height="400"  alt="bestimages">
-                {% endif %}
-
-
                 <div class="podcast__content">
                     <div class="podcast__text">
-                        <h1>{{ article.title }}</h1>
+                        <h1>Нашу победу сопровождал гитарный перебор</h1>
                     </div>
                     <div class="podcast__subtext">
-                        <h4>{{ article.short_title }}</h4>
+                        <h4>С другой стороны, существующая теория требует анализа укрепления моральных ценностей. Учитывая ключевые сценарии поведения, понимание сути ресурсосберегающих технологий напрямую зависит от модели развития.</h4>
                     </div>
                     <div class="podcast__btn">
-                        <a href="{% url 'article_detail' article.slug %}">
-                            <h3>{% trans 'Читать Статью' %}</h3>
+                        <a href="./seven.html">
+                            <h3>Читать Статью</h3>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    {% endfor %}
+
 
         <!-- Видео -->
         <div class="states_wrap">
             <div class="states_wrap__container">
                 <div class="states_container__header">
                     <div class="states_title">
-                        <h1>{% trans 'ВИДЕО' %}</h1>
+                        <h1>ВИДЕО</h1>
                     </div>
                     <div class="states_look__btn">
-                        <a href="#">{% trans 'Смотреть больше' %}</a>
+                        <a href="#">Смотреть больше</a>
                     </div>
                 </div>
             </div>
@@ -701,20 +546,20 @@
             <div class="slider__first">
                 <div class="slider__first__header">
                     <div class="slider_first__title">
-                        <h1>{% trans 'ПОДКАСТЫ' %}</h1>
+                        <h1>ПОДКАСТЫ</h1>
                     </div>
                     <div class="slider_first__btn">
-                        <a href="./seven.html">{% trans "Перейти к подкасту" %}</a>
+                        <a href="./seven.html">Перейти к подкасту</a>
                     </div>
                 </div>
                 <div class="first_slider__content">
-                    <div class="slider__first_img" style="background-image: url({% static 'img/bgpodcast.svg' %});"></div>
+                    <div class="slider__first_img"></div>
                     <div class="slider__first_text">
                         <div class="slider__first_title">
                             <h2>Бежать</h2>
                         </div>
                         <div class="slider__first_subtitle">
-                            <h3>Автор: Абалихин Игорь & Студия Main post</h3>
+                            <h3>Автор: Абадихин Игорь & Студия Main post</h3>
                         </div>
                         <div class="slider__first_endtitle">
                             <h4>Это подкаст о мире, где беженцев сегодня больше, чем во времена Второй мировой. И о
@@ -726,20 +571,20 @@
                         </div>
                         <div class="slider_links_wrap">
                             <div class="first_slider_links__title">
-                                <h3>{% trans 'Доступно на' %}:</h3>
+                                <h3>Доступно на:</h3>
                             </div>
                             <div class="first_slider__links">
                                 <div class="first_slider__link">
-                                    <a href="https://www.google.ru/"><img src="{% static 'img/image1.svg' %}" alt="link"></a>
+                                    <a href="https://www.google.ru/"><img src="./img/image1.svg" alt="link"></a>
                                 </div>
                                 <div class="first_slider__link">
-                                    <a href="https://www.google.ru/"><img src="{% static 'img/image2.svg' %}" alt="link"></a>
+                                    <a href="https://www.google.ru/"><img src="./img/image2.svg" alt="link"></a>
                                 </div>
                                 <div class="first_slider__link">
-                                    <a href="https://www.google.ru/"><img src="{% static 'img/image3.svg' %}" alt="link"></a>
+                                    <a href="https://www.google.ru/"><img src="./img/image3.svg" alt="link"></a>
                                 </div>
                                 <div class="first_slider__link">
-                                    <a href="https://www.google.ru/"><img src="{% static 'img/icon_add1.svg' %}" alt="link"></a>
+                                    <a href="https://www.google.ru/"><img src="./img/icon_add1.svg" alt="link"></a>
                                 </div>
                             </div>
                         </div>
@@ -751,7 +596,7 @@
                                 <div class="first_slider__audio__subtitle">
                                     <h3>Эпизод I. Архипелаг Бежлаг</h3>
                                 </div>
-                                <audio class="audio" src="{% static 'audio/Eminem - Godzilla.flac' %}" controls></audio>
+                                <audio class="audio" src="./audios/Eminem - Godzilla.flac" controls></audio>
                             </div>
                         </div>
                     </div>
@@ -764,7 +609,7 @@
             <div class="tests__container">
                 <div class="states_container__header">
                     <div class="states_title">
-                        <h1>{% trans 'ТЕСТЫ' %}</h1>
+                        <h1>ТЕСТЫ</h1>
                     </div>
                 </div>
                 <!-- Swiper -->
@@ -772,16 +617,16 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                <div class="test_img">
                                     <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                        <a href="./six.html"><img src="./img/ic_arrow-up-right.svg" width="80px"
                                                 height="80px" alt="da"></a>
                                     </div>
                                 </div>
                                 <div class="test_text">
                                     <div class="test_heading">
                                         <a href="./six.html">
-                                            <h2>ЕЕсть над чем задуматься: частокол на границе починят!сть над чем задуматься: частокол на границе починят!</h2>
+                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
                                         </a>
 
                                     </div>
@@ -805,7 +650,7 @@
                                     <div class="test_compl">
 
                                         <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                            <h3>Пройти тест</h3>
                                         </a>
 
                                     </div>
@@ -814,9 +659,9 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                <div class="test_img">
                                     <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                        <a href="./six.html"><img src="./img/ic_arrow-up-right.svg" width="80px"
                                                 height="80px" alt="da"></a>
                                     </div>
                                 </div>
@@ -843,7 +688,7 @@
                                     </div>
                                     <div class="test_compl">
                                         <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                            <h3>Пройти тест</h3>
                                         </a>
                                     </div>
                                 </div>
@@ -851,9 +696,9 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                <div class="test_img">
                                     <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                        <a href="./six.html"><img src="./img/ic_arrow-up-right.svg" width="80px"
                                                 height="80px" alt="da"></a>
                                     </div>
                                 </div>
@@ -880,7 +725,7 @@
                                     </div>
                                     <div class="test_compl">
                                         <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                            <h3>Пройти тест</h3>
                                         </a>
                                     </div>
                                 </div>
@@ -888,9 +733,9 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                <div class="test_img">
                                     <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                        <a href="./six.html"><img src="./img/ic_arrow-up-right.svg" width="80px"
                                                 height="80px" alt="da"></a>
                                     </div>
                                 </div>
@@ -917,7 +762,7 @@
                                     </div>
                                     <div class="test_compl">
                                         <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                            <h3>Пройти тест</h3>
                                         </a>
                                     </div>
                                 </div>
@@ -925,9 +770,9 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                <div class="test_img">
                                     <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                        <a href="./six.html"><img src="./img/ic_arrow-up-right.svg" width="80px"
                                                 height="80px" alt="da"></a>
                                     </div>
                                 </div>
@@ -954,7 +799,7 @@
                                     </div>
                                     <div class="test_compl">
                                         <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                            <h3>Пройти тест</h3>
                                         </a>
                                     </div>
                                 </div>
@@ -962,9 +807,9 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                <div class="test_img">
                                     <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                        <a href="./six.html"><img src="./img/ic_arrow-up-right.svg" width="80px"
                                                 height="80px" alt="da"></a>
                                     </div>
                                 </div>
@@ -991,7 +836,7 @@
                                     </div>
                                     <div class="test_compl">
                                         <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                            <h3>Пройти тест</h3>
                                         </a>
                                     </div>
                                 </div>
@@ -999,9 +844,9 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                <div class="test_img">
                                     <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                        <a href="./six.html"><img src="./img/ic_arrow-up-right.svg" width="80px"
                                                 height="80px" alt="da"></a>
                                     </div>
                                 </div>
@@ -1028,7 +873,7 @@
                                     </div>
                                     <div class="test_compl">
                                         <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                            <h3>Пройти тест</h3>
                                         </a>
                                     </div>
                                 </div>
@@ -1036,9 +881,9 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                <div class="test_img">
                                     <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                        <a href="./six.html"><img src="./img/ic_arrow-up-right.svg" width="80px"
                                                 height="80px" alt="da"></a>
                                     </div>
                                 </div>
@@ -1065,7 +910,7 @@
                                     </div>
                                     <div class="test_compl">
                                         <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                            <h3>Пройти тест</h3>
                                         </a>
                                     </div>
                                 </div>
@@ -1073,9 +918,9 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
+                                <div class="test_img">
                                     <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                        <a href="./six.html"><img src="./img/ic_arrow-up-right.svg" width="80px"
                                                 height="80px" alt="da"></a>
                                     </div>
                                 </div>
@@ -1102,7 +947,7 @@
                                     </div>
                                     <div class="test_compl">
                                         <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
+                                            <h3>Пройти тест</h3>
                                         </a>
                                     </div>
                                 </div>
@@ -1119,13 +964,13 @@
             <div class="redact_wrap">
                 <div class="redact_container">
                     <div class="redact__title">
-                        <h1>{% trans 'ВЫБОР РЕДАКЦИИ' %}</h1>
+                        <h1>ВЫБОР РЕДАКЦИИ</h1>
                     </div>
                     <div class="redact__content">
                         <div class="redact_item">
                             <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                <a class="redact_left__logo" href="./third.html">
+                                    <div class="redact_left__logo"></div>
                                 </a>
                                 <div class="redact_left__text">
                                     <div class="redact_date">
@@ -1160,8 +1005,8 @@
                         </div>
                         <div class="redact_item">
                             <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                <a class="redact_left__logo" href="./third.html">
+                                    <div class="redact_left__logo"></div>
                                 </a>
                                 <div class="redact_left__text">
                                     <div class="redact_date">
@@ -1196,8 +1041,8 @@
                         </div>
                         <div class="redact_item">
                             <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                <a class="redact_left__logo" href="./third.html">
+                                    <div class="redact_left__logo"></div>
                                 </a>
                                 <div class="redact_left__text">
                                     <div class="redact_date">
@@ -1232,8 +1077,8 @@
                         </div>
                         <div class="redact_item">
                             <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                <a class="redact_left__logo" href="./third.html">
+                                    <div class="redact_left__logo"></div>
                                 </a>
                                 <div class="redact_left__text">
                                     <div class="redact_date">
@@ -1268,8 +1113,8 @@
                         </div>
                         <div class="redact_item">
                             <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                <a class="redact_left__logo" href="./third.html">
+                                    <div class="redact_left__logo"></div>
                                 </a>
                                 <div class="redact_left__text">
                                     <div class="redact_date">
@@ -1304,8 +1149,8 @@
                         </div>
                         <div class="redact_item">
                             <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                <a class="redact_left__logo" href="./third.html">
+                                    <div class="redact_left__logo"></div>
                                 </a>
                                 <div class="redact_left__text">
                                     <div class="redact_date">
@@ -1344,7 +1189,7 @@
             </div>
         </div>
 
-    {% include 'include/footer.html' %}
+
 
             <!-- Swiper JS -->
             <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -1376,7 +1221,7 @@
                     document.body.style.overflowY = 'scroll'
                 }
             </script>
-    <script src="{% static 'js/script.js' %}"></script>
+            <script src="./scripts/script.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
             <script>
                 $(document).ready(function () {
@@ -1394,7 +1239,7 @@
                 });
             </script>
             <!-- Swiper JS -->
-    <script src="{% static 'js/swiper.js'%}"></script>
+            <script src="./scripts/swiper.js"></script>
 
             <!-- Initialize Swiper -->
             <script>
