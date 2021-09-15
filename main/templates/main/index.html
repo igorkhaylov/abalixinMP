@@ -1122,222 +1122,419 @@
                         <h1>{% trans 'ВЫБОР РЕДАКЦИИ' %}</h1>
                     </div>
                     <div class="redact__content">
+
+
                         <div class="redact_item">
                             <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                <a class="redact_left__logo" href="{% url 'article_detail' article7.slug %}"
+                                   style="background-image: url({{ article7.image.url }});">
                                 </a>
                                 <div class="redact_left__text">
                                     <div class="redact_date">
-                                        <h3>05 Апрель 2021</h3>
+                                        <h3>{{ article7.date_created|date:"j F Y"}}</h3>
                                     </div>
                                     <div class="redact_title">
-                                        <a href="./forth.html">
-                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
-                                                депрессии
+                                        <a href="{% url 'article_detail' article7.slug %}">
+                                            <h2>
+                                                {{ article7.title }}
                                             </h2>
                                         </a>
                                     </div>
                                     <div class="redact_subtitle">
-                                        <h3>Но перспективное планирование предопределяет высокую востребованность
-                                            позиций,
-                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
-                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
-                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
-                                            из-за
-                                            чего возрастает их статус бесполезности.</h3>
+                                        <h3>
+                                            {{ article7.short_description }}
+                                        </h3>
                                     </div>
                                 </div>
                             </div>
                             <div class="redact_right">
-
                                 <div class="redact_ending">
-                                    <a href="./forth.html">
-                                        <h3>Развитие</h3>
+                                    <a href="###">
+                                        <h3>{{ article7.categories }}</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="redact_item">
+                            <div class="redact_left">
+                                <a class="redact_left__logo" href="{% url 'article_detail' article8.slug %}"
+                                   style="background-image: url({{ article8.image.url }});">
+                                </a>
+                                <div class="redact_left__text">
+                                    <div class="redact_date">
+                                        <h3>{{ article8.date_created|date:"j F Y"}}</h3>
+                                    </div>
+                                    <div class="redact_title">
+                                        <a href="{% url 'article_detail' article8.slug %}">
+                                            <h2>
+                                                {{ article8.title }}
+                                            </h2>
+                                        </a>
+                                    </div>
+                                    <div class="redact_subtitle">
+                                        <h3>
+                                            {{ article8.short_description }}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="redact_right">
+                                <div class="redact_ending">
+                                    <a href="###">
+                                        <h3>{{ article8.categories }}</h3>
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="redact_item">
                             <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                <a class="redact_left__logo" href="{% url 'article_detail' article9.slug %}"
+                                   style="background-image: url({{ article9.image.url }});">
                                 </a>
                                 <div class="redact_left__text">
                                     <div class="redact_date">
-                                        <h3>05 Апрель 2021</h3>
+                                        <h3>{{ article9.date_created|date:"j F Y"}}</h3>
                                     </div>
                                     <div class="redact_title">
-                                        <a href="./forth.html">
-                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
-                                                депрессии
+                                        <a href="{% url 'article_detail' article9.slug %}">
+                                            <h2>
+                                                {{ article9.title }}
                                             </h2>
                                         </a>
                                     </div>
                                     <div class="redact_subtitle">
-                                        <h3>Но перспективное планирование предопределяет высокую востребованность
-                                            позиций,
-                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
-                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
-                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
-                                            из-за
-                                            чего возрастает их статус бесполезности.</h3>
+                                        <h3>
+                                            {{ article9.short_description }}
+                                        </h3>
                                     </div>
                                 </div>
                             </div>
                             <div class="redact_right">
-
                                 <div class="redact_ending">
-                                    <a href="./forth.html">
-                                        <h3>Развитие</h3>
+                                    <a href="###">
+                                        <h3>{{ article9.categories }}</h3>
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="redact_item">
                             <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                <a class="redact_left__logo" href="{% url 'article_detail' article10.slug %}"
+                                   style="background-image: url({{ article10.image.url }});">
                                 </a>
                                 <div class="redact_left__text">
                                     <div class="redact_date">
-                                        <h3>05 Апрель 2021</h3>
+                                        <h3>{{ article10.date_created|date:"j F Y"}}</h3>
                                     </div>
                                     <div class="redact_title">
-                                        <a href="./forth.html">
-                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
-                                                депрессии
+                                        <a href="{% url 'article_detail' article10.slug %}">
+                                            <h2>
+                                                {{ article10.title }}
                                             </h2>
                                         </a>
                                     </div>
                                     <div class="redact_subtitle">
-                                        <h3>Но перспективное планирование предопределяет высокую востребованность
-                                            позиций,
-                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
-                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
-                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
-                                            из-за
-                                            чего возрастает их статус бесполезности.</h3>
+                                        <h3>
+                                            {{ article10.short_description }}
+                                        </h3>
                                     </div>
                                 </div>
                             </div>
                             <div class="redact_right">
-
                                 <div class="redact_ending">
-                                    <a href="./forth.html">
-                                        <h3>Развитие</h3>
+                                    <a href="###">
+                                        <h3>{{ article10.categories }}</h3>
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="redact_item">
                             <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                <a class="redact_left__logo" href="{% url 'article_detail' article11.slug %}"
+                                   style="background-image: url({{ article11.image.url }});">
                                 </a>
                                 <div class="redact_left__text">
                                     <div class="redact_date">
-                                        <h3>05 Апрель 2021</h3>
+                                        <h3>{{ article11.date_created|date:"j F Y"}}</h3>
                                     </div>
                                     <div class="redact_title">
-                                        <a href="./forth.html">
-                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
-                                                депрессии
+                                        <a href="{% url 'article_detail' article11.slug %}">
+                                            <h2>
+                                                {{ article11.title }}
                                             </h2>
                                         </a>
                                     </div>
                                     <div class="redact_subtitle">
-                                        <h3>Но перспективное планирование предопределяет высокую востребованность
-                                            позиций,
-                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
-                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
-                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
-                                            из-за
-                                            чего возрастает их статус бесполезности.</h3>
+                                        <h3>
+                                            {{ article11.short_description }}
+                                        </h3>
                                     </div>
                                 </div>
                             </div>
                             <div class="redact_right">
-
                                 <div class="redact_ending">
-                                    <a href="./forth.html">
-                                        <h3>Развитие</h3>
+                                    <a href="###">
+                                        <h3>{{ article11.categories }}</h3>
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="redact_item">
                             <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
+                                <a class="redact_left__logo" href="{% url 'article_detail' article12.slug %}"
+                                   style="background-image: url({{ article12.image.url }});">
                                 </a>
                                 <div class="redact_left__text">
                                     <div class="redact_date">
-                                        <h3>05 Апрель 2021</h3>
+                                        <h3>{{ article12.date_created|date:"j F Y"}}</h3>
                                     </div>
                                     <div class="redact_title">
-                                        <a href="./forth.html">
-                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
-                                                депрессии
+                                        <a href="{% url 'article_detail' article12.slug %}">
+                                            <h2>
+                                                {{ article12.title }}
                                             </h2>
                                         </a>
                                     </div>
                                     <div class="redact_subtitle">
-                                        <h3>Но перспективное планирование предопределяет высокую востребованность
-                                            позиций,
-                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
-                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
-                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
-                                            из-за
-                                            чего возрастает их статус бесполезности.</h3>
+                                        <h3>
+                                            {{ article12.short_description }}
+                                        </h3>
                                     </div>
                                 </div>
                             </div>
                             <div class="redact_right">
-
                                 <div class="redact_ending">
-                                    <a href="./forth.html">
-                                        <h3>Развитие</h3>
+                                    <a href="###">
+                                        <h3>{{ article12.categories }}</h3>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="redact_item">
-                            <div class="redact_left">
-                                <a class="redact_left__logo" href="./third.html"
-                                   style="background-image: url({% static 'img/pict5.svg' %});">
-                                </a>
-                                <div class="redact_left__text">
-                                    <div class="redact_date">
-                                        <h3>05 Апрель 2021</h3>
-                                    </div>
-                                    <div class="redact_title">
-                                        <a href="./forth.html">
-                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
-                                                депрессии
-                                            </h2>
-                                        </a>
-                                    </div>
-                                    <div class="redact_subtitle">
-                                        <h3>Но перспективное планирование предопределяет высокую востребованность
-                                            позиций,
-                                            занимаемых участниками в отношении поставленных задач. Как принято считать,
-                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и
-                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,
-                                            из-за
-                                            чего возрастает их статус бесполезности.</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="redact_right">
 
-                                <div class="redact_ending">
-                                    <a href="./forth.html">
-                                        <h3>Развитие</h3>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+
+{#                        <div class="redact_item">#}
+{#                            <div class="redact_left">#}
+{#                                <a class="redact_left__logo" href="./third.html"#}
+{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
+{#                                </a>#}
+{#                                <div class="redact_left__text">#}
+{#                                    <div class="redact_date">#}
+{#                                        <h3>05 Апрель 2021</h3>#}
+{#                                    </div>#}
+{#                                    <div class="redact_title">#}
+{#                                        <a href="./forth.html">#}
+{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
+{#                                                депрессии#}
+{#                                            </h2>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class="redact_subtitle">#}
+{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
+{#                                            позиций,#}
+{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
+{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
+{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
+{#                                            из-за#}
+{#                                            чего возрастает их статус бесполезности.#}
+{#                                        </h3>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="redact_right">#}
+{#                                <div class="redact_ending">#}
+{#                                    <a href="./forth.html">#}
+{#                                        <h3>Развитие</h3>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="redact_item">#}
+{#                            <div class="redact_left">#}
+{#                                <a class="redact_left__logo" href="./third.html"#}
+{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
+{#                                </a>#}
+{#                                <div class="redact_left__text">#}
+{#                                    <div class="redact_date">#}
+{#                                        <h3>05 Апрель 2021</h3>#}
+{#                                    </div>#}
+{#                                    <div class="redact_title">#}
+{#                                        <a href="./forth.html">#}
+{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
+{#                                                депрессии#}
+{#                                            </h2>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class="redact_subtitle">#}
+{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
+{#                                            позиций,#}
+{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
+{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
+{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
+{#                                            из-за#}
+{#                                            чего возрастает их статус бесполезности.#}
+{#                                        </h3>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="redact_right">#}
+{#                                <div class="redact_ending">#}
+{#                                    <a href="./forth.html">#}
+{#                                        <h3>Развитие</h3>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="redact_item">#}
+{#                            <div class="redact_left">#}
+{#                                <a class="redact_left__logo" href="./third.html"#}
+{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
+{#                                </a>#}
+{#                                <div class="redact_left__text">#}
+{#                                    <div class="redact_date">#}
+{#                                        <h3>05 Апрель 2021</h3>#}
+{#                                    </div>#}
+{#                                    <div class="redact_title">#}
+{#                                        <a href="./forth.html">#}
+{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
+{#                                                депрессии#}
+{#                                            </h2>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class="redact_subtitle">#}
+{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
+{#                                            позиций,#}
+{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
+{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
+{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
+{#                                            из-за#}
+{#                                            чего возрастает их статус бесполезности.#}
+{#                                        </h3>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="redact_right">#}
+{#                                <div class="redact_ending">#}
+{#                                    <a href="./forth.html">#}
+{#                                        <h3>Развитие</h3>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="redact_item">#}
+{#                            <div class="redact_left">#}
+{#                                <a class="redact_left__logo" href="./third.html"#}
+{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
+{#                                </a>#}
+{#                                <div class="redact_left__text">#}
+{#                                    <div class="redact_date">#}
+{#                                        <h3>05 Апрель 2021</h3>#}
+{#                                    </div>#}
+{#                                    <div class="redact_title">#}
+{#                                        <a href="./forth.html">#}
+{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
+{#                                                депрессии#}
+{#                                            </h2>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class="redact_subtitle">#}
+{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
+{#                                            позиций,#}
+{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
+{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
+{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
+{#                                            из-за#}
+{#                                            чего возрастает их статус бесполезности.#}
+{#                                        </h3>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="redact_right">#}
+{#                                <div class="redact_ending">#}
+{#                                    <a href="./forth.html">#}
+{#                                        <h3>Развитие</h3>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="redact_item">#}
+{#                            <div class="redact_left">#}
+{#                                <a class="redact_left__logo" href="./third.html"#}
+{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
+{#                                </a>#}
+{#                                <div class="redact_left__text">#}
+{#                                    <div class="redact_date">#}
+{#                                        <h3>05 Апрель 2021</h3>#}
+{#                                    </div>#}
+{#                                    <div class="redact_title">#}
+{#                                        <a href="./forth.html">#}
+{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
+{#                                                депрессии#}
+{#                                            </h2>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class="redact_subtitle">#}
+{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
+{#                                            позиций,#}
+{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
+{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
+{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
+{#                                            из-за#}
+{#                                            чего возрастает их статус бесполезности.#}
+{#                                        </h3>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="redact_right">#}
+{#                                <div class="redact_ending">#}
+{#                                    <a href="./forth.html">#}
+{#                                        <h3>Развитие</h3>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="redact_item">#}
+{#                            <div class="redact_left">#}
+{#                                <a class="redact_left__logo" href="./third.html"#}
+{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
+{#                                </a>#}
+{#                                <div class="redact_left__text">#}
+{#                                    <div class="redact_date">#}
+{#                                        <h3>05 Апрель 2021</h3>#}
+{#                                    </div>#}
+{#                                    <div class="redact_title">#}
+{#                                        <a href="./forth.html">#}
+{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
+{#                                                депрессии#}
+{#                                            </h2>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class="redact_subtitle">#}
+{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
+{#                                            позиций,#}
+{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
+{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
+{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
+{#                                            из-за#}
+{#                                            чего возрастает их статус бесполезности.#}
+{#                                        </h3>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="redact_right">#}
+{#                                <div class="redact_ending">#}
+{#                                    <a href="./forth.html">#}
+{#                                        <h3>Развитие</h3>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+
                     </div>
                 </div>
 

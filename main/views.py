@@ -18,6 +18,14 @@ def index(request):
     article6 = Articles.objects.filter(id=mainBlock.article6.id)
     video = Video.objects.first()
 
+    article7 = Articles.objects.get(id=mainBlock.article7.id)
+    article8 = Articles.objects.get(id=mainBlock.article8.id)
+    article9 = Articles.objects.get(id=mainBlock.article9.id)
+    article10 = Articles.objects.get(id=mainBlock.article10.id)
+    article11 = Articles.objects.get(id=mainBlock.article11.id)
+    article12 = Articles.objects.get(id=mainBlock.article12.id)
+
+
     bestArticle = Articles.objects.filter(id=mainBlock.bestArticle.id)
 
     # blockArticles = Articles.objects.all()[:6]
@@ -36,6 +44,12 @@ def index(request):
                                                "article5": article5,
                                                "article6": article6,
                                                "bestArticle": bestArticle,
+                                               "article7": article7,
+                                               "article8": article8,
+                                               "article9": article9,
+                                               "article10": article10,
+                                               "article11": article11,
+                                               "article12": article12,
                                                "news": news,
                                                "video": video,
                                                })

@@ -1152,6 +1152,7 @@ body {
 
 .redact_item {
     width: 90%;
+    min-height: 237px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1228,6 +1229,7 @@ body {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    position: relative;
 }
 
 .redact_ending {
@@ -1238,6 +1240,9 @@ body {
     color: aqua;
     background-color: black;
     font-family: "Roboto", sans-serif;
+    position: absolute;
+    right: 0;
+
 }
 
 .redact_right__logo {
@@ -3420,6 +3425,7 @@ footer {
         width: 100%;
     }
     .redact_right__logo {
+        /*position: relative;*/
         margin-left: 0px;
     }
     footer {

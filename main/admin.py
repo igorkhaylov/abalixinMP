@@ -111,7 +111,11 @@ class MainBlockAdmin(admin.ModelAdmin):
         ("Лучшая статья", {
             'fields': ('bestArticle',)
         }),
-    )
+        ("6 статей на выбор", {
+            'fields': ('article7', 'article8', 'article9',
+                       'article10', 'article11', 'article12',)
+        }),
+        )
 
     def has_add_permission(self, request):
         return False
@@ -143,4 +147,8 @@ class VideoAdmin(TranslationAdmin):
         return False
 
 # admin.site.register(MainBlock)
+
+
+admin.site.site_title = "Управление новостным сайтом"
+admin.site.site_header = "Main Post"
 

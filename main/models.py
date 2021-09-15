@@ -116,6 +116,14 @@ class MainBlock(models.Model):
     article5 = models.ForeignKey("Articles", verbose_name="Статья 5", related_name="article5", on_delete=models.PROTECT)
     article6 = models.ForeignKey("Articles", verbose_name="Статья 6", related_name="article6", on_delete=models.PROTECT)
 
+
+    article7 = models.ForeignKey("Articles", verbose_name="Статья 1", related_name="article7", on_delete=models.PROTECT)
+    article8 = models.ForeignKey("Articles", verbose_name="Статья 2", related_name="article8", on_delete=models.PROTECT)
+    article9 = models.ForeignKey("Articles", verbose_name="Статья 3", related_name="article9", on_delete=models.PROTECT)
+    article10 = models.ForeignKey("Articles", verbose_name="Статья 4", related_name="article10", on_delete=models.PROTECT)
+    article11 = models.ForeignKey("Articles", verbose_name="Статья 5", related_name="article11", on_delete=models.PROTECT)
+    article12 = models.ForeignKey("Articles", verbose_name="Статья 6", related_name="article12", on_delete=models.PROTECT)
+
     bestArticle = models.ForeignKey("Articles", verbose_name="Лучшая статья", related_name="bestArticle", on_delete=models.PROTECT)
 
 
