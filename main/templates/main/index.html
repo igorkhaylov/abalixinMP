@@ -770,344 +770,353 @@
                 <!-- Swiper -->
                 <div class="swiper-container mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
-                                    <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
-                                                height="80px" alt="da"></a>
-                                    </div>
-                                </div>
-                                <div class="test_text">
-                                    <div class="test_heading">
-                                        <a href="./six.html">
-                                            <h2>ЕЕсть над чем задуматься: частокол на границе починят!сть над чем задуматься: частокол на границе починят!</h2>
-                                        </a>
 
-                                    </div>
-                                    <div class="test_perc">
-                                        <div class="perc_left">
-                                            <h4>Вопросов: 16 </h4>
-                                        </div>
-                                        <div class="perc_right">
-                                            <h4>Время прохождения: 3 мин.</h4>
+                        {% for test in tests %}
+
+                            <div class="swiper-slide">
+                                <div class="test_item">
+                                    <div class="test_img" style="background-image: url({{ test.picture.url }});">
+                                        <div class="da">
+                                            <a href="{{ test.link }}"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
+                                                    height="80px" alt="da"></a>
                                         </div>
                                     </div>
-                                    <div class="test_sub">
-                                        <h3>Каак принято считать, представители современных социальных резервов формируют
-                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                            собственных
-                                            рациональных огрк принято считать, представители современных социальных резервов формируют
-                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                            собственных
-                                            рациональных ограничений.</h3>
-                                    </div>
-                                    <div class="test_compl">
+                                    <div class="test_text">
+                                        <div class="test_heading">
+                                            <a href="./six.html">
+                                                <h2>{{ test.title }}</h2>
+                                            </a>
 
-                                        <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
-                                        </a>
+                                        </div>
+                                        <div class="test_perc">
+                                            <div class="perc_left">
+                                                <h4>Вопросов: {{ test.questions }} </h4>
+                                            </div>
+                                            <div class="perc_right">
+                                                <h4>Время прохождения: {{ test.passage_time }} мин.</h4>
+                                            </div>
+                                        </div>
+                                        <div class="test_sub">
+                                            <h3>{{ test.description }}</h3>
+                                        </div>
+                                        <div class="test_compl">
 
+                                            <a href="{{ test.link }}">
+                                                <h3>{% trans 'Пройти тест' %}</h3>
+                                            </a>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
-                                    <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
-                                                height="80px" alt="da"></a>
-                                    </div>
-                                </div>
-                                <div class="test_text">
-                                    <div class="test_heading">
-                                        <a href="./six.html">
-                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
-                                        </a>
 
-                                    </div>
-                                    <div class="test_perc">
-                                        <div class="perc_left">
-                                            <h4>Вопросов: 16</h4>
-                                        </div>
-                                        <div class="perc_right">
-                                            <h4>Время прохождения: 3 мин.</h4>
-                                        </div>
-                                    </div>
-                                    <div class="test_sub">
-                                        <h3>Как принято считать, представители современных социальных резервов формируют
-                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                            собственных
-                                            рациональных ограничений.</h3>
-                                    </div>
-                                    <div class="test_compl">
-                                        <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
-                                    <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
-                                                height="80px" alt="da"></a>
-                                    </div>
-                                </div>
-                                <div class="test_text">
-                                    <div class="test_heading">
-                                        <a href="./six.html">
-                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
-                                        </a>
+                        {% endfor %}
 
-                                    </div>
-                                    <div class="test_perc">
-                                        <div class="perc_left">
-                                            <h4>Вопросов: 16</h4>
-                                        </div>
-                                        <div class="perc_right">
-                                            <h4>Время прохождения: 3 мин.</h4>
-                                        </div>
-                                    </div>
-                                    <div class="test_sub">
-                                        <h3>Как принято считать, представители современных социальных резервов формируют
-                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                            собственных
-                                            рациональных ограничений.</h3>
-                                    </div>
-                                    <div class="test_compl">
-                                        <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
-                                    <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
-                                                height="80px" alt="da"></a>
-                                    </div>
-                                </div>
-                                <div class="test_text">
-                                    <div class="test_heading">
-                                        <a href="./six.html">
-                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
-                                        </a>
 
-                                    </div>
-                                    <div class="test_perc">
-                                        <div class="perc_left">
-                                            <h4>Вопросов: 16</h4>
-                                        </div>
-                                        <div class="perc_right">
-                                            <h4>Время прохождения: 3 мин.</h4>
-                                        </div>
-                                    </div>
-                                    <div class="test_sub">
-                                        <h3>Как принято считать, представители современных социальных резервов формируют
-                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                            собственных
-                                            рациональных ограничений.</h3>
-                                    </div>
-                                    <div class="test_compl">
-                                        <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
-                                    <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
-                                                height="80px" alt="da"></a>
-                                    </div>
-                                </div>
-                                <div class="test_text">
-                                    <div class="test_heading">
-                                        <a href="./six.html">
-                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
-                                        </a>
+{#                        <div class="swiper-slide">#}
+{#                            <div class="test_item">#}
+{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
+{#                                    <div class="da">#}
+{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
+{#                                                height="80px" alt="da"></a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="test_text">#}
+{#                                    <div class="test_heading">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
+{#                                        </a>#}
+{##}
+{#                                    </div>#}
+{#                                    <div class="test_perc">#}
+{#                                        <div class="perc_left">#}
+{#                                            <h4>Вопросов: 16</h4>#}
+{#                                        </div>#}
+{#                                        <div class="perc_right">#}
+{#                                            <h4>Время прохождения: 3 мин.</h4>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="test_sub">#}
+{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
+{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
+{#                                            собственных#}
+{#                                            рациональных ограничений.</h3>#}
+{#                                    </div>#}
+{#                                    <div class="test_compl">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="swiper-slide">#}
+{#                            <div class="test_item">#}
+{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
+{#                                    <div class="da">#}
+{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
+{#                                                height="80px" alt="da"></a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="test_text">#}
+{#                                    <div class="test_heading">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
+{#                                        </a>#}
+{##}
+{#                                    </div>#}
+{#                                    <div class="test_perc">#}
+{#                                        <div class="perc_left">#}
+{#                                            <h4>Вопросов: 16</h4>#}
+{#                                        </div>#}
+{#                                        <div class="perc_right">#}
+{#                                            <h4>Время прохождения: 3 мин.</h4>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="test_sub">#}
+{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
+{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
+{#                                            собственных#}
+{#                                            рациональных ограничений.</h3>#}
+{#                                    </div>#}
+{#                                    <div class="test_compl">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="swiper-slide">#}
+{#                            <div class="test_item">#}
+{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
+{#                                    <div class="da">#}
+{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
+{#                                                height="80px" alt="da"></a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="test_text">#}
+{#                                    <div class="test_heading">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
+{#                                        </a>#}
+{##}
+{#                                    </div>#}
+{#                                    <div class="test_perc">#}
+{#                                        <div class="perc_left">#}
+{#                                            <h4>Вопросов: 16</h4>#}
+{#                                        </div>#}
+{#                                        <div class="perc_right">#}
+{#                                            <h4>Время прохождения: 3 мин.</h4>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="test_sub">#}
+{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
+{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
+{#                                            собственных#}
+{#                                            рациональных ограничений.</h3>#}
+{#                                    </div>#}
+{#                                    <div class="test_compl">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="swiper-slide">#}
+{#                            <div class="test_item">#}
+{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
+{#                                    <div class="da">#}
+{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
+{#                                                height="80px" alt="da"></a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="test_text">#}
+{#                                    <div class="test_heading">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
+{#                                        </a>#}
+{##}
+{#                                    </div>#}
+{#                                    <div class="test_perc">#}
+{#                                        <div class="perc_left">#}
+{#                                            <h4>Вопросов: 16</h4>#}
+{#                                        </div>#}
+{#                                        <div class="perc_right">#}
+{#                                            <h4>Время прохождения: 3 мин.</h4>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="test_sub">#}
+{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
+{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
+{#                                            собственных#}
+{#                                            рациональных ограничений.</h3>#}
+{#                                    </div>#}
+{#                                    <div class="test_compl">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="swiper-slide">#}
+{#                            <div class="test_item">#}
+{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
+{#                                    <div class="da">#}
+{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
+{#                                                height="80px" alt="da"></a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="test_text">#}
+{#                                    <div class="test_heading">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
+{#                                        </a>#}
+{##}
+{#                                    </div>#}
+{#                                    <div class="test_perc">#}
+{#                                        <div class="perc_left">#}
+{#                                            <h4>Вопросов: 16</h4>#}
+{#                                        </div>#}
+{#                                        <div class="perc_right">#}
+{#                                            <h4>Время прохождения: 3 мин.</h4>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="test_sub">#}
+{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
+{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
+{#                                            собственных#}
+{#                                            рациональных ограничений.</h3>#}
+{#                                    </div>#}
+{#                                    <div class="test_compl">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="swiper-slide">#}
+{#                            <div class="test_item">#}
+{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
+{#                                    <div class="da">#}
+{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
+{#                                                height="80px" alt="da"></a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="test_text">#}
+{#                                    <div class="test_heading">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
+{#                                        </a>#}
+{##}
+{#                                    </div>#}
+{#                                    <div class="test_perc">#}
+{#                                        <div class="perc_left">#}
+{#                                            <h4>Вопросов: 16</h4>#}
+{#                                        </div>#}
+{#                                        <div class="perc_right">#}
+{#                                            <h4>Время прохождения: 3 мин.</h4>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="test_sub">#}
+{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
+{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
+{#                                            собственных#}
+{#                                            рациональных ограничений.</h3>#}
+{#                                    </div>#}
+{#                                    <div class="test_compl">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="swiper-slide">#}
+{#                            <div class="test_item">#}
+{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
+{#                                    <div class="da">#}
+{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
+{#                                                height="80px" alt="da"></a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="test_text">#}
+{#                                    <div class="test_heading">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
+{#                                        </a>#}
+{##}
+{#                                    </div>#}
+{#                                    <div class="test_perc">#}
+{#                                        <div class="perc_left">#}
+{#                                            <h4>Вопросов: 16</h4>#}
+{#                                        </div>#}
+{#                                        <div class="perc_right">#}
+{#                                            <h4>Время прохождения: 3 мин.</h4>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="test_sub">#}
+{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
+{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
+{#                                            собственных#}
+{#                                            рациональных ограничений.</h3>#}
+{#                                    </div>#}
+{#                                    <div class="test_compl">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="swiper-slide">#}
+{#                            <div class="test_item">#}
+{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
+{#                                    <div class="da">#}
+{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
+{#                                                height="80px" alt="da"></a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="test_text">#}
+{#                                    <div class="test_heading">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
+{#                                        </a>#}
+{##}
+{#                                    </div>#}
+{#                                    <div class="test_perc">#}
+{#                                        <div class="perc_left">#}
+{#                                            <h4>Вопросов: 16</h4>#}
+{#                                        </div>#}
+{#                                        <div class="perc_right">#}
+{#                                            <h4>Время прохождения: 3 мин.</h4>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="test_sub">#}
+{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
+{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
+{#                                            собственных#}
+{#                                            рациональных ограничений.</h3>#}
+{#                                    </div>#}
+{#                                    <div class="test_compl">#}
+{#                                        <a href="./six.html">#}
+{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
 
-                                    </div>
-                                    <div class="test_perc">
-                                        <div class="perc_left">
-                                            <h4>Вопросов: 16</h4>
-                                        </div>
-                                        <div class="perc_right">
-                                            <h4>Время прохождения: 3 мин.</h4>
-                                        </div>
-                                    </div>
-                                    <div class="test_sub">
-                                        <h3>Как принято считать, представители современных социальных резервов формируют
-                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                            собственных
-                                            рациональных ограничений.</h3>
-                                    </div>
-                                    <div class="test_compl">
-                                        <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
-                                    <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
-                                                height="80px" alt="da"></a>
-                                    </div>
-                                </div>
-                                <div class="test_text">
-                                    <div class="test_heading">
-                                        <a href="./six.html">
-                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
-                                        </a>
-
-                                    </div>
-                                    <div class="test_perc">
-                                        <div class="perc_left">
-                                            <h4>Вопросов: 16</h4>
-                                        </div>
-                                        <div class="perc_right">
-                                            <h4>Время прохождения: 3 мин.</h4>
-                                        </div>
-                                    </div>
-                                    <div class="test_sub">
-                                        <h3>Как принято считать, представители современных социальных резервов формируют
-                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                            собственных
-                                            рациональных ограничений.</h3>
-                                    </div>
-                                    <div class="test_compl">
-                                        <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
-                                    <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
-                                                height="80px" alt="da"></a>
-                                    </div>
-                                </div>
-                                <div class="test_text">
-                                    <div class="test_heading">
-                                        <a href="./six.html">
-                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
-                                        </a>
-
-                                    </div>
-                                    <div class="test_perc">
-                                        <div class="perc_left">
-                                            <h4>Вопросов: 16</h4>
-                                        </div>
-                                        <div class="perc_right">
-                                            <h4>Время прохождения: 3 мин.</h4>
-                                        </div>
-                                    </div>
-                                    <div class="test_sub">
-                                        <h3>Как принято считать, представители современных социальных резервов формируют
-                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                            собственных
-                                            рациональных ограничений.</h3>
-                                    </div>
-                                    <div class="test_compl">
-                                        <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
-                                    <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
-                                                height="80px" alt="da"></a>
-                                    </div>
-                                </div>
-                                <div class="test_text">
-                                    <div class="test_heading">
-                                        <a href="./six.html">
-                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
-                                        </a>
-
-                                    </div>
-                                    <div class="test_perc">
-                                        <div class="perc_left">
-                                            <h4>Вопросов: 16</h4>
-                                        </div>
-                                        <div class="perc_right">
-                                            <h4>Время прохождения: 3 мин.</h4>
-                                        </div>
-                                    </div>
-                                    <div class="test_sub">
-                                        <h3>Как принято считать, представители современных социальных резервов формируют
-                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                            собственных
-                                            рациональных ограничений.</h3>
-                                    </div>
-                                    <div class="test_compl">
-                                        <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="test_item">
-                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">
-                                    <div class="da">
-                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"
-                                                height="80px" alt="da"></a>
-                                    </div>
-                                </div>
-                                <div class="test_text">
-                                    <div class="test_heading">
-                                        <a href="./six.html">
-                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>
-                                        </a>
-
-                                    </div>
-                                    <div class="test_perc">
-                                        <div class="perc_left">
-                                            <h4>Вопросов: 16</h4>
-                                        </div>
-                                        <div class="perc_right">
-                                            <h4>Время прохождения: 3 мин.</h4>
-                                        </div>
-                                    </div>
-                                    <div class="test_sub">
-                                        <h3>Как принято считать, представители современных социальных резервов формируют
-                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                            собственных
-                                            рациональных ограничений.</h3>
-                                    </div>
-                                    <div class="test_compl">
-                                        <a href="./six.html">
-                                            <h3>{% trans 'Пройти тест' %}</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div style="color: black;" class="swiper-button-next"></div>
                     <div style="color: black;" class="swiper-button-prev"></div>

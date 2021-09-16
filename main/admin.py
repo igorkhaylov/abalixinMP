@@ -140,6 +140,7 @@ class VideoAdmin(TranslationAdmin):
             'fields': ('title4', 'link4',)
         }),
     )
+
     def has_add_permission(self, request):
         return False
 
@@ -150,6 +151,8 @@ class VideoAdmin(TranslationAdmin):
 @admin.register(Tests)
 class TestsAdmin(TranslationAdmin):
     list_display = ('title', )
+    save_as = True
+
 
 # admin.site.register(MainBlock)
 

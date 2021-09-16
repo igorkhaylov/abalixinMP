@@ -161,7 +161,7 @@ class Tests(models.Model):
     description = models.TextField("Описание")
     picture = models.ImageField("Картинка", upload_to="tests/%Y/%m/%d/")
     questions = models.IntegerField("Количество вопросов", default=0)
-    passage_time = models.TimeField("Время прохождения", default=datetime.time)
+    passage_time = models.SmallIntegerField("Время прохождения мин", default=0)
     link = models.CharField("Ссылка на тест", max_length=250)
 
     def __str__(self):
