@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import Ticker, Articles, Author, Categories, UzbNews, WorldNews, Video
+from .models import Ticker, Articles, Author, Categories, UzbNews, WorldNews, Video, Tests
 
 
 @register(Ticker)
@@ -52,4 +52,7 @@ class CategoriesTranslationOptions(TranslationOptions):
     fields = ('name', )
 
 
+@register(Tests)
+class TestsTranslationOptions(TranslationOptions):
+    fields = ('title', 'description', )
 

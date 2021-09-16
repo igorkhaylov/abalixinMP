@@ -1,6 +1,6 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
-from .models import Ticker, Articles, Author, Categories, MainBlock, UzbNews, WorldNews, Video
+from .models import Ticker, Articles, Author, Categories, MainBlock, UzbNews, WorldNews, Video, Tests
 from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
@@ -145,6 +145,11 @@ class VideoAdmin(TranslationAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False
+
+
+@admin.register(Tests)
+class TestsAdmin(TranslationAdmin):
+    list_display = ('title', )
 
 # admin.site.register(MainBlock)
 

@@ -1,3 +1,5 @@
+import datetime
+
 from django.utils import timezone
 from django.db import models
 # from ckeditor.fields import RichTextField
@@ -93,6 +95,7 @@ class Author(models.Model):
 
 class Categories(models.Model):
     name = models.CharField("Название категории", max_length=120)
+    description = models.TextField("Описание", max_length=250)
     url = models.SlugField(max_length=120, unique=True)
     # tag = models.ForeignKey("")
 
@@ -151,5 +154,21 @@ class Video(models.Model):
     class Meta:
         verbose_name = "ВИДЕО"
         verbose_name_plural = "ВИДЕО"
+
+
+class Tests(models.Model):
+    title = models.CharField("Название", max_length=120)
+    description = models.TextField("Описание")
+    picture = models.ImageField("Картинка", upload_to="tests/%Y/%m/%d/")
+    questions = models.IntegerField("Количество вопросов", default=0)
+    passage_time = models.TimeField("Время прохождения", default=datetime.time)
+    link = models.CharField("Ссылка на тест", max_length=250)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Тесты"
+        verbose_name_plural = "Тесты"
 
 
