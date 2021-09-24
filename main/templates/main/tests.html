@@ -1,0 +1,104 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тесты</title>
+    <link rel="stylesheet" href="{% static 'css/tests.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="icon" type="img/svg" href="{% static 'img/sitelogo.svg' %}">
+</head>
+
+<body>
+    <!-- Верстка хедера -->
+    
+    <div class="adv" style="margin-top: 0">
+        <img src="{% static 'img/reklama.png' %}" alt="da">
+    </div>
+    {% include 'include/header.html' %}
+
+    <div class="container__title">
+        <h1>ТЕСТЫ</h1>
+    </div>
+    <div class="container">
+        <div class="right__sidebar">
+            <div class="right_sidebar__content">
+               {% for test in tests %}
+
+                <div class="sidebar__item">
+                    <a href="#">
+                        <div class="sidebar_item__top" style="background-image: url({{ test.picture.url }});">
+                            <h3>{{ test.title }}</h3>
+                        </div>
+                    </a>
+                    
+                    <div class="sidebar_item__bottom">
+                        <div class="date">
+                            <h5>Вопросов: {{ test.questions }}</h5>
+                            <h5>Время прохождения: {{ test.passage_time }} мин</h5>
+                        </div>
+                        <div class="subtext">
+                            <h3>{{ test.description }}</h3>
+                        </div>
+                        <div class="date">
+                            <h5>{{ test.date|date:"H:i" }}</h5>
+                            <h5>{{ test.date|date:"d.m.Y" }}</h5>
+                        </div>
+                        <div class="pass">
+                            <a href="{{ test.link }}">Пройти тест</a>
+                        </div>
+                    </div>
+                </div>
+               {% endfor %}
+            </div>
+            <div class="eshe">
+                <h3 style="text-decoration: underline;">Показать ещё v</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="best_state">
+        <div class="best_state__container">
+            <div class="best_state__item1">
+                <h2>Лучшая статья</h2>
+                <h3>Лишь акционеры крупнейших компаний являются только методом политического участия и объявлены нарушающими общечеловеческие нормы этики и морали.</h3>
+            </div>
+            <div class="best_state__item2"></div>
+            <div class="best_state__item3">
+                <div class="best_state__item3_header">
+                    <h3>Стиль</h3>
+                    <h3>2021</h3>
+                </div>
+                <div class="best_state__item3_title">
+                    <h2>Нашу победу сопровождал гитарный перебор</h2>
+                    <h3>С другой стороны, существующая теория требует анализа укрепления моральных ценностей. Учитывая ключевые сценарии поведения, понимание сути ресурсосберегающих технологий напрямую зависит от модели развития.</h3>
+                </div>
+                <div class="best_state__item3_subtitle"></div>
+                <a class="read" href="#">Читать статью</a>
+            </div>
+        </div>
+    </div>
+
+    {% include "include/footer.html" %}
+
+
+    <script>
+        /* Открыть, когда кто-то нажимает на элемент span */
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+            document.body.style.overflowY = 'hidden'
+        }
+
+        /* Закрыть, когда кто-то нажимает на символ "x" внутри наложения */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+            document.body.style.overflowY = 'scroll'
+        }
+    </script>
+
+</body>
+
+</html>

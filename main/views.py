@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Ticker, MainBlock, Articles, UzbNews, Video, Tests
+from .models import Ticker, MainBlock, Articles, UzbNews, Video, Tests, WorldNews, Categories, Podcasts
 
 
 def index(request):
@@ -17,6 +17,7 @@ def index(request):
     article5 = Articles.objects.filter(id=mainBlock.article5.id)
     article6 = Articles.objects.filter(id=mainBlock.article6.id)
     video = Video.objects.first()
+    podcast = Podcasts.objects.get(id=mainBlock.podcast.id)
 
     article7 = Articles.objects.get(id=mainBlock.article7.id)
     article8 = Articles.objects.get(id=mainBlock.article8.id)
@@ -55,6 +56,7 @@ def index(request):
                                                "news": news,
                                                "video": video,
                                                "tests": tests,
+                                               "podcast": podcast,
                                                })
 
 
@@ -74,3 +76,42 @@ def article_detail(request, slug):
     return render(request, "main/article_detail.html", {"article": article})
 
 
+def uzb_news_detail(request, id):
+    news = get_object_or_404(UzbNews, id=id)
+    news.views += 1
+    news.save()
+    return render(request, "main/news_detail.html", {"news": news})
+
+
+def world_news_detail(request, id):
+    news = get_object_or_404(WorldNews, id=id)
+    news.views += 1
+    news.save()
+    return render(request, "main/news_detail.html", {"news": news})
+
+
+def tests(request):
+    tests = Tests.objects.all()
+    return render(request, "main/tests.html", {"tests": tests})
+
+
+def categories(request):
+    mainBlock = MainBlock.objects.first()
+    bestArticle = Articles.objects.get(id=mainBlock.bestArticle.id)
+    categories = Categories.objects.all()
+    articles = Articles.objects.all()
+    tests = Tests.objects.all()
+    return render(request, "main/categories.html", {"categories": categories,
+                                                    "articles": articles,
+                                                    "tests": tests,
+                                                    "bestArticle": bestArticle,
+                                                    })
+
+
+def podcasts(request):
+    podcasts = Podcasts.objects.all()
+    return render(request, "main/podcasts.html", {"podcasts": podcasts, })
+
+
+def news(request):
+    return render(request, "main/news.html", )

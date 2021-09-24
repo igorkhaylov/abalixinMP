@@ -17,13 +17,12 @@
 
 .adv {
     width: 100%;
-    /*margin-top: 150px;*/
+    margin-top: 150px;
 }
 
 .adv img {
     width: 100%;
 }
-
 
 .comment {
     width: 100%;
@@ -96,203 +95,6 @@
     margin-top: 20px;
 }
 
-
-.overlay {
-    /* Высота и ширина зависят от того, как вы хотите показать наложение (см. JS ниже) */
-    height: 100%;
-    width: 0;
-    position: fixed;
-    /* Оставаться на месте */
-    z-index: 1;
-    /* Сидеть на вершине */
-    left: 0;
-    top: 0;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
-    background-color: rgb(0, 0, 0);
-    /* Черный резервный цвет */
-    background-color: rgba(0, 0, 0, 0.9);
-    /*Черный с непрозрачностью */
-    overflow-x: hidden;
-    /* Отключить горизонтальную прокрутку */
-    transition: 0.5s ease-in-out;
-    /* 0.5 секунды эффект перехода, чтобы скользить в или скользить вниз по наложению (высота или ширина, в зависимости от показа) */
-}
-
-.overlay::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    z-index: 2;
-    background-color: #00000095;
-}
-
-/* Расположите содержимое внутри наложения */
-
-.overlay-content {
-    position: relative;
-    z-index: 5;
-    top: 25%;
-    /* 25% сверху */
-    width: 100%;
-    /* 100% ширина */
-    text-align: center;
-    /* Центрированный текст/ссылки */
-    /* 30px верхнее поле, чтобы избежать конфликта с кнопкой закрытия на небольших экранах */
-}
-
-/* Навигационные ссылки внутри наложения */
-
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    z-index: 5;
-    color: white;
-    display: block;
-    /* Блок дисплея вместо встроенного */
-    transition: 0.3s;
-    /* Эффекты перехода при наведении (цвет) */
-}
-
-
-/* При наведении курсора мыши на навигационные ссылки измените их цвет */
-
-.overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-}
-
-/* Расположите кнопку закрыть (верхний правый угол) */
-
-.overlay .closebtn {
-    position: absolute;
-    top: -10px;
-    left: 1768px;
-    font-size: 60px;
-}
-
-/* Если высота экрана меньше 450 пикселей, измените размер шрифта ссылок и снова установите кнопку закрыть, чтобы они не перекрывались */
-
-@media screen and (max-height: 450px) {
-    .overlay a {
-        font-size: 20px
-    }
-
-    .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
-}
-
-/* скрываем чекбокс */
-#menu__toggle {
-    opacity: 0;
-}
-
-/* стилизуем кнопку */
-.menu__btn {
-    display: flex; /* используем flex для центрирования содержимого */
-    align-items: center; /* центрируем содержимое кнопки */
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-    z-index: 1;
-    display: none;
-}
-
-/* добавляем "гамбургер" */
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #616161;
-}
-
-.menu__btn > span::before {
-    content: '';
-    top: -8px;
-}
-
-.menu__btn > span::after {
-    content: '';
-    top: 8px;
-}
-
-/* контейнер меню */
-.menu__box {
-    display: block;
-    position: fixed;
-    visibility: hidden;
-    top: 0;
-    left: -100%;
-    width: 300px;
-    height: 100%;
-    margin: 0;
-    padding: 80px 0;
-    list-style: none;
-    text-align: center;
-    background-color: #ECEFF1;
-    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-}
-
-/* элементы меню */
-.menu__item {
-    display: block;
-    padding: 12px 24px;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.menu__item:hover {
-    background-color: #CFD8DC;
-}
-
-#menu__toggle:checked ~ .menu__btn > span {
-    transform: rotate(45deg);
-}
-
-#menu__toggle:checked ~ .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0);
-}
-
-#menu__toggle:checked ~ .menu__btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-}
-
-#menu__toggle:checked ~ .menu__box {
-    visibility: visible;
-    left: 0;
-}
-
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
-    transition-duration: .25s;
-}
-
-.menu__box {
-    transition-duration: .25s;
-}
-
-.menu__item {
-    transition-duration: .25s;
-}
-
 :root {
     --bl: #000;
     --wh: #fff;
@@ -302,22 +104,33 @@
 }
 
 /* Модальный (фон) */
+
 .modal {
-    display: none; /* Скрыто по умолчанию */
-    position: fixed; /* Оставаться на месте */
-    z-index: 1; /* Сидеть на вершине */
-    padding-top: 100px; /* Расположение коробки */
+    display: none;
+    /* Скрыто по умолчанию */
+    position: fixed;
+    /* Оставаться на месте */
+    z-index: 1;
+    /* Сидеть на вершине */
+    padding-top: 100px;
+    /* Расположение коробки */
     left: 0;
     top: 0;
     transition: 300ms;
-    width: 100%; /* Полная ширина */
-    height: 100%; /* Полная высота */
-    overflow: auto; /* Включите прокрутку, если это необходимо */
-    background-color: rgb(0, 0, 0); /* Цвет запасной вариант  */
-    background-color: rgba(0, 0, 0, 0.4); /*Черный с непрозрачностью */
+    width: 100%;
+    /* Полная ширина */
+    height: 100%;
+    /* Полная высота */
+    overflow: auto;
+    /* Включите прокрутку, если это необходимо */
+    background-color: rgb(0, 0, 0);
+    /* Цвет запасной вариант  */
+    background-color: rgba(0, 0, 0, 0.4);
+    /*Черный с непрозрачностью */
 }
 
 /* Style the Image Used to Trigger the Modal */
+
 #myImg {
     border-radius: 5px;
     cursor: pointer;
@@ -329,21 +142,32 @@
 }
 
 /* The Modal (background) */
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
 }
 
 /* Modal Content (Image) */
+
 .modal-content {
     margin: auto;
     display: block;
@@ -352,6 +176,7 @@
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
+
 #caption {
     margin: auto;
     display: block;
@@ -364,6 +189,7 @@
 }
 
 /* Add Animation - Zoom in the Modal */
+
 .modal-content, #caption {
     animation-name: zoom;
     animation-duration: 0.6s;
@@ -379,6 +205,7 @@
 }
 
 /* The Close Button */
+
 .close {
     position: absolute;
     top: 15px;
@@ -389,14 +216,14 @@
     transition: 0.3s;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
 }
 
 /* 100% Image Width on Smaller Screens */
+
 @media only screen and (max-width: 700px) {
     .modal-content {
         width: 100%;
@@ -412,6 +239,7 @@
 }
 
 /* Модальное содержание */
+
 .modal-content {
     background-color: black;
     color: white;
@@ -424,6 +252,7 @@
 }
 
 /* Кнопка закрытия */
+
 .close {
     color: #aaaaaa;
     float: right;
@@ -432,8 +261,7 @@
     transition: 300ms;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -452,53 +280,6 @@
     background-color: black;
 }
 
-
-.burger_menu {
-    width: 150px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-align: center;
-    display: none;
-}
-
-.burger_menu span {
-    width: 40px;
-    height: 4px;
-    background-color: var(--bl);
-    margin-top: 4px;
-}
-
-
-.select__language {
-    background-color: inherit;
-    border: none;
-    font-size: 20px;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: bolder;
-}
-
-.opt_lang {
-    background-color: inherit;
-    border: none;
-    font-size: 20px;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: bolder;
-}
-
-
-.select__lang {
-    font-family: Georgia, "Times New Roman", Times, serif;
-}
-
-/* Конец хедера */
 .header_topbar {
     width: 100%;
     display: -webkit-box;
@@ -514,7 +295,7 @@
     -ms-flex-align: center;
     align-items: center;
     background-color: whitesmoke;
-    /*margin-top: 100px;*/
+    margin-top: 100px;
 }
 
 .header_topbar .header_topbar__container {
@@ -600,19 +381,6 @@
     transition: 300ms;
 }
 
-/* .header_topbar .header_topbar__container .header_topbar__right .category::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 100%;
-  background-color: yellow;
-  color: black;
-  -webkit-transition: 300ms;
-  transition: 300ms;
-  z-index: -5;
-} */
 .header_topbar .header_topbar__container .header_topbar__right .category:hover::after {
     left: 0;
 }
@@ -680,7 +448,8 @@
 }
 
 .main_state__wrap .text__top span {
-    color: black;
+    color: white;
+    background-color: black;
     cursor: pointer;
 }
 
@@ -690,9 +459,9 @@
     margin-top: 15px;
 }
 
-.main_state__wrap .text__bottom span {
-    color: black;
-    cursor: pointer;
+.colored {
+    color: white;
+    background-color: black;
 }
 
 .second_state__wrap {
@@ -882,7 +651,7 @@
 }
 
 .more .more__container .more__content .more__item .more_item__img {
-    width: 600px;
+    width: 100%;
     height: 300px;
     background-image: url(../img/harasho.svg);
     background-repeat: no-repeat;
@@ -892,10 +661,12 @@
 
 .more .more__container .more__content .more__item .more_item__text {
     margin-top: 20px;
+    width: 100%;
 }
 
 .more .more__container .more__content .more__item .more_item__text h2 {
     font-size: 25px;
+    width: 100%;
 }
 
 .more .more__container .more__content .more__item .more_item__text h3 {
@@ -903,96 +674,32 @@
     margin-top: 10px;
 }
 
-
 @media screen and (max-width: 1100px) {
     .more .more__container .more__content {
         flex-direction: column;
     }
-
     .more__item {
         margin-top: 20px;
     }
 }
 
-@media screen and (max-width: 1024px) {
-
-}
+@media screen and (max-width: 1024px) {}
 
 @media screen and (max-width: 900px) {
-
-
-
-
     .more .more__container {
         margin-top: 70px;
     }
-
-
-    .footer_third_content {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
-
-    .footer_third_content img {
-        margin-top: 10px;
-    }
-
-
 }
 
 @media screen and (max-width: 768px) {
-
-
-    .overlay .closebtn {
-        left: 32px;
-    }
-
-
-
     .header_topbar .header_topbar__container .header_topbar__left .header_topbar__title {
         font-size: 20px;
     }
-
     .second_state__wrap .second_state__container .second_state__left {
         height: auto;
     }
-
-    .burger_menu {
-        display: flex;
-    }
-
-
-
-    .menu__btn {
-        display: flex;
-    }
-
-
-
-
     .top_post_item_1 {
         height: 400px;
-    }
-
-
-
-
-}
-
-@media screen and (max-width: 640px) {
-    footer {
-        height: 647px;
-    }
-
-
-
-}
-
-@media screen and (max-width: 640px) {
-    footer {
-        height: 600px;
     }
 }
 
@@ -1000,105 +707,65 @@
     .third_state__wrap .third_state__container {
         flex-direction: column;
     }
-
-
     .comment {
         height: auto;
     }
-
     .comment_wrapper {
         flex-direction: column;
     }
-
     .comment_text {
         width: 100%;
     }
-
-
     .third__right {
         margin-left: 0px;
     }
-
     .more .more__container .more__content .more__item {
         width: 90%;
     }
-
     .more .more__container .more__content .more__item .more_item__img {
         width: 90%;
     }
-
     .third_state__wrap .third_state__container .third__left {
         width: 90%;
     }
-
     .third_state__wrap .third_state__container .third__right {
         width: 90%;
         margin-left: 0px;
     }
-
     .second_state__wrap .second_state__container {
         flex-direction: column;
     }
-
     .second_state__wrap .second_state__container .second_state__left {
         width: 100%;
     }
-
     .second_state__wrap .second_state__container .second_state__right {
         width: 90%;
     }
-
     .header_topbar .header_topbar__container {
         flex-direction: column;
     }
-
     .uzb_news__wrap .uzb_news__container .uzb_news__bottom .uzb_news__bottom__item:nth-child(1) {
         width: 62%;
     }
-
     .uzb_news__wrap .uzb_news__container .uzb_news__top .uzb_news__top__item:nth-child(3) {
         width: 62%;
     }
-
-}
-
-@media screen and (max-width: 540px) {
-
-
 }
 
 @media screen and (max-width: 414px) {
-
-    footer {
-        margin-top: 40px;
-        height: 700px;
-    }
-
-
-
-
-
-
     .wrapper .container {
         width: 70%;
         margin-left: 20px;
     }
-
-
-
 }
 
 @media screen and (max-width: 375px) {
-
     .header_topbar .header_topbar__container .header_topbar__left .header_topbar__nav {
         width: 230px;
     }
-
-
 }
 
 @media screen and (max-width: 400px) {
-
     .header_topbar .header_topbar__container .header_topbar__left .header_topbar__title {
         width: 100%;
         font-size: 16px;
@@ -1106,8 +773,6 @@
 }
 
 @media screen and (max-width: 320px) {
-
-
     .redact__title {
         font-size: 20px;
     }

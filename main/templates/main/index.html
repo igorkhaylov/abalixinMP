@@ -20,18 +20,6 @@
     {% include "include/header.html" %}
     
     <!-- Конец хедера -->
-{#    {% for article in firstArticle %}#}
-{#        {{ article.image.url }}#}
-{#    {% endfor %}#}
-
-
-{#    {% if secondArticle %}#}
-{#            true#}
-{#        {% else %}#}
-{#        false#}
-{#    {% endif %}#}
-
-
 
     <!-- Верстка верхнего блока с новостями -->
     <div class="top_posts__wrap">
@@ -59,29 +47,6 @@
                 {% endfor %}
 
 
-
-{#        <div class="top_post_item_1" style="background-image: url({% static 'img/Rectangle 288.png' %}); ">#}
-{##}
-{#                <div class="news_link">#}
-{#                    <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>#}
-{#                </div>#}
-{#                <div class="news_content__row">#}
-{#                    <div class="news_content__title">#}
-{#                        <a href="#">#}
-{#                            <h3>Музыка</h3>#}
-{#                        </a>#}
-{#                    </div>#}
-{#                    <div class="news_content__subtitle">#}
-{#                        <h1>Выставка Плакатов</h1>#}
-{#                    </div>#}
-{#                    <div class="news_content__endtitle">#}
-{#                        <h1>Впервые в Узбекистане</h1>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-
-
-
             <div class="other">
                 {% for article in secondArticle %}
                     <div class="top_post_item_2" style="background-image: url({{ article.image.url }}); ">
@@ -101,24 +66,6 @@
                         </div>
                     </div>
                 {% endfor %}
-
-
-{#            <div class="top_post_item_2" style="background-image: url({% static 'img/Rectangle 289.png' %}); ">#}
-{#                    <div class="news_link">#}
-{#                        <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>#}
-{#                    </div>#}
-{#                    <div class="news_content__title">#}
-{#                        <a href="#">#}
-{#                            <h3>Музыка</h3>#}
-{#                        </a>#}
-{#                    </div>#}
-{#                    <div class="news_content__subtitle second">#}
-{#                        <h3>С дефектом в глазах</h3>#}
-{#                    </div>#}
-{#                    <div class="news_content__endtitle third">#}
-{#                        <h1>Женшина-ящерица</h1>#}
-{#                    </div>#}
-{#                </div>#}
 
 
             {% for article in thirdArticle %}
@@ -142,28 +89,7 @@
 
             {% endfor %}
 
-
-{#            <div class="top_post_item_3" style="background-image: url({% static 'img/Rectangle 289.svg' %});">#}
-{#                    <div class="news_link">#}
-{#                        <a href="./third.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" alt="arrow"></a>#}
-{#                    </div>#}
-{#                    <div class="news_content__title">#}
-{#                        <a href="#">#}
-{#                            <h3>Музыка</h3>#}
-{#                        </a>#}
-{#                    </div>#}
-{#                    <div class="news_content__subtitle second">#}
-{#                        <h3>С дефектом в глазах</h3>#}
-{#                    </div>#}
-{#                    <div class="news_content__endtitle third">#}
-{#                        <h1>Женшина-ящерица</h1>#}
-{#                    </div>#}
-{#                </div>#}
-
-
-
             </div>
-
         </div>
 
         <!-- Новостная линия -->
@@ -241,125 +167,6 @@
                         {% endif %}
 
                     {% endfor %}
-
-
-
-
-
-{#                    <div class="content_items_elem">#}
-{#                        <div class="content_block">#}
-{#                            <div class="content__image"#}
-{#                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">#}
-{#                            </div>#}
-{#                            <div class="content_date">#}
-{#                                <div class="content_num">20.05.2021</div>#}
-{#                                <div class="content_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="content_text">#}
-{#                            <div class="content_text__text">#}
-{#                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>#}
-{#                            </div>#}
-{#                            <div class="content_text__image">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{##}
-{#                    <div class="content_items_elem">#}
-{#                        <div class="second_content__content">#}
-{#                            <div class="second_logo">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                            <div class="second_text">#}
-{#                                <h2>Не следует забывать, что цены на бензин начинают падать</h2>#}
-{#                            </div>#}
-{#                            <div class="second_date">#}
-{#                                <div class="second_num">20.05.2021</div>#}
-{#                                <div class="second_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{##}
-{#                    <div class="content_items_elem">#}
-{#                        <div class="content_block">#}
-{#                            <div class="content__image"#}
-{#                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">#}
-{#                            </div>#}
-{#                            <div class="content_date">#}
-{#                                <div class="content_num">20.05.2021</div>#}
-{#                                <div class="content_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="content_text">#}
-{#                            <div class="content_text__text">#}
-{#                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>#}
-{#                            </div>#}
-{#                            <div class="content_text__image">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{##}
-{#                    <div class="content_items_elem">#}
-{#                        <div class="content_block">#}
-{#                            <div class="content__image"#}
-{#                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">#}
-{#                            </div>#}
-{#                            <div class="content_date">#}
-{#                                <div class="content_num">20.05.2021</div>#}
-{#                                <div class="content_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="content_text">#}
-{#                            <div class="content_text__text">#}
-{#                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>#}
-{#                            </div>#}
-{#                            <div class="content_text__image">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{##}
-{#                    <div class="content_items_elem">#}
-{#                        <div class="content_block">#}
-{#                            <div class="content__image"#}
-{#                                 style="background-image: url({% static 'img/dizaynerchmo.png' %});">#}
-{#                            </div>#}
-{#                            <div class="content_date">#}
-{#                                <div class="content_num">20.05.2021</div>#}
-{#                                <div class="content_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="content_text">#}
-{#                            <div class="content_text__text">#}
-{#                                <h3>Прототип нового сервиса - это как глас грядущего поколения</h3>#}
-{#                            </div>#}
-{#                            <div class="content_text__image">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{##}
-{##}
-{#                    <div class="content_items_elem">#}
-{#                        <div class="second_content__content">#}
-{#                            <div class="second_logo">#}
-{#                                <a href="./second.html"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arr"></a>#}
-{#                            </div>#}
-{#                            <div class="second_text">#}
-{#                                <h2>Не следует забывать, что цены на бензин начинают падать</h2>#}
-{#                            </div>#}
-{#                            <div class="second_date">#}
-{#                                <div class="second_num">20.05.2021</div>#}
-{#                                <div class="second_year">20:06</div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
 
                 </div>
             </div>
@@ -597,7 +404,7 @@
                 <iframe class="podcast__video"
                         width="560"
                         height="315"
-                        src="https://www.youtube.com/embed/{{ article.video| cut:"https://www.youtube.com/watch?v=" }}"
+                        src="https://www.youtube.com/embed/{{ article.video|cut:"https://www.youtube.com/watch?v=" }}"
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -606,8 +413,6 @@
                 {% else %}
                     <img class="best_state__image" src="{{ article.image.url }}" width="700" height="400"  alt="bestimages">
                 {% endif %}
-
-
                 <div class="podcast__content">
                     <div class="podcast__text">
                         <h1>{{ article.title }}</h1>
@@ -704,25 +509,20 @@
                         <h1>{% trans 'ПОДКАСТЫ' %}</h1>
                     </div>
                     <div class="slider_first__btn">
-                        <a href="./seven.html">{% trans "Перейти к подкасту" %}</a>
+                        <a href="{{ podcast.link }}">{% trans "Перейти к подкасту" %}</a>
                     </div>
                 </div>
                 <div class="first_slider__content">
-                    <div class="slider__first_img" style="background-image: url({% static 'img/bgpodcast.svg' %});"></div>
+                    <div class="slider__first_img" style="background-image: url({{ podcast.image.url }});"></div>
                     <div class="slider__first_text">
                         <div class="slider__first_title">
-                            <h2>Бежать</h2>
+                            <h2>{{ podcast.genre }}</h2>
                         </div>
                         <div class="slider__first_subtitle">
-                            <h3>Автор: Абалихин Игорь & Студия Main post</h3>
+                            <h3>Автор: {{ podcast.author }}</h3>
                         </div>
                         <div class="slider__first_endtitle">
-                            <h4>Это подкаст о мире, где беженцев сегодня больше, чем во времена Второй мировой. И о
-                                людях, которые ищут в этом мире пристанище. В каждом эпизоде мы рассказываем историю
-                                очередного беглеца. Кто-то сбежал от гражданской войны в Европу. Кто-то — из Европы в
-                                Россию. А кто-то уехал из России, потому что не смог ощут в этом мире пристанище. В каждом эпизоде мы рассказываем историю
-                                очередного беглеца. Кто-то сбежал от гражданской войны в Европу. Кто-то — из Европы в
-                                Россию. А кто-то уехал из России, потому что не смобрести здесь дом.</h4>
+                            <h4>{{ podcast.description }}</h4>
                         </div>
                         <div class="slider_links_wrap">
                             <div class="first_slider_links__title">
@@ -749,9 +549,10 @@
                             </div> -->
                             <div class="audio_main__block">
                                 <div class="first_slider__audio__subtitle">
-                                    <h3>Эпизод I. Архипелаг Бежлаг</h3>
+                                    <h3>{{ podcast.title }}</h3>
                                 </div>
-                                <audio class="audio" src="{% static 'audio/Eminem - Godzilla.flac' %}" controls></audio>
+{#                                <audio class="audio" src="{% static 'audio/Eminem - Godzilla.flac' %}" controls></audio>#}
+                                <audio class="audio" src="{{ podcast.file.url }}" type="audio/mpeg" controls></audio>
                             </div>
                         </div>
                     </div>
@@ -783,7 +584,7 @@
                                     </div>
                                     <div class="test_text">
                                         <div class="test_heading">
-                                            <a href="./six.html">
+                                            <a href="{{ test.link }}">
                                                 <h2>{{ test.title }}</h2>
                                             </a>
 
@@ -811,311 +612,6 @@
                             </div>
 
                         {% endfor %}
-
-
-{#                        <div class="swiper-slide">#}
-{#                            <div class="test_item">#}
-{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
-{#                                    <div class="da">#}
-{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
-{#                                                height="80px" alt="da"></a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="test_text">#}
-{#                                    <div class="test_heading">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
-{#                                        </a>#}
-{##}
-{#                                    </div>#}
-{#                                    <div class="test_perc">#}
-{#                                        <div class="perc_left">#}
-{#                                            <h4>Вопросов: 16</h4>#}
-{#                                        </div>#}
-{#                                        <div class="perc_right">#}
-{#                                            <h4>Время прохождения: 3 мин.</h4>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="test_sub">#}
-{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
-{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
-{#                                            собственных#}
-{#                                            рациональных ограничений.</h3>#}
-{#                                    </div>#}
-{#                                    <div class="test_compl">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="swiper-slide">#}
-{#                            <div class="test_item">#}
-{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
-{#                                    <div class="da">#}
-{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
-{#                                                height="80px" alt="da"></a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="test_text">#}
-{#                                    <div class="test_heading">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
-{#                                        </a>#}
-{##}
-{#                                    </div>#}
-{#                                    <div class="test_perc">#}
-{#                                        <div class="perc_left">#}
-{#                                            <h4>Вопросов: 16</h4>#}
-{#                                        </div>#}
-{#                                        <div class="perc_right">#}
-{#                                            <h4>Время прохождения: 3 мин.</h4>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="test_sub">#}
-{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
-{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
-{#                                            собственных#}
-{#                                            рациональных ограничений.</h3>#}
-{#                                    </div>#}
-{#                                    <div class="test_compl">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="swiper-slide">#}
-{#                            <div class="test_item">#}
-{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
-{#                                    <div class="da">#}
-{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
-{#                                                height="80px" alt="da"></a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="test_text">#}
-{#                                    <div class="test_heading">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
-{#                                        </a>#}
-{##}
-{#                                    </div>#}
-{#                                    <div class="test_perc">#}
-{#                                        <div class="perc_left">#}
-{#                                            <h4>Вопросов: 16</h4>#}
-{#                                        </div>#}
-{#                                        <div class="perc_right">#}
-{#                                            <h4>Время прохождения: 3 мин.</h4>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="test_sub">#}
-{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
-{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
-{#                                            собственных#}
-{#                                            рациональных ограничений.</h3>#}
-{#                                    </div>#}
-{#                                    <div class="test_compl">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="swiper-slide">#}
-{#                            <div class="test_item">#}
-{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
-{#                                    <div class="da">#}
-{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
-{#                                                height="80px" alt="da"></a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="test_text">#}
-{#                                    <div class="test_heading">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
-{#                                        </a>#}
-{##}
-{#                                    </div>#}
-{#                                    <div class="test_perc">#}
-{#                                        <div class="perc_left">#}
-{#                                            <h4>Вопросов: 16</h4>#}
-{#                                        </div>#}
-{#                                        <div class="perc_right">#}
-{#                                            <h4>Время прохождения: 3 мин.</h4>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="test_sub">#}
-{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
-{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
-{#                                            собственных#}
-{#                                            рациональных ограничений.</h3>#}
-{#                                    </div>#}
-{#                                    <div class="test_compl">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="swiper-slide">#}
-{#                            <div class="test_item">#}
-{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
-{#                                    <div class="da">#}
-{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
-{#                                                height="80px" alt="da"></a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="test_text">#}
-{#                                    <div class="test_heading">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
-{#                                        </a>#}
-{##}
-{#                                    </div>#}
-{#                                    <div class="test_perc">#}
-{#                                        <div class="perc_left">#}
-{#                                            <h4>Вопросов: 16</h4>#}
-{#                                        </div>#}
-{#                                        <div class="perc_right">#}
-{#                                            <h4>Время прохождения: 3 мин.</h4>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="test_sub">#}
-{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
-{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
-{#                                            собственных#}
-{#                                            рациональных ограничений.</h3>#}
-{#                                    </div>#}
-{#                                    <div class="test_compl">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="swiper-slide">#}
-{#                            <div class="test_item">#}
-{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
-{#                                    <div class="da">#}
-{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
-{#                                                height="80px" alt="da"></a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="test_text">#}
-{#                                    <div class="test_heading">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
-{#                                        </a>#}
-{##}
-{#                                    </div>#}
-{#                                    <div class="test_perc">#}
-{#                                        <div class="perc_left">#}
-{#                                            <h4>Вопросов: 16</h4>#}
-{#                                        </div>#}
-{#                                        <div class="perc_right">#}
-{#                                            <h4>Время прохождения: 3 мин.</h4>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="test_sub">#}
-{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
-{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
-{#                                            собственных#}
-{#                                            рациональных ограничений.</h3>#}
-{#                                    </div>#}
-{#                                    <div class="test_compl">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="swiper-slide">#}
-{#                            <div class="test_item">#}
-{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
-{#                                    <div class="da">#}
-{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
-{#                                                height="80px" alt="da"></a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="test_text">#}
-{#                                    <div class="test_heading">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
-{#                                        </a>#}
-{##}
-{#                                    </div>#}
-{#                                    <div class="test_perc">#}
-{#                                        <div class="perc_left">#}
-{#                                            <h4>Вопросов: 16</h4>#}
-{#                                        </div>#}
-{#                                        <div class="perc_right">#}
-{#                                            <h4>Время прохождения: 3 мин.</h4>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="test_sub">#}
-{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
-{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
-{#                                            собственных#}
-{#                                            рациональных ограничений.</h3>#}
-{#                                    </div>#}
-{#                                    <div class="test_compl">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="swiper-slide">#}
-{#                            <div class="test_item">#}
-{#                                <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});">#}
-{#                                    <div class="da">#}
-{#                                        <a href="./six.html"><img src="{% static 'img/ic_arrow-up-right.svg' %}" width="80px"#}
-{#                                                height="80px" alt="da"></a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                                <div class="test_text">#}
-{#                                    <div class="test_heading">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h2>Есть над чем задуматься: частокол на границе починят!</h2>#}
-{#                                        </a>#}
-{##}
-{#                                    </div>#}
-{#                                    <div class="test_perc">#}
-{#                                        <div class="perc_left">#}
-{#                                            <h4>Вопросов: 16</h4>#}
-{#                                        </div>#}
-{#                                        <div class="perc_right">#}
-{#                                            <h4>Время прохождения: 3 мин.</h4>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <div class="test_sub">#}
-{#                                        <h3>Как принято считать, представители современных социальных резервов формируют#}
-{#                                            глобальную экономическую сеть и при этом - заблокированы в рамках своих#}
-{#                                            собственных#}
-{#                                            рациональных ограничений.</h3>#}
-{#                                    </div>#}
-{#                                    <div class="test_compl">#}
-{#                                        <a href="./six.html">#}
-{#                                            <h3>{% trans 'Пройти тест' %}</h3>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
 
                     </div>
                     <div style="color: black;" class="swiper-button-next"></div>
@@ -1320,229 +816,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-{#                        <div class="redact_item">#}
-{#                            <div class="redact_left">#}
-{#                                <a class="redact_left__logo" href="./third.html"#}
-{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
-{#                                </a>#}
-{#                                <div class="redact_left__text">#}
-{#                                    <div class="redact_date">#}
-{#                                        <h3>05 Апрель 2021</h3>#}
-{#                                    </div>#}
-{#                                    <div class="redact_title">#}
-{#                                        <a href="./forth.html">#}
-{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
-{#                                                депрессии#}
-{#                                            </h2>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                    <div class="redact_subtitle">#}
-{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
-{#                                            позиций,#}
-{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
-{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
-{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
-{#                                            из-за#}
-{#                                            чего возрастает их статус бесполезности.#}
-{#                                        </h3>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="redact_right">#}
-{#                                <div class="redact_ending">#}
-{#                                    <a href="./forth.html">#}
-{#                                        <h3>Развитие</h3>#}
-{#                                    </a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="redact_item">#}
-{#                            <div class="redact_left">#}
-{#                                <a class="redact_left__logo" href="./third.html"#}
-{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
-{#                                </a>#}
-{#                                <div class="redact_left__text">#}
-{#                                    <div class="redact_date">#}
-{#                                        <h3>05 Апрель 2021</h3>#}
-{#                                    </div>#}
-{#                                    <div class="redact_title">#}
-{#                                        <a href="./forth.html">#}
-{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
-{#                                                депрессии#}
-{#                                            </h2>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                    <div class="redact_subtitle">#}
-{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
-{#                                            позиций,#}
-{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
-{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
-{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
-{#                                            из-за#}
-{#                                            чего возрастает их статус бесполезности.#}
-{#                                        </h3>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="redact_right">#}
-{#                                <div class="redact_ending">#}
-{#                                    <a href="./forth.html">#}
-{#                                        <h3>Развитие</h3>#}
-{#                                    </a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="redact_item">#}
-{#                            <div class="redact_left">#}
-{#                                <a class="redact_left__logo" href="./third.html"#}
-{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
-{#                                </a>#}
-{#                                <div class="redact_left__text">#}
-{#                                    <div class="redact_date">#}
-{#                                        <h3>05 Апрель 2021</h3>#}
-{#                                    </div>#}
-{#                                    <div class="redact_title">#}
-{#                                        <a href="./forth.html">#}
-{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
-{#                                                депрессии#}
-{#                                            </h2>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                    <div class="redact_subtitle">#}
-{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
-{#                                            позиций,#}
-{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
-{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
-{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
-{#                                            из-за#}
-{#                                            чего возрастает их статус бесполезности.#}
-{#                                        </h3>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="redact_right">#}
-{#                                <div class="redact_ending">#}
-{#                                    <a href="./forth.html">#}
-{#                                        <h3>Развитие</h3>#}
-{#                                    </a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="redact_item">#}
-{#                            <div class="redact_left">#}
-{#                                <a class="redact_left__logo" href="./third.html"#}
-{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
-{#                                </a>#}
-{#                                <div class="redact_left__text">#}
-{#                                    <div class="redact_date">#}
-{#                                        <h3>05 Апрель 2021</h3>#}
-{#                                    </div>#}
-{#                                    <div class="redact_title">#}
-{#                                        <a href="./forth.html">#}
-{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
-{#                                                депрессии#}
-{#                                            </h2>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                    <div class="redact_subtitle">#}
-{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
-{#                                            позиций,#}
-{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
-{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
-{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
-{#                                            из-за#}
-{#                                            чего возрастает их статус бесполезности.#}
-{#                                        </h3>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="redact_right">#}
-{#                                <div class="redact_ending">#}
-{#                                    <a href="./forth.html">#}
-{#                                        <h3>Развитие</h3>#}
-{#                                    </a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="redact_item">#}
-{#                            <div class="redact_left">#}
-{#                                <a class="redact_left__logo" href="./third.html"#}
-{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
-{#                                </a>#}
-{#                                <div class="redact_left__text">#}
-{#                                    <div class="redact_date">#}
-{#                                        <h3>05 Апрель 2021</h3>#}
-{#                                    </div>#}
-{#                                    <div class="redact_title">#}
-{#                                        <a href="./forth.html">#}
-{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
-{#                                                депрессии#}
-{#                                            </h2>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                    <div class="redact_subtitle">#}
-{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
-{#                                            позиций,#}
-{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
-{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
-{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
-{#                                            из-за#}
-{#                                            чего возрастает их статус бесполезности.#}
-{#                                        </h3>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="redact_right">#}
-{#                                <div class="redact_ending">#}
-{#                                    <a href="./forth.html">#}
-{#                                        <h3>Развитие</h3>#}
-{#                                    </a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{##}
-{#                        <div class="redact_item">#}
-{#                            <div class="redact_left">#}
-{#                                <a class="redact_left__logo" href="./third.html"#}
-{#                                   style="background-image: url({% static 'img/pict5.svg' %});">#}
-{#                                </a>#}
-{#                                <div class="redact_left__text">#}
-{#                                    <div class="redact_date">#}
-{#                                        <h3>05 Апрель 2021</h3>#}
-{#                                    </div>#}
-{#                                    <div class="redact_title">#}
-{#                                        <a href="./forth.html">#}
-{#                                            <h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой#}
-{#                                                депрессии#}
-{#                                            </h2>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                    <div class="redact_subtitle">#}
-{#                                        <h3>Но перспективное планирование предопределяет высокую востребованность#}
-{#                                            позиций,#}
-{#                                            занимаемых участниками в отношении поставленных задач. Как принято считать,#}
-{#                                            сторонники тоталитаризма в науке лишь добавляют фракционных разногласий и#}
-{#                                            смешаны с не уникальными данными до степени совершенной неузнаваемости,#}
-{#                                            из-за#}
-{#                                            чего возрастает их статус бесполезности.#}
-{#                                        </h3>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="redact_right">#}
-{#                                <div class="redact_ending">#}
-{#                                    <a href="./forth.html">#}
-{#                                        <h3>Развитие</h3>#}
-{#                                    </a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
 
                     </div>
                 </div>

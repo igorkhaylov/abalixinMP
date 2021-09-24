@@ -1,6 +1,6 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
-from .models import Ticker, Articles, Author, Categories, MainBlock, UzbNews, WorldNews, Video, Tests
+from .models import Ticker, Articles, Author, Categories, MainBlock, UzbNews, WorldNews, Video, Tests, Podcasts
 from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
@@ -111,6 +111,9 @@ class MainBlockAdmin(admin.ModelAdmin):
         ("Лучшая статья", {
             'fields': ('bestArticle',)
         }),
+        ("Подкаст", {
+            'fields': ('podcast',)
+        }),
         ("6 статей на выбор", {
             'fields': ('article7', 'article8', 'article9',
                        'article10', 'article11', 'article12',)
@@ -152,7 +155,14 @@ class VideoAdmin(TranslationAdmin):
 class TestsAdmin(TranslationAdmin):
     list_display = ('title', )
     save_as = True
+    save_on_top = True
 
+
+@admin.register(Podcasts)
+class PodcastsAdmin(TranslationAdmin):
+    list_display = ('title', 'genre')
+    save_as = True
+    save_on_top = True
 
 # admin.site.register(MainBlock)
 

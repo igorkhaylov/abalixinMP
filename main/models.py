@@ -119,6 +119,7 @@ class MainBlock(models.Model):
     article5 = models.ForeignKey("Articles", verbose_name="Статья 5", related_name="article5", on_delete=models.PROTECT)
     article6 = models.ForeignKey("Articles", verbose_name="Статья 6", related_name="article6", on_delete=models.PROTECT)
 
+    podcast = models.ForeignKey("Podcasts", verbose_name="Подкаст", related_name="podcast", on_delete=models.PROTECT)
 
     article7 = models.ForeignKey("Articles", verbose_name="Статья 1", related_name="article7", on_delete=models.PROTECT)
     article8 = models.ForeignKey("Articles", verbose_name="Статья 2", related_name="article8", on_delete=models.PROTECT)
@@ -163,6 +164,7 @@ class Tests(models.Model):
     questions = models.IntegerField("Количество вопросов", default=0)
     passage_time = models.SmallIntegerField("Время прохождения мин", default=0)
     link = models.CharField("Ссылка на тест", max_length=250)
+    date = models.DateTimeField("Дата и время")
 
     def __str__(self):
         return self.title
@@ -172,3 +174,18 @@ class Tests(models.Model):
         verbose_name_plural = "Тесты"
 
 
+class Podcasts(models.Model):
+    title = models.CharField("Название", max_length=50)
+    genre = models.CharField("Жанр", max_length=50)
+    author = models.CharField("Автор", max_length=100)
+    description = models.TextField("Описание", blank=True)
+    file = models.FileField("Аудио файл", upload_to="podcasts_audio/", blank=True)
+    image = models.ImageField("Картинка", upload_to="podcasts/%Y/%m/%d/")
+    link = models.CharField("Сылка", max_length=250)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Подкаст"
+        verbose_name_plural = "Подкасты"

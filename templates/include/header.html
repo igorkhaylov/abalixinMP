@@ -10,17 +10,17 @@
             </div>
             <nav class="header_nav__menu">
                 <div class="nav_menu__link">
-                    <a href="./second.html">
+                    <a href="{% url 'news' %}">
                         <h3>{% trans 'Новости' %}</h3>
                     </a>
                 </div>
                 <div class="nav_menu__link">
-                    <a href="./third.html">
+                    <a href="{% url 'categories' %}">
                         <h3>{% trans 'Статьи' %}</h3>
                     </a>
                 </div>
                 <div class="nav_menu__link">
-                    <a href="./seven.html">
+                    <a href="{% url 'podcasts' %}">
                         <h3>{% trans 'Подкасты' %}</h3>
                     </a>
                 </div>
@@ -30,7 +30,7 @@
                     </a>
                 </div>
                 <div class="nav_menu__link">
-                    <a href="./six.html">
+                    <a href="{% url 'tests' %}">
                         <h3>{% trans 'Тесты' %}</h3>
                     </a>
                 </div>
@@ -98,11 +98,11 @@
 
                 <!-- Верхний слой содержимого -->
                 <div class="overlay-content">
-                    <a href="./third.html">{% trans 'Статьи' %}</a>
-                    <a href="./second.html">{% trans 'Новости' %}</a>
-                    <a href="./six.html">{% trans 'Тесты' %}</a>
-                    <a href="./seven.html">{% trans 'Подкасты' %}</a>
-                    <a href="#">{% trans 'Видео' %}</a>
+                    <a href="{% url 'categories' %}">{% trans 'Статьи' %}</a>
+                    <a href="{% url 'news' %}">{% trans 'Новости' %}</a>
+                    <a href="{% url 'tests' %}">{% trans 'Тесты' %}</a>
+                    <a href="{% url 'podcasts' %}">{% trans 'Подкасты' %}</a>
+                    <a href="#vid">{% trans 'Видео' %}</a>
                 <a>
                     <h3>
                     {% for language in languages %}

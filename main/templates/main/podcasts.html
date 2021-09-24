@@ -1,0 +1,244 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подкасты</title>
+    <link rel="stylesheet" href="{% static 'css/podcasts22.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="icon" type="img/svg" href="{% static 'img/sitelogo.svg' %}">
+</head>
+
+<body>
+     <!-- Верстка хедера -->
+
+    <div class="adv" style="margin-top: 0">
+        <img src="{% static 'img/reklama.png' %}" alt="da">
+    </div>
+
+     {% include 'include/header.html' %}
+    <!-- Конец хедера -->
+
+    <main class="main">
+        <div class="container">
+            <div class="container_topbar">
+                <div class="container_topbar__left">
+                    <h1>ПОДКАСТЫ</h1>
+                    <h4>В своём стремлении повысить качество жизни, они забывают, что современная методология разработки играет важную роль в формировании первоочередных требований.</h4>
+                </div>
+                <div class="container_topbar__right">
+                    <img src="{% static 'img/cuate.svg' %}" alt="da">
+                </div>
+            </div>
+            <div class="container_main">
+                {% for podcast in podcasts %}
+
+
+                <div class="container_main__item">
+                    <div class="container_main__item___top" style="background-image: url({{ podcast.image.url }});"></div>
+                    <div class="container_main__item___bottom">
+                        <div class="bottom_left">
+                            <h3>{{ podcast.title }}</h3>
+                            <h5>Жанр: {{ podcast.genre }}</h5>
+                        </div>
+                        <div class="bottom_right">
+                            <button class="playyer">
+                                <a href="{{ podcast.link }}"><h3>Слушать</h3></a>
+                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+{#                <div class="container_main__item">#}
+{#                    <div class="container_main__item___top" style="background-image: url(img/dadadadadsakdasdka.svg);"></div>#}
+{#                    <div class="container_main__item___bottom">#}
+{#                        <div class="bottom_left">#}
+{#                            <h3>Чумовой Доктор</h3>#}
+{#                            <h5>Жанр: медецина</h5>#}
+{#                        </div>#}
+{#                        <div class="bottom_right">#}
+{#                            <button class="playyer">#}
+{#                                <a href="#"><h3>Слушать</h3></a>#}
+{#                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="container_main__item">#}
+{#                    <div class="container_main__item___top" style="background-image: url(img/dadadadadsakdasdka.svg);"></div>#}
+{#                    <div class="container_main__item___bottom">#}
+{#                        <div class="bottom_left">#}
+{#                            <h3>Чумовой Доктор</h3>#}
+{#                            <h5>Жанр: медецина</h5>#}
+{#                        </div>#}
+{#                        <div class="bottom_right">#}
+{#                            <button class="playyer">#}
+{#                                <a href="#"><h3>Слушать</h3></a>#}
+{#                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="container_main__item">#}
+{#                    <div class="container_main__item___top" style="background-image: url(img/dadadadadsakdasdka.svg);"></div>#}
+{#                    <div class="container_main__item___bottom">#}
+{#                        <div class="bottom_left">#}
+{#                            <h3>Чумовой Доктор</h3>#}
+{#                            <h5>Жанр: медецина</h5>#}
+{#                        </div>#}
+{#                        <div class="bottom_right">#}
+{#                            <button class="playyer">#}
+{#                                <a href="#"><h3>Слушать</h3></a>#}
+{#                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="container_main__item">#}
+{#                    <div class="container_main__item___top" style="background-image: url(img/dadadadadsakdasdka.svg);"></div>#}
+{#                    <div class="container_main__item___bottom">#}
+{#                        <div class="bottom_left">#}
+{#                            <h3>Чумовой Доктор</h3>#}
+{#                            <h5>Жанр: медецина</h5>#}
+{#                        </div>#}
+{#                        <div class="bottom_right">#}
+{#                            <button class="playyer">#}
+{#                                <a href="#"><h3>Слушать</h3></a>#}
+{#                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="container_main__item">#}
+{#                    <div class="container_main__item___top" style="background-image: url(img/dadadadadsakdasdka.svg);"></div>#}
+{#                    <div class="container_main__item___bottom">#}
+{#                        <div class="bottom_left">#}
+{#                            <h3>Чумовой Доктор</h3>#}
+{#                            <h5>Жанр: медецина</h5>#}
+{#                        </div>#}
+{#                        <div class="bottom_right">#}
+{#                            <button class="playyer">#}
+{#                                <a href="#"><h3>Слушать</h3></a>#}
+{#                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="container_main__item">#}
+{#                    <div class="container_main__item___top" style="background-image: url(img/dadadadadsakdasdka.svg);"></div>#}
+{#                    <div class="container_main__item___bottom">#}
+{#                        <div class="bottom_left">#}
+{#                            <h3>Чумовой Доктор</h3>#}
+{#                            <h5>Жанр: медецина</h5>#}
+{#                        </div>#}
+{#                        <div class="bottom_right">#}
+{#                            <button class="playyer">#}
+{#                                <a href="#"><h3>Слушать</h3></a>#}
+{#                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="container_main__item">#}
+{#                    <div class="container_main__item___top" style="background-image: url(img/dadadadadsakdasdka.svg);"></div>#}
+{#                    <div class="container_main__item___bottom">#}
+{#                        <div class="bottom_left">#}
+{#                            <h3>Чумовой Доктор</h3>#}
+{#                            <h5>Жанр: медецина</h5>#}
+{#                        </div>#}
+{#                        <div class="bottom_right">#}
+{#                            <button class="playyer">#}
+{#                                <a href="#"><h3>Слушать</h3></a>#}
+{#                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="container_main__item">#}
+{#                    <div class="container_main__item___top" style="background-image: url(img/dadadadadsakdasdka.svg);"></div>#}
+{#                    <div class="container_main__item___bottom">#}
+{#                        <div class="bottom_left">#}
+{#                            <h3>Чумовой Доктор</h3>#}
+{#                            <h5>Жанр: медецина</h5>#}
+{#                        </div>#}
+{#                        <div class="bottom_right">#}
+{#                            <button class="playyer">#}
+{#                                <a href="#"><h3>Слушать</h3></a>#}
+{#                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="container_main__item">#}
+{#                    <div class="container_main__item___top" style="background-image: url(img/dadadadadsakdasdka.svg);"></div>#}
+{#                    <div class="container_main__item___bottom">#}
+{#                        <div class="bottom_left">#}
+{#                            <h3>Чумовой Доктор</h3>#}
+{#                            <h5>Жанр: медецина</h5>#}
+{#                        </div>#}
+{#                        <div class="bottom_right">#}
+{#                            <button class="playyer">#}
+{#                                <a href="#"><h3>Слушать</h3></a>#}
+{#                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="container_main__item">#}
+{#                    <div class="container_main__item___top" style="background-image: url(img/dadadadadsakdasdka.svg);"></div>#}
+{#                    <div class="container_main__item___bottom">#}
+{#                        <div class="bottom_left">#}
+{#                            <h3>Чумовой Доктор</h3>#}
+{#                            <h5>Жанр: медецина</h5>#}
+{#                        </div>#}
+{#                        <div class="bottom_right">#}
+{#                            <button class="playyer">#}
+{#                                <a href="#"><h3>Слушать</h3></a>#}
+{#                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="container_main__item">#}
+{#                    <div class="container_main__item___top" style="background-image: url(img/dadadadadsakdasdka.svg);"></div>#}
+{#                    <div class="container_main__item___bottom">#}
+{#                        <div class="bottom_left">#}
+{#                            <h3>Чумовой Доктор</h3>#}
+{#                            <h5>Жанр: медецина</h5>#}
+{#                        </div>#}
+{#                        <div class="bottom_right">#}
+{#                            <button class="playyer">#}
+{#                                <a href="#"><h3>Слушать</h3></a>#}
+{#                                <!-- <img src="./img/lublufigmu.svg" alt="da"> -->#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+            </div>
+        </div>
+    </main>
+
+     {% include 'include/footer.html' %}
+   
+
+    <script>
+        /* Открыть, когда кто-то нажимает на элемент span */
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+            document.body.style.overflowY = 'hidden'
+        }
+
+        /* Закрыть, когда кто-то нажимает на символ "x" внутри наложения */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+            document.body.style.overflowY = 'scroll'
+        }
+    </script>
+</body>
+
+</html>

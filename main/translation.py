@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import Ticker, Articles, Author, Categories, UzbNews, WorldNews, Video, Tests
+from .models import Ticker, Articles, Author, Categories, UzbNews, WorldNews, Video, Tests, Podcasts
 
 
 @register(Ticker)
@@ -55,4 +55,9 @@ class CategoriesTranslationOptions(TranslationOptions):
 @register(Tests)
 class TestsTranslationOptions(TranslationOptions):
     fields = ('title', 'description', )
+
+
+@register(Podcasts)
+class PodcastsTranslationOption(TranslationOptions):
+    fields = ('title', 'genre', 'author', 'description', )
 
