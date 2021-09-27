@@ -49,7 +49,7 @@ class AuthorTranslationOptions(TranslationOptions):
 
 @register(Categories)
 class CategoriesTranslationOptions(TranslationOptions):
-    fields = ('name', )
+    fields = ('name', 'description')
 
 
 @register(Tests)

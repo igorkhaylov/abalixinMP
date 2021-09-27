@@ -1,0 +1,161 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+    <link rel="icon" href="{% static 'img/sitelogo.svg' %}">
+</head>
+<body>
+     <!-- Верстка хедера -->
+     
+    <div class="adv" style="margin-top: 0">
+        <img src="{% static 'img/reklama.png' %}" alt="da">
+    </div>
+     {% include 'include/header.html' %}
+    <div class="wrapper">
+        <div class="container">
+            <div class="left__sidebar">
+                <div class="left__sidebar__text">
+                    <div class="left_sidebar__title">
+                        <a href="{% url 'categories' %}"><h2>Все Статьи</h2></a>
+                    </div>
+
+                    {% for category in categories %}
+{#                        <div class="left_sidebar__link"><a href="{% url 'category_view' category.url %}">{{ category.name }}</a></div>#}
+                        <div class="left_sidebar__link"><a style="border-bottom: 1px solid black;" href="{% url 'category_view' category.url %}">{{ category.name }}</a></div>
+                    {% endfor %}
+{#                    <div class="left_sidebar__link"><a style="border-bottom: 1px solid black;" href="./forth.html">Люди</a></div>#}
+{#                    <div class="left_sidebar__link"><a href="./forth2.html">Развлечения</a></div>#}
+{#                    <div class="left_sidebar__link"><a href="./forth3.html">Стиль</a></div>#}
+{#                    <div class="left_sidebar__link"><a href="./forth4.html">Бизнес</a></div>#}
+{#                    <div class="left_sidebar__link"><a href="./forth5.html">Культура</a></div>#}
+{#                    <div class="left_sidebar__link"><a href="./forth7.html">Развитие</a></div>#}
+{#                    <div class="left_sidebar__link"><a href="./forth6.html">Спорт</a></div>#}
+                </div>
+            </div>
+            <div class="right__sidebar">
+                <div class="right_sidebar__image">
+                    <div class="right_sidebar__text">
+                        <div class="right_sidebar__title">
+                         <a href="#">   <h2>{{ category.name|upper }}</h2></a>
+                        </div>
+                        <div class="right_sidebar__subtitle">
+                            <h4>{{ category.description }}</h4>
+                        </div>
+                    </div>
+                    <div class="right_imgg">
+                        <img src="{% static 'img/cuate.svg' %}" alt="da" height="250px">
+                    </div>
+                </div>
+               
+                <!-- Выбор редакции -->
+                <div class="redact_wrap">
+                    <div class="redact_container">
+                        <div class="redact__title">
+    
+                        </div>
+                        <div class="redact__content">
+
+                            {% for article in articles %}
+
+
+                            <div class="redact_item">
+                                <div class="redact_left">
+                                    <div class="redact_left__logo" style="background-image: url({{ article.image.url }});">
+                                       
+                                    </div>
+                                    <div class="redact_left__text">
+                                        <div class="redact_date">
+                                            <h3>{{ article.date_created|date:"j F Y" }}</h3>
+                                        </div>
+                                        <div class="redact_title">
+                                            <a href="#"><h2>{{ article.title }}</h2></a>
+                                        </div>
+                                        <div class="redact_subtitle">
+                                            <h3>{{ article.short_description }}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="redact_right">
+                                    <div class="redact_right__logo">
+                                        <a href="#"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a>
+                                    </div>
+                                    <div class="redact_ending">
+                                        <a href="#"><h3>{{ article.categories }}</h3></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+
+                            <div class="redact_item">
+                                <div class="redact_left">
+                                    <div class="redact_left__logo" style="background-image: url({% static 'img/gazety-fon-cvet.png' %});">
+                                       
+                                    </div>
+                                    <div class="redact_left__text">
+                                        <div class="redact_date">
+                                            <h3>05 Апрель 2021</h3>
+                                        </div>
+                                        <div class="redact_title">
+                                            <a href="#"><h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
+                                                депрессии</h2></a>
+                                        </div>
+                                        <div class="redact_subtitle">
+                                            <h3>Но перспективное планирование предопределяет высокую востребованность
+                                                позиций,
+                                                занимаемых участниками в отношении поставленных задач. Как принято
+                                                считать,
+                                                сторонники тоталитаризма в науке лишь добавляют фракционных разногласий
+                                                и
+                                                смешаны с не уникальными данными до степени совершенной неузнаваемости,
+                                                из-за
+                                                чего возрастает их статус бесполезности.</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="redact_right">
+                                    <div class="redact_right__logo">
+                                        <a href="#"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a>
+                                    </div>
+                                    <div class="redact_ending">
+                                        <a href="#"><h3>Развитие</h3></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="eshe">
+                        <a href="#"><h3 style="text-decoration: underline;">Показать ещё ˅</h3></a> 
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'include/footer.html' %}
+
+        
+    <script>
+        /* Открыть, когда кто-то нажимает на элемент span */
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+            document.body.style.overflowY = 'hidden'
+        }
+
+        /* Закрыть, когда кто-то нажимает на символ "x" внутри наложения */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+            document.body.style.overflowY = 'scroll'
+        }
+    </script>
+</body>
+</html>

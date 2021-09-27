@@ -33,7 +33,7 @@
                         <h2>Все Статьи</h2>
                     </div>
                     {% for category in categories %}
-                        <div class="left_sidebar__link"><a href="#{{ category.url }}">{{ category.name }}</a></div>
+                        <div class="left_sidebar__link"><a href="{% url 'category_view' category.url %}">{{ category.name }}</a></div>
                     {% endfor %}
 
 {#                    <div class="left_sidebar__link"><a href="#">Люди</a></div>#}
@@ -126,72 +126,26 @@
         <div class="test_praviy">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
+                    {% for test in tests %}
 
                     <div class="swiper-slide">
                         <div class="test_item">
-                            <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});"></div>
+                            <div class="test_img" style="background-image: url({{ test.picture.url }});"></div>
                             <div class="test_text">
                                 <div class="test_heading">
-                                    <h2>Есть над чем задуматься: частокол на границе починят!</h2>
+                                    <h2>{{ test.title }}</h2>
                                 </div>
                                 <div class="test_sub">
-                                    <h3>Как принято считать, представители современных социальных резервов формируют
-                                        глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                        собственных
-                                        рациональных ограничений.</h3>
+                                    <h3>{{ test.description }}</h3>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="test_item">
-                            <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});"></div>
-                            <div class="test_text">
-                                <div class="test_heading">
-                                    <h2>Есть над чем задуматься: частокол на границе починят!</h2>
-                                </div>
-                                <div class="test_sub">
-                                    <h3>Как принято считать, представители современных социальных резервов формируют
-                                        глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                        собственных
-                                        рациональных ограничений.</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="test_item">
-                            <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});"></div>
-                            <div class="test_text">
-                                <div class="test_heading">
-                                    <h2>Есть над чем задуматься: частокол на границе починят!</h2>
-                                </div>
-                                <div class="test_sub">
-                                    <h3>Как принято считать, представители современных социальных резервов формируют
-                                        глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                        собственных
-                                        рациональных ограничений.</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="test_item">
-                            <div class="test_img" style="background-image: url({% static 'img/rectda.svg' %});"></div>
-                            <div class="test_text">
-                                <div class="test_heading">
-                                    <h2>Есть над чем задуматься: частокол на границе починят!</h2>
-                                </div>
-                                <div class="test_sub">
-                                    <h3>Как принято считать, представители современных социальных резервов формируют
-                                        глобальную экономическую сеть и при этом - заблокированы в рамках своих
-                                        собственных
-                                        рациональных ограничений.</h3>
+                                <div>
+                                    <a href="##" style="text-decoration: underline; padding-left: 1rem">Пройти тест</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    {% endfor %}
 
                 </div>
                 <div class="swiper-button-prev"></div>
@@ -201,66 +155,129 @@
     </div>
 
         <!-- Слайдер -->
-        <div class="slider">
+
+    <div class="slider">
             <div class="slider__first">
                 <div class="slider__first__header">
                     <div class="slider_first__title">
-                        <h1>ПОДКАСТЫ</h1>
+                        <h1>{% trans 'ПОДКАСТЫ' %}</h1>
                     </div>
                     <div class="slider_first__btn">
-                        <a href="#">Перейти к подкасту</a>
+                        <a href="{{ podcast.link }}">{% trans "Перейти к подкасту" %}</a>
                     </div>
                 </div>
                 <div class="first_slider__content">
-                    <div class="slider__first_img" style="background-image: url({% static 'img/bgpodcast.svg' %});"></div>
+                    <div class="slider__first_img" style="background-image: url({{ podcast.image.url }});"></div>
                     <div class="slider__first_text">
                         <div class="slider__first_title">
-                            <h2>Бежать</h2>
+                            <h2>{{ podcast.genre }}</h2>
                         </div>
                         <div class="slider__first_subtitle">
-                            <h3>Автор: Абадихин Игорь & Студия Main post</h3>
+                            <h3>Автор: {{ podcast.author }}</h3>
                         </div>
                         <div class="slider__first_endtitle">
-                            <h4>Это подкаст о мире, где беженцев сегодня больше, чем во времена Второй мировой. И о
-                                людях, которые ищут в этом мире пристанище. В каждом эпизоде мы рассказываем историю
-                                очередного беглеца. Кто-то сбежал от гражданской войны в Европу. Кто-то — из Европы в
-                                Россию. А кто-то уехал из России, потому что не смог обрести здесь дом.</h4>
+                            <h4>{{ podcast.description }}</h4>
                         </div>
                         <div class="slider_links_wrap">
                             <div class="first_slider_links__title">
-                                <h3>Доступно на:</h3>
+                                <h3>{% trans 'Доступно на' %}:</h3>
                             </div>
                             <div class="first_slider__links">
                                 <div class="first_slider__link">
-                                    <a href="#"><img src="./img/image1.svg" alt="link"></a>
+                                    <a href="https://www.google.ru/"><img src="{% static 'img/image1.svg' %}" alt="link"></a>
                                 </div>
                                 <div class="first_slider__link">
-                                    <a href="#"><img src="./img/image2.svg" alt="link"></a>
+                                    <a href="https://www.google.ru/"><img src="{% static 'img/image2.svg' %}" alt="link"></a>
                                 </div>
                                 <div class="first_slider__link">
-                                    <a href="#"><img src="./img/image3.svg" alt="link"></a>
+                                    <a href="https://www.google.ru/"><img src="{% static 'img/image3.svg' %}" alt="link"></a>
                                 </div>
                                 <div class="first_slider__link">
-                                    <a href="#"><img src="./img/icon_add1.svg" alt="link"></a>
+                                    <a href="https://www.google.ru/"><img src="{% static 'img/icon_add1.svg' %}" alt="link"></a>
                                 </div>
                             </div>
                         </div>
                         <div class="first_slider__audio">
-                            <div class="first_slider__audio__title">
+                            <!-- <div class="first_slider__audio__title">
                                 <h3>Эпизоды:</h3>
-                            </div>
+                            </div> -->
                             <div class="audio_main__block">
                                 <div class="first_slider__audio__subtitle">
-                                    <h3>Эпизод I. Архипелаг Бежлаг</h3>
+                                    <h3>{{ podcast.title }}</h3>
                                 </div>
-                                <audio class="audio" src="./audios/Eminem - Godzilla.flac" controls></audio>
+{#                                <audio class="audio" src="{% static 'audio/Eminem - Godzilla.flac' %}" controls></audio>#}
+                                <audio class="audio" src="{{ podcast.file.url }}" type="audio/mpeg" controls></audio>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+
+
+
+
+{#        <div class="slider">#}
+{#            <div class="slider__first">#}
+{#                <div class="slider__first__header">#}
+{#                    <div class="slider_first__title">#}
+{#                        <h1>ПОДКАСТЫ</h1>#}
+{#                    </div>#}
+{#                    <div class="slider_first__btn">#}
+{#                        <a href="#">Перейти к подкасту</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="first_slider__content">#}
+{#                    <div class="slider__first_img" style="background-image: url({% static 'img/bgpodcast.svg' %});"></div>#}
+{#                    <div class="slider__first_text">#}
+{#                        <div class="slider__first_title">#}
+{#                            <h2>Бежать</h2>#}
+{#                        </div>#}
+{#                        <div class="slider__first_subtitle">#}
+{#                            <h3>Автор: Абадихин Игорь & Студия Main post</h3>#}
+{#                        </div>#}
+{#                        <div class="slider__first_endtitle">#}
+{#                            <h4>Это подкаст о мире, где беженцев сегодня больше, чем во времена Второй мировой. И о#}
+{#                                людях, которые ищут в этом мире пристанище. В каждом эпизоде мы рассказываем историю#}
+{#                                очередного беглеца. Кто-то сбежал от гражданской войны в Европу. Кто-то — из Европы в#}
+{#                                Россию. А кто-то уехал из России, потому что не смог обрести здесь дом.</h4>#}
+{#                        </div>#}
+{#                        <div class="slider_links_wrap">#}
+{#                            <div class="first_slider_links__title">#}
+{#                                <h3>Доступно на:</h3>#}
+{#                            </div>#}
+{#                            <div class="first_slider__links">#}
+{#                                <div class="first_slider__link">#}
+{#                                    <a href="#"><img src="./img/image1.svg" alt="link"></a>#}
+{#                                </div>#}
+{#                                <div class="first_slider__link">#}
+{#                                    <a href="#"><img src="./img/image2.svg" alt="link"></a>#}
+{#                                </div>#}
+{#                                <div class="first_slider__link">#}
+{#                                    <a href="#"><img src="./img/image3.svg" alt="link"></a>#}
+{#                                </div>#}
+{#                                <div class="first_slider__link">#}
+{#                                    <a href="#"><img src="./img/icon_add1.svg" alt="link"></a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="first_slider__audio">#}
+{#                            <div class="first_slider__audio__title">#}
+{#                                <h3>Эпизоды:</h3>#}
+{#                            </div>#}
+{#                            <div class="audio_main__block">#}
+{#                                <div class="first_slider__audio__subtitle">#}
+{#                                    <h3>Эпизод I. Архипелаг Бежлаг</h3>#}
+{#                                </div>#}
+{#                                <audio class="audio" src="./audios/Eminem - Godzilla.flac" controls></audio>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
 
 
     {% include 'include/footer.html' %}

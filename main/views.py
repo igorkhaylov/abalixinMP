@@ -101,12 +101,23 @@ def categories(request):
     categories = Categories.objects.all()
     articles = Articles.objects.all()
     tests = Tests.objects.all()
+    podcast = Podcasts.objects.get(id=mainBlock.podcast.id)
     return render(request, "main/categories.html", {"categories": categories,
                                                     "articles": articles,
                                                     "tests": tests,
                                                     "bestArticle": bestArticle,
+                                                    "podcast": podcast,
                                                     })
 
+
+def category_view(request, slug):
+    category = get_object_or_404(Categories, url=slug)
+    categories = Categories.objects.all()
+    articles = Articles.objects.filter(categories_id=category.id)
+    return render(request, "main/category.html", {"category": category,
+                                                  "categories": categories,
+                                                  "articles": articles,
+                                                  })
 
 def podcasts(request):
     podcasts = Podcasts.objects.all()

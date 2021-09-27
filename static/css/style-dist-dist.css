@@ -1988,6 +1988,7 @@ body {
     }
     .state_end__title {
         width: 100%;
+        right: 0;
     }
     .top_post_item_1 {
         height: 350px;
