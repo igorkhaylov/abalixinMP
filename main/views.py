@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Ticker, MainBlock, Articles, UzbNews, Video, Tests, WorldNews, Categories, Podcasts
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def index(request):
@@ -91,8 +92,12 @@ def world_news_detail(request, id):
 
 
 def tests(request):
+    mainBlock = MainBlock.objects.first()
+
+    bestArticle = Articles.objects.get(id=mainBlock.bestArticle.id)
+
     tests = Tests.objects.all()
-    return render(request, "main/tests.html", {"tests": tests})
+    return render(request, "main/tests.html", {"tests": tests, 'article': bestArticle, })
 
 
 def categories(request):
@@ -111,17 +116,27 @@ def categories(request):
 
 
 def category_view(request, slug):
+    page = request.GET.get('page', 1)
     category = get_object_or_404(Categories, url=slug)
-    categories = Categories.objects.all()
+    categories_list = Categories.objects.all()
     articles = Articles.objects.filter(categories_id=category.id)
+    paginator = Paginator(articles, 6)
+    try:
+        page_obj = paginator.page(page)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
     return render(request, "main/category.html", {"category": category,
-                                                  "categories": categories,
-                                                  "articles": articles,
+                                                  "categories": categories_list,
+                                                  # "articles": articles,
+                                                  "page_obj": page_obj,
                                                   })
 
+
 def podcasts(request):
-    podcasts = Podcasts.objects.all()
-    return render(request, "main/podcasts.html", {"podcasts": podcasts, })
+    podcasts_list = Podcasts.objects.all()
+    return render(request, "main/podcasts.html", {"podcasts": podcasts_list, })
 
 
 def news(request):

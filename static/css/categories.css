@@ -17,7 +17,7 @@
 
 .adv {
     width: 100%;
-    z-index: 10000000;
+    /*z-index: 10000000;*/
     position: relative;
 }
 
@@ -184,11 +184,11 @@
     overflow: hidden;
     -webkit-transition: 300ms;
     transition: 300ms;
-    z-index: 100;
+    /*z-index: 100;*/
 }
 
 .wrapper .container .right__sidebar .right_sidebar__image .category h3 {
-    z-index: 100;
+    /*z-index: 100;*/
 }
 
 .wrapper .container .right__sidebar .right_sidebar__image .category::after {

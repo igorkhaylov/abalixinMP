@@ -49,8 +49,6 @@ class TickerAdmin(TranslationAdmin):
 class ArticlesAdmin(TranslationAdmin):
     list_display = ('title', 'short_title',)
     form = ArticlesAdminForm
-    save_on_top = True
-    save_as = True
     fieldsets = (
         ("Первый блок", {
             'fields': ('title', 'short_title', 'image', 'slug', 'categories', 'video')
@@ -67,6 +65,8 @@ class ArticlesAdmin(TranslationAdmin):
     )
     readonly_fields = ('date_created', )
     prepopulated_fields = {'slug': ('title', )}
+    save_on_top = True
+    save_as = True
 
 
 @admin.register(UzbNews)

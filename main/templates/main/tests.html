@@ -60,27 +60,69 @@
         </div>
     </div>
 
-    <div class="best_state">
-        <div class="best_state__container">
-            <div class="best_state__item1">
-                <h2>Лучшая статья</h2>
-                <h3>Лишь акционеры крупнейших компаний являются только методом политического участия и объявлены нарушающими общечеловеческие нормы этики и морали.</h3>
+
+        <div class="podcast_wrap">
+            <div class="podcast_pre__title">
+                <div class="pre_title">
+                    <h2>{% trans 'Лучшая Статья' %}</h2>
+                </div>
+                <div class="pre_subtitle">
+                    <h3>{{ article.title1 }} {{ article.title2 }}</h3>
+                </div>
             </div>
-            <div class="best_state__item2"></div>
-            <div class="best_state__item3">
-                <div class="best_state__item3_header">
-                    <h3>Стиль</h3>
-                    <h3>2021</h3>
+            <div class="podcast_container">
+                {% if article.video %}
+                <iframe class="podcast__video"
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/{{ article.video|cut:"https://www.youtube.com/watch?v=" }}"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+                {% else %}
+                    <img class="best_state__image" src="{{ article.image.url }}" width="700" height="400"  alt="bestimages">
+                {% endif %}
+                <div class="podcast__content">
+                    <div class="podcast__text">
+                        <h1>{{ article.title }}</h1>
+                    </div>
+                    <div class="podcast__subtext">
+                        <h4>{{ article.short_description }}</h4>
+                    </div>
+                    <div class="podcast__btn">
+                        <a href="{% url 'article_detail' article.slug %}">
+                            <h3>{% trans 'Читать Статью' %}</h3>
+                        </a>
+                    </div>
                 </div>
-                <div class="best_state__item3_title">
-                    <h2>Нашу победу сопровождал гитарный перебор</h2>
-                    <h3>С другой стороны, существующая теория требует анализа укрепления моральных ценностей. Учитывая ключевые сценарии поведения, понимание сути ресурсосберегающих технологий напрямую зависит от модели развития.</h3>
-                </div>
-                <div class="best_state__item3_subtitle"></div>
-                <a class="read" href="#">Читать статью</a>
             </div>
         </div>
-    </div>
+
+
+
+{#    <div class="best_state">#}
+{#        <div class="best_state__container">#}
+{#            <div class="best_state__item1">#}
+{#                <h2>Лучшая статья</h2>#}
+{#                <h3>Лишь акционеры крупнейших компаний являются только методом политического участия и объявлены нарушающими общечеловеческие нормы этики и морали.</h3>#}
+{#            </div>#}
+{#            <div class="best_state__item2"></div>#}
+{#            <div class="best_state__item3">#}
+{#                <div class="best_state__item3_header">#}
+{#                    <h3>Стиль</h3>#}
+{#                    <h3>2021</h3>#}
+{#                </div>#}
+{#                <div class="best_state__item3_title">#}
+{#                    <h2>Нашу победу сопровождал гитарный перебор</h2>#}
+{#                    <h3>С другой стороны, существующая теория требует анализа укрепления моральных ценностей. Учитывая ключевые сценарии поведения, понимание сути ресурсосберегающих технологий напрямую зависит от модели развития.</h3>#}
+{#                </div>#}
+{#                <div class="best_state__item3_subtitle"></div>#}
+{#                <a class="read" href="#">Читать статью</a>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
 
     {% include "include/footer.html" %}
 

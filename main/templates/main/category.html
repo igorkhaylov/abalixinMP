@@ -62,7 +62,8 @@
                         </div>
                         <div class="redact__content">
 
-                            {% for article in articles %}
+{#                            {% for article in articles %}#}
+                                {% for article in page_obj %}
 
 
                             <div class="redact_item">
@@ -95,47 +96,60 @@
                             {% endfor %}
 
 
-                            <div class="redact_item">
-                                <div class="redact_left">
-                                    <div class="redact_left__logo" style="background-image: url({% static 'img/gazety-fon-cvet.png' %});">
-                                       
-                                    </div>
-                                    <div class="redact_left__text">
-                                        <div class="redact_date">
-                                            <h3>05 Апрель 2021</h3>
-                                        </div>
-                                        <div class="redact_title">
-                                            <a href="#"><h2>«Хотелось убить собственного ребёнка»: три истории о послеродовой
-                                                депрессии</h2></a>
-                                        </div>
-                                        <div class="redact_subtitle">
-                                            <h3>Но перспективное планирование предопределяет высокую востребованность
-                                                позиций,
-                                                занимаемых участниками в отношении поставленных задач. Как принято
-                                                считать,
-                                                сторонники тоталитаризма в науке лишь добавляют фракционных разногласий
-                                                и
-                                                смешаны с не уникальными данными до степени совершенной неузнаваемости,
-                                                из-за
-                                                чего возрастает их статус бесполезности.</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="redact_right">
-                                    <div class="redact_right__logo">
-                                        <a href="#"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a>
-                                    </div>
-                                    <div class="redact_ending">
-                                        <a href="#"><h3>Развитие</h3></a>
-                                    </div>
-                                </div>
-                            </div>
+
 
                         </div>
                     </div>
-                    <div class="eshe">
-                        <a href="#"><h3 style="text-decoration: underline;">Показать ещё ˅</h3></a> 
-                     </div>
+
+                    {% if page_obj.has_other_pages %}
+                        <nav aria-label="main-navigation" class="paginate wrapper">
+
+
+{#                            <li><a href="">1</a></li>#}
+{#                            <li><a href="" class="inactive">2</a></li>#}
+{#                            <li><a href="">3</a></li>#}
+{#                            <li><a href="" class="active">4</a></li>#}
+{#                            <li><a href="">5</a></li>#}
+{#                            <li><a href="" class="more">&hellip;</a></li>#}
+{#                            <li><a href="">98</a></li>#}
+{#                            <li><a href="">99</a></li>#}
+{#                            <li><a href="">100</a></li>#}
+{#                            <li><a href="">&rang;</a></li>#}
+
+                            <ul>
+                                {% if page_obj.has_previous %}
+                                    <li><a href="?page={{ page_obj.previous_page_number }}">&lang;</a></li>
+                                {% else %}
+                                    <li>
+                                        <span class="page-link">&lang;</span>
+                                    </li>
+                                {% endif %}
+
+
+                                {% for i in page_obj.paginator.page_range %}
+                                    {% if page_obj.number == i %}
+                                        <li><a href="" class="active">{{ i }}</a></li>
+                                    {% elif i > page_obj.number|add:-3 and i < page_obj.number|add:3 %}
+                                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if page_obj.has_next %}
+                                    <li><a href="?page={{ page_obj.next_page_number }}">&rang;</a></li>
+                                {% else %}
+                                    <li>
+                                        <span class="page-link">&rang;</span>
+                                    </li>
+{#                                    <li><a href="" class="">&rang;</a></li>#}
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    {% endif %}
+
+{#                    <div class="eshe">#}
+{#                        <a href="#"><h3 style="text-decoration: underline;">Показать ещё ˅</h3></a> #}
+{#                     </div>#}
                 </div>
             </div>
         </div>
