@@ -967,7 +967,7 @@
     }
 
     .test_praviy {
-        width: 69%;
+        width: 68%;
     }
 
     .tests_wrap {
@@ -1033,7 +1033,7 @@
     }
 
     .slider {
-        margin-bottom: 100px;
+        /*margin-bottom: 100px;*/
     }
 
     .tests .test_left {
@@ -1102,7 +1102,7 @@
         width: 100%;
     }
     .slider__first_text {
-        width: 100%;
+        width: 99%;
         margin-top: 50px;
         margin-left: 0px;
     }
@@ -1258,7 +1258,7 @@
     }
     .slider__first_endtitle {
         font-size: 13px;
-        width: 400px;
+        /*width: 400px;*/
     }
 
     .slider_first__btn {

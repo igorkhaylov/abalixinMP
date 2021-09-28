@@ -1054,6 +1054,7 @@ body {
 
 .audio {
     margin-top: 10px;
+    width: 100%;
 }
 
 .tests_wrap {
@@ -1889,7 +1890,7 @@ body {
     }
 
     .slider__first_text {
-        width: 100%;
+        width: 99%;
         margin-top: 50px;
         margin-left: 0px;
     }
@@ -2472,7 +2473,7 @@ body {
 
     .slider__first_endtitle {
         font-size: 13px;
-        width: 400px;
+        /*width: 400px;*/
     }
 
     .podcast_container {
@@ -2694,6 +2695,7 @@ body {
 
     .news_content__endtitle {
         font-size: 15px;
+        line-height: initial;
     }
 
     .redact_left__text {
@@ -2771,7 +2773,7 @@ body {
     }
 
     .news_content__subtitle {
-        width: 70%;
+        /*width: 70%;*/
     }
 
     .states_container__header {
@@ -2798,6 +2800,7 @@ body {
 
     .news_content__endtitle {
         width: 86%;
+        line-height: initial;
     }
 
     .content_header__left {
@@ -2837,7 +2840,7 @@ body {
     }
 
     .audio {
-        width: 100%;
+        width: 98%;
     }
 }
 

@@ -398,7 +398,8 @@
 @media screen and (max-width: 768px) {
     .container .right__sidebar .right_sidebar__content .sidebar__item {
         width: 700px;
-        margin-top: 70px;
+        /*margin-top: 70px;*/
+        /*margin-bottom: 125px;*/
     }
 
     .container .right__sidebar .right_sidebar__content .sidebar__item .sidebar_item__top {
@@ -411,7 +412,7 @@
     }
 
     .container .right__sidebar .right_sidebar__content .sidebar__item .sidebar_item__bottom .pass {
-        position: absolute;
+        /*position: absolute;*/
         top: 100px;
         right: 0;
     }
@@ -476,6 +477,11 @@
 }
 
 @media screen and (max-width: 540px) {
+    .container .right__sidebar .right_sidebar__content .sidebar__item {
+        width: 700px;
+        /*margin-top: 70px;*/
+        margin-bottom: 100px;
+    }
     .container .right__sidebar .right_sidebar__content .sidebar__item .sidebar_item__bottom .pass {
         position: absolute;
         top: 370px;

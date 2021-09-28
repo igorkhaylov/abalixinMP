@@ -895,7 +895,7 @@
     font-size: 13px;
   }
   .recent_line {
-    width: 90%;
+    width: 100%;
     overflow-x: scroll;
   }
   .recent_item h3 {
