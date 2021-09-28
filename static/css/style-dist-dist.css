@@ -36,7 +36,7 @@ body {
     font-weight: 900;
 }
 
-.state_num {
+.state_num, .state_date {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -251,7 +251,7 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    z-index: 2;
+    /*z-index: 2;*/
 }
 
 .news_content__title {
@@ -684,6 +684,7 @@ body {
 
 .state_article__subsubtitle {
     margin-top: 10px;
+    /*font-weight: lighter;*/
 }
 
 .state_end__title {
@@ -950,6 +951,7 @@ body {
     font-family: "Montseratt", sans-serif;
     font-size: 22px;
     letter-spacing: 0.12rem;
+    margin-bottom: 2rem;
 }
 
 .slider_first__btn {
@@ -1482,8 +1484,11 @@ body {
 }
 
 .second_text {
-    width: 300px;
+    /*width: 300px;*/
+    width: 75%;
+    font-size: 0.8em;
     margin: 0 auto;
+
     font-family: "Monsteratt", sans-serif;
 }
 
@@ -1819,7 +1824,7 @@ body {
     }
 
     .second_text h2 {
-        width: 200px;
+        /*width: 200px;*/
         margin-left: 30px;
         font-size: 20px;
     }
@@ -2002,6 +2007,7 @@ body {
 
     .state_end__title {
         width: 100%;
+        top: 325px;
     }
 }
 
@@ -2071,6 +2077,7 @@ body {
     .state_end__title {
         width: 100%;
         right: 0;
+        top: 325px;
     }
 
     .top_post_item_1 {
@@ -2204,7 +2211,7 @@ body {
     }
 
     .second_text {
-        width: 200px;
+        /*width: 200px;*/
     }
 
     .top_post__container {
@@ -2327,7 +2334,7 @@ body {
     width: 100%;
     line-height: 1.5;
     font-family: "Montseratt", sans-serif;
-    background-image: url("http://image.noelshack.com/fichiers/2016/46/1479595480-clouds.png");
+    /*background-image: url("http://image.noelshack.com/fichiers/2016/46/1479595480-clouds.png");*/
     background-repeat: repeat-x;
     -webkit-animation: animatedBackground 20s linear infinite;
     animation: animatedBackground 20s linear infinite;
@@ -2886,3 +2893,24 @@ body {
         margin-left: 30px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.state_article__subsubtitle h3{
+    font-weight: lighter;
+}
+
+
+

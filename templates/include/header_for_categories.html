@@ -96,8 +96,11 @@
             <!-- Кнопка для закрытия навигации наложения -->
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-            <!-- Верхний слой содержимого -->
+
+
             <div class="overlay-content">
+                            <div class="overlay_left">
+
                 <a href="{% url 'categories' %}">{% trans 'Статьи' %}</a>
                 <a href="{% url 'news' %}">{% trans 'Новости' %}</a>
                 <a href="{% url 'tests' %}">{% trans 'Тесты' %}</a>
@@ -120,13 +123,9 @@
                                             font-size: smaller"
                                             type="submit">
                                         {% if language.code == "uz" %}
-                                            {#                                            <p  style="font-family: Comic Neue; font-weight: bold">#}
                                             O'zbekcha
-                                            {#                                            </p>#}
                                         {% elif language.code == "ru" %}
-                                            {#                                             <p  style="font-family: Comic Neue; font-weight: bold">#}
                                             Русский
-                                            {#                                             </p>#}
                                         {% endif %}
                                     </button>
                                 </form>
@@ -134,10 +133,36 @@
                         {% endfor %}
                     </h3>
                 </a>
-                {#                    <a href="#">O'zbekcha</a>#}
+                            </div>
+
+            <div class="overlay_right">
+                {% for category in categories %}
+                    <div class="left_sidebar__link"><a style="color: aqua;" href="{% url 'category_view' category.url %}">{{ category.name }}</a></div>
+                {% endfor %}
+
+
+{#                    <div class="left_sidebar__link"><a style="color: aqua;" href="./forth2.html">Развлечения</a></div>#}
+{#                    <div class="left_sidebar__link"><a style="color: aqua;" href="./forth3.html">Стиль</a></div>#}
+{#                    <div class="left_sidebar__link"><a style="color: aqua;" href="./forth4.html">Бизнес</a></div>#}
+{#                    <div class="left_sidebar__link"><a style="color: aqua;" href="./forth5.html">Культура</a></div>#}
+{#                    <div class="left_sidebar__link"><a style="color: aqua;" href="./forth7.html">Развитие</a></div>#}
+{#                    <div class="left_sidebar__link"><a style="color: aqua;" href="./forth6.html">Спорт</a></div>#}
+                </div>
+
 
             </div>
+{#            <div class="overlay-content">#}
+{#                <div class="overlay_left">#}
+{#                    <a href="./third.html">Статьи</a>#}
+{#                    <a href="./second.html">Новости</a>#}
+{#                    <a href="./six.html">Тесты</a>#}
+{#                    <a href="./six.html">Видео</a>#}
+{#                    <a href="./seven.html">Подкасты</a>#}
+{#                    <a href="#">O'zbekcha</a>#}
+{#                </div>#}
 
+{##}
+{#            </div>#}
         </div>
 
         <!-- Используйте любой элемент для открытия / отображения меню навигации наложения -->
@@ -148,17 +173,3 @@
             </span>
     </div>
 </header>
-
-<script>
-    /* Открыть, когда кто-то нажимает на элемент span */
-    function openNav() {
-        document.getElementById("myNav").style.width = "100%";
-        document.body.style.overflowY = 'hidden'
-    }
-
-    /* Закрыть, когда кто-то нажимает на символ "x" внутри наложения */
-    function closeNav() {
-        document.getElementById("myNav").style.width = "0%";
-        document.body.style.overflowY = 'scroll'
-    }
-</script>

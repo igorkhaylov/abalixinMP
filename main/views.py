@@ -101,17 +101,26 @@ def tests(request):
 
 
 def categories(request):
+    page = request.GET.get('page', 1)
     mainBlock = MainBlock.objects.first()
     bestArticle = Articles.objects.get(id=mainBlock.bestArticle.id)
     categories = Categories.objects.all()
     articles = Articles.objects.all()
     tests = Tests.objects.all()
     podcast = Podcasts.objects.get(id=mainBlock.podcast.id)
+    paginator = Paginator(articles, 3)
+    try:
+        page_obj = paginator.page(page)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
     return render(request, "main/categories.html", {"categories": categories,
                                                     "articles": articles,
                                                     "tests": tests,
                                                     "bestArticle": bestArticle,
                                                     "podcast": podcast,
+                                                    "page_obj": page_obj,
                                                     })
 
 
@@ -120,7 +129,7 @@ def category_view(request, slug):
     category = get_object_or_404(Categories, url=slug)
     categories_list = Categories.objects.all()
     articles = Articles.objects.filter(categories_id=category.id)
-    paginator = Paginator(articles, 6)
+    paginator = Paginator(articles, 3)
     try:
         page_obj = paginator.page(page)
     except PageNotAnInteger:

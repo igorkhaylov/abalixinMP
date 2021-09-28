@@ -79,7 +79,7 @@
 }
 
 .test_leviy h4 {
-    width: 300px;
+    /*width: 300px;*/
     color: gray;
     margin-top: 20px;
 }
@@ -219,6 +219,8 @@
     flex-direction: column;
     margin-top: 20px;
     font-family: "Montseratt", sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .wrapper .container .right__sidebar .right_sidebar__text .right_sidebar__title {
@@ -1006,6 +1008,8 @@
 @media screen and (max-width: 1100px) {
     .wrapper .container .right__sidebar .right_sidebar__image {
         width: 90%;
+        margin-right: 5%;
+        margin-left: 5%;
     }
     .slider__first_endtitle {
         width: 400px;
@@ -1021,7 +1025,8 @@
     }
 
     .test_leviy {
-        width: 32%;
+        /*width: 32%;*/
+        width: 285px;
     }
 
     .test_leviy h4 {
@@ -1042,7 +1047,7 @@
     }
 
     .wrapper .container .left__sidebar {
-        display: none;
+        /*display: none;*/
     }
 
     .wrapper .container .right__sidebar {
@@ -1059,11 +1064,11 @@
 
     .wrapper .container .left__sidebar .left__sidebar__text {
         width: 285px;
-        position: fixed;
+        /*position: fixed;*/
         z-index: 1000;
         background-color: whitesmoke;
         margin-top: 0px;
-        padding: 10px;
+        /*padding: 10px;*/
     }
 
     .tests .test_left {
@@ -1096,6 +1101,9 @@
 
 @media screen and (max-width: 900px) {
     .wrapper .container .left__sidebar .left__sidebar__text {
+        /*display: none;*/
+    }
+    .left__sidebar {
         display: none;
     }
     .slider__first_endtitle {
@@ -1228,6 +1236,7 @@
     .slider_first__btn {
         width: 100%;
         font-size: 30px;
+        margin-top: 2rem;
     }
 
     .wrapper .container .right__sidebar .redact_item {

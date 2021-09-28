@@ -445,7 +445,8 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {*/
+    @media screen and (max-width: 900px) {
     .header_right__menu {
         width: 25%;
     }
