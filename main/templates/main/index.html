@@ -190,7 +190,7 @@
 
                 {% for article in article1 %}
                     <div class="state_item">
-                    <a href="./forth.html">
+                    <a href="{% url 'article_detail' article.slug %}">
                         <div class="state_pict1" style="background-image: url({{ article.image.url }});">
                             <div class="state_end__title">
                                 <div class="state_date">
@@ -205,12 +205,12 @@
                     </a>
                     <div class="state_article">
                         <div class="state_article__title">
-                            <a href="./forth.html">
+                            <a href="{% url 'category_view' article.categories.url %}">
                                 <h3>{{ article.categories }}</h3>
                             </a>
                         </div>
                         <div class="state_article__subtitle">
-                            <a href="./forth.html">
+                            <a href="{% url 'article_detail' article.slug %}">
                                 <h2>{{ article.short_title }}</h2>
                             </a>
                         </div>
@@ -223,7 +223,7 @@
 
                 {% for article in article2 %}
                     <div class="state_item">
-                    <a href="./forth.html">
+                    <a href="{% url 'article_detail' article.slug %}">
                         <div class="state_pict1" style="background-image: url({{ article.image.url }});">
                             <div class="state_end__title">
                                 <div class="state_date">
@@ -238,12 +238,12 @@
                     </a>
                     <div class="state_article">
                         <div class="state_article__title">
-                            <a href="./forth.html">
+                            <a href="{% url 'category_view' article.categories.url %}">
                                 <h3>{{ article.categories }}</h3>
                             </a>
                         </div>
                         <div class="state_article__subtitle">
-                            <a href="./forth.html">
+                            <a href="{% url 'article_detail' article.slug %}">
                                 <h2>{{ article.short_title }}</h2>
                             </a>
                         </div>
@@ -256,7 +256,7 @@
 
                 {% for article in article3 %}
                     <div class="state_item">
-                    <a href="./forth.html">
+                    <a href="{% url 'article_detail' article.slug %}">
                         <div class="state_pict1" style="background-image: url({{ article.image.url }});">
                             <div class="state_end__title">
                                 <div class="state_date">
@@ -271,12 +271,12 @@
                     </a>
                     <div class="state_article">
                         <div class="state_article__title">
-                            <a href="./forth.html">
+                            <a href="{% url 'category_view' article.categories.url %}">
                                 <h3>{{ article.categories }}</h3>
                             </a>
                         </div>
                         <div class="state_article__subtitle">
-                            <a href="./forth.html">
+                            <a href="{% url 'article_detail' article.slug %}">
                                 <h2>{{ article.short_title }}</h2>
                             </a>
                         </div>
@@ -288,7 +288,7 @@
                 {% endfor %}
                 {% for article in article4 %}
                     <div class="state_item">
-                    <a href="./forth.html">
+                    <a href="{% url 'article_detail' article.slug %}">
                         <div class="state_pict1" style="background-image: url({{ article.image.url }});">
                             <div class="state_end__title">
                                 <div class="state_date">
@@ -303,12 +303,12 @@
                     </a>
                     <div class="state_article">
                         <div class="state_article__title">
-                            <a href="./forth.html">
+                            <a href="{% url 'category_view' article.categories.url %}">
                                 <h3>{{ article.categories }}</h3>
                             </a>
                         </div>
                         <div class="state_article__subtitle">
-                            <a href="./forth.html">
+                            <a href="{% url 'article_detail' article.slug %}">
                                 <h2>{{ article.short_title }}</h2>
                             </a>
                         </div>
@@ -320,7 +320,7 @@
                 {% endfor %}
                 {% for article in article5 %}
                     <div class="state_item">
-                    <a href="./forth.html">
+                    <a href="{% url 'article_detail' article.slug %}">
                         <div class="state_pict1" style="background-image: url({{ article.image.url }});">
                             <div class="state_end__title">
                                 <div class="state_date">
@@ -335,12 +335,12 @@
                     </a>
                     <div class="state_article">
                         <div class="state_article__title">
-                            <a href="./forth.html">
+                            <a href="{% url 'category_view' article.categories.url %}">
                                 <h3>{{ article.categories }}</h3>
                             </a>
                         </div>
                         <div class="state_article__subtitle">
-                            <a href="./forth.html">
+                            <a href="{% url 'article_detail' article.slug %}">
                                 <h2>{{ article.short_title }}</h2>
                             </a>
                         </div>
@@ -352,7 +352,7 @@
                 {% endfor %}
                 {% for article in article6 %}
                     <div class="state_item">
-                    <a href="./forth.html">
+                    <a href="{% url 'article_detail' article.slug %}">
                         <div class="state_pict1" style="background-image: url({{ article.image.url }});">
                             <div class="state_end__title">
                                 <div class="state_date">
@@ -367,12 +367,12 @@
                     </a>
                     <div class="state_article">
                         <div class="state_article__title">
-                            <a href="./forth.html">
+                            <a href="{% url 'category_view' article.categories.url %}">
                                 <h3>{{ article.categories }}</h3>
                             </a>
                         </div>
                         <div class="state_article__subtitle">
-                            <a href="./forth.html">
+                            <a href="{% url 'article_detail' article.slug %}">
                                 <h2>{{ article.short_title }}</h2>
                             </a>
                         </div>
@@ -652,7 +652,7 @@
                             </div>
                             <div class="redact_right">
                                 <div class="redact_ending">
-                                    <a href="###">
+                                    <a href="{% url 'category_view' article7.categories.url %}">
                                         <h3>{{ article7.categories }}</h3>
                                     </a>
                                 </div>
@@ -684,7 +684,7 @@
                             </div>
                             <div class="redact_right">
                                 <div class="redact_ending">
-                                    <a href="###">
+                                    <a href="{% url 'category_view' article8.categories.url %}">
                                         <h3>{{ article8.categories }}</h3>
                                     </a>
                                 </div>
@@ -715,7 +715,7 @@
                             </div>
                             <div class="redact_right">
                                 <div class="redact_ending">
-                                    <a href="###">
+                                    <a href="{% url 'category_view' article9.categories.url %}">
                                         <h3>{{ article9.categories }}</h3>
                                     </a>
                                 </div>
@@ -746,7 +746,7 @@
                             </div>
                             <div class="redact_right">
                                 <div class="redact_ending">
-                                    <a href="###">
+                                    <a href="{% url 'category_view' article10.categories.url %}">
                                         <h3>{{ article10.categories }}</h3>
                                     </a>
                                 </div>
@@ -777,7 +777,7 @@
                             </div>
                             <div class="redact_right">
                                 <div class="redact_ending">
-                                    <a href="###">
+                                    <a href="{% url 'category_view' article11.categories.url %}">
                                         <h3>{{ article11.categories }}</h3>
                                     </a>
                                 </div>
@@ -808,7 +808,7 @@
                             </div>
                             <div class="redact_right">
                                 <div class="redact_ending">
-                                    <a href="###">
+                                    <a href="{% url 'category_view' article12.categories.url %}">
                                         <h3>{{ article12.categories }}</h3>
                                     </a>
                                 </div>

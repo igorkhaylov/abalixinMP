@@ -46,7 +46,7 @@
                 <div class="right_sidebar__image">
                     <div class="right_sidebar__text">
                         <div class="right_sidebar__title">
-                         <a href="#">   <h2>{{ category.name|upper }}</h2></a>
+                         <a href="#"><h2>{{ category.name|upper }}</h2></a>
                         </div>
                         <div class="right_sidebar__subtitle">
                             <h4>{{ category.description }}</h4>
@@ -79,7 +79,7 @@
                                             <h3>{{ article.date_created|date:"j F Y" }}</h3>
                                         </div>
                                         <div class="redact_title">
-                                            <a href="#"><h2>{{ article.title }}</h2></a>
+                                            <a href="{% url 'article_detail' article.slug %}"><h2>{{ article.title }}</h2></a>
                                         </div>
                                         <div class="redact_subtitle">
                                             <h3>{{ article.short_description }}</h3>

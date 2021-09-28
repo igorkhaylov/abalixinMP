@@ -33,6 +33,7 @@ class Articles(models.Model):
     class Meta:
         verbose_name = "Статья"
         verbose_name_plural = "Статьи"
+        ordering = ["-date_created"]
 
 
 class UzbNews(models.Model):
@@ -67,6 +68,7 @@ class WorldNews(models.Model):
     class Meta:
         verbose_name = "Мировые Новости"
         verbose_name_plural = "Мировые новости"
+        ordering = ["-date_created"]
 
 
 class Ticker(models.Model):

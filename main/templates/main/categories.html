@@ -52,7 +52,7 @@
             </div>
             <div class="right__sidebar">
                 <div class="right_sidebar__image">
-                    <div class="category"><a href="#{{ bestArticle.categories.url }}"><h3>{{ bestArticle.categories }}</h3></a></div>
+                    <div class="category"><a href="{% url 'category_view' bestArticle.categories.url %}"><h3>{{ bestArticle.categories }}</h3></a></div>
                 </div>
                 <div class="right_sidebar__text">
                     <div class="right_sidebar__title">

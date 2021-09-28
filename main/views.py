@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Ticker, MainBlock, Articles, UzbNews, Video, Tests, WorldNews, Categories, Podcasts
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import random
 
 
 def index(request):
@@ -63,6 +64,8 @@ def index(request):
 
 def article_detail(request, slug):
     article = get_object_or_404(Articles, slug=slug)
+    rand_article = Articles.objects.all()[:20]
+    rand_article = random.choices(rand_article, k=2)
     # print("#" * 100)
     # print(article.views)
     article.views += 1
@@ -74,7 +77,9 @@ def article_detail(request, slug):
     # article.views
     # F(article.views) + 1
     # print()
-    return render(request, "main/article_detail.html", {"article": article})
+    return render(request, "main/article_detail.html", {"article": article,
+                                                        "rand_article": rand_article,
+                                                        })
 
 
 def uzb_news_detail(request, id):

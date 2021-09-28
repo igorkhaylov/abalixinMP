@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="header_topbar__right">
-                <div class="category"><a href="#">
+                <div class="category"><a href="{% url 'category_view' article.categories.url %}">
                         <h3>{{ article.categories }}</h3>
                     </a></div>
             </div>
@@ -68,36 +68,54 @@
                 <h2>Вам также может понравиться</h2>
             </div>
             <div class="more__content">
-                <div class="more__item">
-                    <a href="#"><div class="more_item__img"></div></a>
-                    <div class="more_item__text">
-                        <a href="#"><h2>Органический трафик попахивает безумием</h2></a>
-                        <h3>С другой стороны, базовый вектор развития создаёт предпосылки для распределения внутренних
-                            резервов и ресурсов.</h3>
-                    </div>
-                </div>
+
+
+               {% for article_rand in rand_article %}
+
+                   <div class="more__item">
+                       <a href="{% url 'article_detail' article_rand.slug %}"><div class="more_item__img" style="background-image: url({{ article_rand.image.url }});"></div></a>
+
+                       <div class="more_item__text">
+                           <a href="{% url 'article_detail' article_rand.slug %}"><h2>{{ article_rand.short_title }}</h2></a>
+                           <h3>{{ article_rand.short_description }}</h3>
+                       </div>
+                   </div>
+
+               {% endfor %}
+
+
+
+
+
+
+
+
                 <!-- Trigger the Modal -->
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
+{#                <div id="myModal" class="modal">#}
+{##}
+{#                    <!-- The Close Button -->#}
+{#                    <span class="close">&times;</span>#}
+{##}
+{#                    <!-- Modal Content (The Image) -->#}
+{#                    <img class="modal-content" id="img01">#}
+{##}
+{#                    <!-- Modal Caption (Image Text) -->#}
+{#                    <div id="caption"></div>#}
+{#                </div>#}
 
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
 
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01">
 
-  <!-- Modal Caption (Image Text) -->
-  <div id="caption"></div>
-</div>
-                <div class="more__item">
-                    <a href="#"><div class="more_item__img"></div></a>
-                    <div class="more_item__text">
-                        <a href="#"><h2>Органический трафик попахивает безумием</h2></a>
-                        <h3>С другой стороны, базовый вектор развития создаёт предпосылки для распределения внутренних
-                            резервов и ресурсов.</h3>
-                    </div>
-                </div>
+
+{#                <div class="more__item">#}
+{#                    <a href="#"><div class="more_item__img" style="background-image: url({% static 'img/harasho.svg' %});"></div></a>#}
+{#                    <div class="more_item__text">#}
+{#                        <a href="#"><h2>Органический трафик попахивает безумием</h2></a>#}
+{#                        <h3>С другой стороны, базовый вектор развития создаёт предпосылки для распределения внутренних#}
+{#                            резервов и ресурсов.</h3>#}
+{#                    </div>#}
+{#                </div>#}
             </div>
         </div>
     </div>
@@ -108,13 +126,15 @@
           <span class="close">&times;</span>
           <h2 class="modal__title">Мы в соц.сетях:</h2>
           <div class="modal_links">
-              <a href="#"><img src="./img/ic_instagram.svg" alt="da"></a>
-              <a href="#"><img src="./img/Vector.svg" alt="da"></a>
-              <a href="#"><img src="./img/facebook.svg" alt="da"></a>
+              <a href="#"><img src="{% static 'img/ic_instagram.svg' %}" alt="da"></a>
+              <a href="#"><img src="{% static 'img/Vector.svg' %}" alt="da"></a>
+              <a href="#"><img src="{% static 'img/facebook.svg' %}" alt="da"></a>
           </div>
         </div>
       
       </div>
+
+    {% include 'include/footer.html' %}
 
      
     <script>
