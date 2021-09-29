@@ -722,6 +722,7 @@
     }
     .more .more__container .more__content .more__item {
         width: 90%;
+        height: 40rem;
     }
     .more .more__container .more__content .more__item .more_item__img {
         width: 90%;

@@ -585,6 +585,8 @@
         justify-content: center;
         text-align: center;
         font-size: 30px;
+        position: inherit;
+        margin-top: 1rem;
     }
 
     .wrapper .container .right__sidebar .redact_left__text {
@@ -673,6 +675,7 @@
         width: 100%;
         font-size: 16px;
         padding: 10px;
+        margin-top: 0;
     }
 
     .wrapper .container .right__sidebar .redact_wrap {
@@ -723,7 +726,7 @@
     }
 
     .wrapper .container .right__sidebar .redact_right {
-        height: 30px;
+        /*height: 30px;*/
     }
 
     .wrapper .container .right__sidebar .redact_right__logo {
@@ -812,16 +815,19 @@
 
     .wrapper .container .right__sidebar .redact_left {
         flex-direction: column;
+        height: auto;
     }
 
     .wrapper .container .right__sidebar .redact_right {
         flex-direction: row;
         width: 100%;
+        height: auto;
     }
 
     .wrapper .container .right__sidebar .redact_ending {
         display: flex;
         align-items: center;
+        margin-top: 0;
     }
 
     .wrapper .container .right__sidebar .redact_subtitle {
@@ -853,14 +859,17 @@
     .wrapper .container .right__sidebar .redact_item {
         margin: 0;
         margin-top: 20px;
+        padding: 0;
     }
 
     .wrapper .container .right__sidebar .redact_wrap {
+        margin-top: 0;
         margin-left: 0px;
     }
 
     .wrapper .container .right__sidebar .redact_left {
         width: 100%;
+        height: auto;
     }
 
     .wrapper .container .right__sidebar .redact_left__logo {
@@ -886,10 +895,12 @@
 
     .wrapper .container .right__sidebar .right_sidebar__image {
         width: 100%;
+        margin-top: 1rem;
     }
 
     .wrapper .container .right__sidebar .redact_ending {
-        padding: 20px;
+        /*padding: 20px;*/
+        position: inherit;
     }
 
     .wrapper .container {
@@ -993,7 +1004,7 @@
     .wrapper .container .right__sidebar .redact_item {
         flex-direction: column;
         width: 277px;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
     }
 
     .wrapper .container .right__sidebar .redact_left__logo {

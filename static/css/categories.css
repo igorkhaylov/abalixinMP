@@ -1009,7 +1009,7 @@
     .wrapper .container .right__sidebar .right_sidebar__image {
         width: 90%;
         margin-right: 5%;
-        margin-left: 5%;
+        /*margin-left: 5%;*/
     }
     .slider__first_endtitle {
         width: 400px;

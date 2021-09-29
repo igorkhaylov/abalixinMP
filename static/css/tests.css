@@ -722,7 +722,7 @@
     background-size: cover;
     background-position: center;
     position: relative;
-    margin-bottom: 50px;
+    /*margin-bottom: 50px;*/
 }
 .podcast__video video {
     width: 100%;
@@ -817,7 +817,7 @@
         margin-top: 20px;
     }
     .podcast__content {
-        padding: 50px;
+        /*padding: 50px;*/
     }
     .podcast__video {
         width: 100%;
@@ -894,6 +894,7 @@
     }
     .podcast__content {
         width: 100%;
+        margin-top: 0;
     }
     .podcast_container {
         width: 100%;

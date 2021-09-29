@@ -36,18 +36,9 @@
                             <h2>Все Статьи</h2>
                         </a>
                     </div>
-{#                    {% for category in categories %}#}
                     {% for category in categories %}
                         <div class="left_sidebar__link"><a href="{% url 'category_view' category.url %}">{{ category.name }}</a></div>
                     {% endfor %}
-
-{#                    <div class="left_sidebar__link"><a href="#">Люди</a></div>#}
-{#                    <div class="left_sidebar__link"><a href="#">Развлечения</a></div>#}
-{#                    <div class="left_sidebar__link"><a href="#">Стиль</a></div>#}
-{#                    <div class="left_sidebar__link"><a href="#">Бизнес</a></div>#}
-{#                    <div class="left_sidebar__link"><a href="#">Культура</a></div>#}
-{#                    <div class="left_sidebar__link"><a href="#">Развитие</a></div>#}
-{#                    <div class="left_sidebar__link"><a href="#">Спорт</a></div>#}
                 </div>
             </div>
             <div class="right__sidebar">

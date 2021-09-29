@@ -1217,7 +1217,8 @@ footer {
     height: 620px;
   }
   .main .container .container_topbar .container_topbar__left {
-    width: 530px;
+    /*width: 530px;*/
+      width: auto;
   }
   .top_cont {
     height: 570px;
@@ -1250,6 +1251,7 @@ footer {
 @media screen and (max-width: 414px) {
   .main .container .container_topbar .container_topbar__left h1 {
     font-size: 33px;
+    text-align: center;
   }
   .header_logo {
     right: 21%;
@@ -1257,9 +1259,6 @@ footer {
   .main .container .container_main {
     justify-content: center;
     margin-bottom: 50px;
-  }
-  footer {
-    height: 700px;
   }
   .main .container .container_main .container_main__item {
     margin: 0;
@@ -1273,7 +1272,8 @@ footer {
     transform: none;
   }
   .main .container .container_topbar .container_topbar__left {
-    width: 100%;
+    width: 140%;
+    /*padding: 2rem;*/
   }
   .footer_down {
     margin: 20px;
