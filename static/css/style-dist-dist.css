@@ -1643,7 +1643,8 @@ body {
 
 @media screen and (max-width: 1366px) {
     .podcast__video {
-        width: 100%;
+        /*width: 100%;*/
+        width: 90%;
         margin-top: 20px;
     }
 

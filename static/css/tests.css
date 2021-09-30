@@ -784,7 +784,8 @@
         margin-top: 20px;
     }
     .podcast__video {
-        width: 100%;
+        /*width: 100%;*/
+        width: 90%;
         margin-top: 20px;
     }
     .podcast_pre__title {
