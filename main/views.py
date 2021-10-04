@@ -186,7 +186,7 @@ class DynamicArticles(View):
                 'slug': lang_link + "article_detail/" + article.slug,
                 'short_description': article.short_description,
                 'category': article.categories.name,
-                'category_url': article.categories.url,
+                'category_url': lang_link + "category/" + article.categories.url,
             }
             data.append(obj)
         data[-1]['last-article'] = True

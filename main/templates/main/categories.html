@@ -101,7 +101,7 @@
                                                 src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a>
                                     </div>
                                     <div class="redact_ending" style="min-width: 125px">
-                                        <a href="#{{ article.categories.url }}"><h3
+                                        <a href="{% url 'category_view' article.categories.url %}"><h3
                                                 style="display: flex; justify-content: center">{{ article.categories }}</h3>
                                         </a>
                                     </div>
@@ -294,8 +294,7 @@
                                             '<h3>'+ obj.short_description +'</h3> </div> </div> </div> <div class="redact_right"> <div class="redact_right__logo">'+
                                         '<a href="'+ obj.slug +'"><img' +
                                                 'src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a> </div> <div class="redact_ending" style="min-width: 125px">'+
-                                        '<a href="#'+ obj.category_url +'"><h3'+
-                                                'style="display: flex; justify-content: center">'+ obj.category +'</h3> </a> </div> </div> </div>'
+                                        '<a href="'+ obj.category_url +'"><h3 style="display: flex; justify-content: center">'+ obj.category +'</h3> </a> </div> </div> </div>'
                                 )
                             } else {
                                 $('.redact__content').append(
@@ -307,8 +306,7 @@
                                     '<h3>'+ obj.short_description +'</h3> </div> </div> </div> <div class="redact_right"> <div class="redact_right__logo">'+
                                     '<a href="'+ obj.slug +'"><img' +
                                     'src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a> </div> <div class="redact_ending" style="min-width: 125px">'+
-                                    '<a href="#'+ obj.category_url +'"><h3'+
-                                    'style="display: flex; justify-content: center">'+ obj.category +'</h3> </a> </div> </div> </div>'
+                                    '<a href="'+ obj.category_url +'"><h3 style="display: flex; justify-content: center">'+ obj.category +'</h3> </a> </div> </div> </div>'
                                 )
                             }
                         })
