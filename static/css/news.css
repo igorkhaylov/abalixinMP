@@ -35,6 +35,7 @@
 .top_new {
   width: 90%;
   margin: 30px auto;
+  margin-top: 0;
   height: 500px;
   background-image: url(../img/dizaynereblan.svg);
   background-repeat: no-repeat;
@@ -981,7 +982,8 @@
     width: 696px;
   }
   .world_news .world_news__container .world__right {
-    width: 90%;
+    /*width: 90%;*/
+    width: 93%;
   }
   .recent_wrap .recent_container .recent__top {
     width: 100%;

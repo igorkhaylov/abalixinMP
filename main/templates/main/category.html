@@ -66,20 +66,22 @@
                         <div class="redact__content">
 
 {#                            {% for article in articles %}#}
-                                {% for article in page_obj %}
+                        {% for article in page_obj %}
 
 
                             <div class="redact_item">
                                 <div class="redact_left">
-                                    <div class="redact_left__logo" style="background-image: url({{ article.image.url }});">
-                                       
+                                    <div class="redact_left__logo"
+                                         style="background-image: url({{ article.image.url }});">
+
                                     </div>
                                     <div class="redact_left__text">
                                         <div class="redact_date">
                                             <h3>{{ article.date_created|date:"j F Y" }}</h3>
                                         </div>
                                         <div class="redact_title">
-                                            <a href="{% url 'article_detail' article.slug %}"><h2>{{ article.title }}</h2></a>
+                                            <a href="{% url 'article_detail' article.slug %}">
+                                                <h2>{{ article.title }}</h2></a>
                                         </div>
                                         <div class="redact_subtitle">
                                             <h3>{{ article.short_description }}</h3>
@@ -88,7 +90,8 @@
                                 </div>
                                 <div class="redact_right">
                                     <div class="redact_right__logo">
-                                        <a href="#"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a>
+                                        <a href="#"><img src="{% static 'img/ic_arrow-up-right12.svg' %}"
+                                                         alt="arrow"></a>
                                     </div>
                                     <div class="redact_ending">
                                         <a href="#"><h3>{{ article.categories }}</h3></a>
@@ -96,7 +99,7 @@
                                 </div>
                             </div>
 
-                            {% endfor %}
+                        {% endfor %}
 
 
 

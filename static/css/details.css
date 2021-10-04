@@ -368,7 +368,7 @@
     position: absolute;
     bottom: 0;
     text-align: center;
-    width: 130px;
+    /*width: 130px;*/
     padding: 6px;
     background-color: var(--aq);
     font-size: 20px;
@@ -778,4 +778,11 @@
     .redact__title {
         font-size: 20px;
     }
+}
+
+
+
+
+img {
+    width: 100%;
 }

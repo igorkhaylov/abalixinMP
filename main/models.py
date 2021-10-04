@@ -33,7 +33,8 @@ class Articles(models.Model):
     class Meta:
         verbose_name = "Статья"
         verbose_name_plural = "Статьи"
-        ordering = ["-date_created"]
+        # ordering = ["-date_created"]
+        ordering = ["-id"]
 
 
 class UzbNews(models.Model):

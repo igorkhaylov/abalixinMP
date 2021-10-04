@@ -11,74 +11,84 @@
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" href="{% static 'css/paginator.css' %}">
+    <link rel="stylesheet" href="{% static 'css/button_more.css' %}">
     <link rel="icon" type="img/svg" href="{% static 'img/sitelogo.svg' %}">
 
 </head>
 
 <body>
-    <!-- Верстка хедера -->
+<!-- Верстка хедера -->
 
-    <!-- Конец хедера -->
-    <div class="adv" style="margin-top: 00px;">
-        <img src="{% static 'img/reklama.png' %}" alt="da">
-    </div>
+<!-- Конец хедера -->
+<div class="adv" style="margin-top: 00px;">
+    <img src="{% static 'img/reklama.png' %}" alt="da">
+</div>
 
 {#    {% include 'include/header.html' %}#}
-    {% include 'include/header_for_categories.html' %}
+{% include 'include/header_for_categories.html' %}
 
-    <!-- Левая панель и правый сайдбар -->
-    <div class="wrapper" style="margin-top: 0">
-        <div class="container">
-            <div class="left__sidebar">
-                <div class="left__sidebar__text">
-                    <div class="left_sidebar__title">
-                        <a href="{% url 'categories' %}">
-                            <h2>Все Статьи</h2>
-                        </a>
-                    </div>
-                    {% for category in categories %}
-                        <div class="left_sidebar__link"><a href="{% url 'category_view' category.url %}">{{ category.name }}</a></div>
-                    {% endfor %}
+<!-- Левая панель и правый сайдбар -->
+<div class="wrapper" style="margin-top: 0">
+    <div class="container">
+        <div class="left__sidebar">
+            <div class="left__sidebar__text">
+                <div class="left_sidebar__title">
+                    <a href="{% url 'categories' %}">
+                        <h2>Все Статьи</h2>
+                    </a>
+                </div>
+                {% for category in categories %}
+                    <div class="left_sidebar__link"><a
+                            href="{% url 'category_view' category.url %}">{{ category.name }}</a></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="right__sidebar">
+            <div class="right_sidebar__image">
+                <div class="category"><a href="{% url 'category_view' bestArticle.categories.url %}">
+                    <h3>{{ bestArticle.categories }}</h3></a></div>
+            </div>
+            <div class="right_sidebar__text">
+                <div class="right_sidebar__title">
+                    <a href="{% url 'article_detail' bestArticle.slug %}"><h2>{{ bestArticle.title }}</h2></a>
+                </div>
+                <div class="right_sidebar__subtitle">
+                    <h4>{{ bestArticle.short_description }}</h4>
+                </div>
+                <div class="right_sidebar__endtitle">
+                    <h5><a href="{% url 'article_detail' bestArticle.slug %}">Читать всё</a></h5>
                 </div>
             </div>
-            <div class="right__sidebar">
-                <div class="right_sidebar__image">
-                    <div class="category"><a href="{% url 'category_view' bestArticle.categories.url %}"><h3>{{ bestArticle.categories }}</h3></a></div>
-                </div>
-                <div class="right_sidebar__text">
-                    <div class="right_sidebar__title">
-                        <a href="{% url 'article_detail' bestArticle.slug %}"><h2>{{ bestArticle.title }}</h2></a>
+            <!-- Выбор редакции -->
+            <div class="redact_wrap">
+                <div class="redact_container">
+                    <div class="redact__title">
+                        <h1>Все статьи</h1>
                     </div>
-                    <div class="right_sidebar__subtitle">
-                        <h4>{{ bestArticle.short_description }}</h4>
-                    </div>
-                    <div class="right_sidebar__endtitle">
-                        <h5><a href="{% url 'article_detail' bestArticle.slug %}">Читать всё</a></h5>
-                    </div>
-                </div>
-                <!-- Выбор редакции -->
-                <div class="redact_wrap">
-                    <div class="redact_container">
-                        <div class="redact__title">
-                            <h1>Все статьи</h1>
-                        </div>
-                        <div class="redact__content">
-{#                            {% for article in articles %}#}
-                            {% for article in page_obj %}
+                    <div class="redact__content">
 
 
+                        {% for article in articles %}
 
-                            <div class="redact_item">
+                            {#                            {% for article in page_obj %}#}
+                            {% if forloop.last %}
+                                <div class="redact_item last-article" data-articleid="{{ article.id }}">
+                            {% else %}
+{#                                <div class="redact_item" data-articleid="{{ article.id }}">#}
+                                <div class="redact_item">
+                            {% endif %}
                                 <div class="redact_left">
-                                    <div class="redact_left__logo" style="background-image: url({{ article.image.url }});">
-                                        
+                                    <div class="redact_left__logo"
+                                         style="background-image: url({{ article.image.url }});">
+
                                     </div>
                                     <div class="redact_left__text">
                                         <div class="redact_date">
                                             <h3>{{ article.date_created|date:"j F Y" }}</h3>
                                         </div>
                                         <div class="redact_title">
-                                            <a href="{% url 'article_detail' article.slug %}"><h2>{{ article.title }}</h2></a>
+                                            <a href="{% url 'article_detail' article.slug %}">
+                                                <h2>{{ article.title }}</h2></a>
                                         </div>
                                         <div class="redact_subtitle">
                                             <h3>{{ article.short_description }}</h3>
@@ -87,71 +97,80 @@
                                 </div>
                                 <div class="redact_right">
                                     <div class="redact_right__logo">
-                                        <a href="{% url 'article_detail' article.slug %}"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a>
+                                        <a href="{% url 'article_detail' article.slug %}"><img
+                                                src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a>
                                     </div>
                                     <div class="redact_ending" style="min-width: 125px">
-                                        <a href="#{{ article.categories.url }}"><h3 style="display: flex; justify-content: center">{{ article.categories }}</h3></a>
+                                        <a href="#{{ article.categories.url }}"><h3
+                                                style="display: flex; justify-content: center">{{ article.categories }}</h3>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
 
-                            {% endfor %}
-                            {% if page_obj.has_other_pages %}
-                                <nav aria-label="main-navigation" class="paginate wrapper">
-                                    <ul>
-                                        {% if page_obj.has_previous %}
-                                            <li><a href="?page={{ page_obj.previous_page_number }}">&lang;</a></li>
-                                        {% else %}
-                                            <li>
-                                                <span class="page-link">&lang;</span>
-                                            </li>
-                                        {% endif %}
-                                        {% for i in page_obj.paginator.page_range %}
-                                            {% if page_obj.number == i %}
-                                                <li><a href="" class="active">{{ i }}</a></li>
-                                            {% elif i > page_obj.number|add:-3 and i < page_obj.number|add:3 %}
-                                                <li><a href="?page={{ i }}">{{ i }}</a></li>
+                        {% endfor %}
+{#                        {% if page_obj.has_other_pages %}#}
+{#                            <nav aria-label="main-navigation" class="paginate wrapper">#}
+{#                                <ul>#}
+{#                                    {% if page_obj.has_previous %}#}
+{#                                        <li><a href="?page={{ page_obj.previous_page_number }}">&lang;</a></li>#}
+{#                                    {% else %}#}
+{#                                        <li>#}
+{#                                            <span class="page-link">&lang;</span>#}
+{#                                        </li>#}
+{#                                    {% endif %}#}
+{#                                    {% for i in page_obj.paginator.page_range %}#}
+{#                                        {% if page_obj.number == i %}#}
+{#                                            <li><a href="" class="active">{{ i }}</a></li>#}
+{#                                        {% elif i > page_obj.number|add:-3 and i < page_obj.number|add:3 %}#}
+{#                                            <li><a href="?page={{ i }}">{{ i }}</a></li>#}
+{##}
+{#                                        {% endif %}#}
+{#                                    {% endfor %}#}
+{#                                    {% if page_obj.has_next %}#}
+{#                                        <li><a href="?page={{ page_obj.next_page_number }}">&rang;</a></li>#}
+{#                                    {% else %}#}
+{#                                        <li>#}
+{#                                            <span class="page-link">&rang;</span>#}
+{#                                        </li>#}
+{#                                    {% endif %}#}
+{#                                </ul>#}
+{#                            </nav>#}
+{#                        {% endif %}#}
 
-                                            {% endif %}
-                                        {% endfor %}
-                                        {% if page_obj.has_next %}
-                                            <li><a href="?page={{ page_obj.next_page_number }}">&rang;</a></li>
-                                        {% else %}
-                                            <li>
-                                                <span class="page-link">&rang;</span>
-                                            </li>
-                                        {% endif %}
-                                    </ul>
-                                </nav>
-                            {% endif %}
-
-                                </div>
-                            </div>
-                            <div class="eshe">
-                               <a href="#see_more"><h3 style="text-decoration: underline;">Показать ещё ˅</h3></a>
-                            </div>
-                        </div>
                     </div>
                 </div>
+                {% if articles.count >= 2 %}
+                    <div class="see-more-container">
+                        <button type="submit" class="see-more noselect" id="see-more-categories">Показать еще...
+                        </button>
+                    </div>
+                {% endif %}
+                {#                <div class="eshe">#}
+                {#                    <a href="#see_more"><h3 style="text-decoration: underline;">Показать ещё ˅</h3></a>#}
+                {#                </div>#}
             </div>
         </div>
-        <!-- Swiper -->
-
-
     </div>
-    
-        
-        <hr>
-    <div class="slider_container">
-        <div class="test_leviy">
-            <h2>ТЕCТЫ</h2>
-            <h4>Имеется спорная точка зрения, гласящая примерно следующее: акционеры крупнейших компаний неоднозначны и
-                будут описаны максимально подробно.</h4>
-        </div>
-        <div class="test_praviy">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    {% for test in tests %}
+</div>
+</div>
+<!-- Swiper -->
+
+
+</div>
+
+
+<hr>
+<div class="slider_container">
+    <div class="test_leviy">
+        <h2>ТЕCТЫ</h2>
+        <h4>Имеется спорная точка зрения, гласящая примерно следующее: акционеры крупнейших компаний неоднозначны и
+            будут описаны максимально подробно.</h4>
+    </div>
+    <div class="test_praviy">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for test in tests %}
 
                     <div class="swiper-slide">
                         <div class="test_item">
@@ -170,171 +189,219 @@
                         </div>
                     </div>
 
-                    {% endfor %}
+                {% endfor %}
 
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Слайдер -->
+
+<div class="slider">
+    <div class="slider__first">
+        <div class="slider__first__header">
+            <div class="slider_first__title">
+                <h1>{% trans 'ПОДКАСТЫ' %}</h1>
+            </div>
+            <div class="slider_first__btn">
+                <a href="{{ podcast.link }}">{% trans "Перейти к подкасту" %}</a>
+            </div>
+        </div>
+        <div class="first_slider__content">
+            <div class="slider__first_img" style="background-image: url({{ podcast.image.url }});"></div>
+            <div class="slider__first_text">
+                <div class="slider__first_title">
+                    <h2>{{ podcast.genre }}</h2>
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="slider__first_subtitle">
+                    <h3>Автор: {{ podcast.author }}</h3>
+                </div>
+                <div class="slider__first_endtitle">
+                    <h4>{{ podcast.description }}</h4>
+                </div>
+                <div class="slider_links_wrap">
+                    <div class="first_slider_links__title">
+                        <h3>{% trans 'Доступно на' %}:</h3>
+                    </div>
+                    <div class="first_slider__links">
+                        <div class="first_slider__link">
+                            <a href="https://www.google.ru/"><img src="{% static 'img/image1.svg' %}" alt="link"></a>
+                        </div>
+                        <div class="first_slider__link">
+                            <a href="https://www.google.ru/"><img src="{% static 'img/image2.svg' %}" alt="link"></a>
+                        </div>
+                        <div class="first_slider__link">
+                            <a href="https://www.google.ru/"><img src="{% static 'img/image3.svg' %}" alt="link"></a>
+                        </div>
+                        <div class="first_slider__link">
+                            <a href="https://www.google.ru/"><img src="{% static 'img/icon_add1.svg' %}" alt="link"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="first_slider__audio">
+                    <!-- <div class="first_slider__audio__title">
+                        <h3>Эпизоды:</h3>
+                    </div> -->
+                    <div class="audio_main__block">
+                        <div class="first_slider__audio__subtitle">
+                            <h3>{{ podcast.title }}</h3>
+                        </div>
+                        {#                                <audio class="audio" src="{% static 'audio/Eminem - Godzilla.flac' %}" controls></audio>#}
+                        <audio class="audio" src="{{ podcast.file.url }}" type="audio/mpeg" controls></audio>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-        <!-- Слайдер -->
-
-    <div class="slider">
-            <div class="slider__first">
-                <div class="slider__first__header">
-                    <div class="slider_first__title">
-                        <h1>{% trans 'ПОДКАСТЫ' %}</h1>
-                    </div>
-                    <div class="slider_first__btn">
-                        <a href="{{ podcast.link }}">{% trans "Перейти к подкасту" %}</a>
-                    </div>
-                </div>
-                <div class="first_slider__content">
-                    <div class="slider__first_img" style="background-image: url({{ podcast.image.url }});"></div>
-                    <div class="slider__first_text">
-                        <div class="slider__first_title">
-                            <h2>{{ podcast.genre }}</h2>
-                        </div>
-                        <div class="slider__first_subtitle">
-                            <h3>Автор: {{ podcast.author }}</h3>
-                        </div>
-                        <div class="slider__first_endtitle">
-                            <h4>{{ podcast.description }}</h4>
-                        </div>
-                        <div class="slider_links_wrap">
-                            <div class="first_slider_links__title">
-                                <h3>{% trans 'Доступно на' %}:</h3>
-                            </div>
-                            <div class="first_slider__links">
-                                <div class="first_slider__link">
-                                    <a href="https://www.google.ru/"><img src="{% static 'img/image1.svg' %}" alt="link"></a>
-                                </div>
-                                <div class="first_slider__link">
-                                    <a href="https://www.google.ru/"><img src="{% static 'img/image2.svg' %}" alt="link"></a>
-                                </div>
-                                <div class="first_slider__link">
-                                    <a href="https://www.google.ru/"><img src="{% static 'img/image3.svg' %}" alt="link"></a>
-                                </div>
-                                <div class="first_slider__link">
-                                    <a href="https://www.google.ru/"><img src="{% static 'img/icon_add1.svg' %}" alt="link"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first_slider__audio">
-                            <!-- <div class="first_slider__audio__title">
-                                <h3>Эпизоды:</h3>
-                            </div> -->
-                            <div class="audio_main__block">
-                                <div class="first_slider__audio__subtitle">
-                                    <h3>{{ podcast.title }}</h3>
-                                </div>
-{#                                <audio class="audio" src="{% static 'audio/Eminem - Godzilla.flac' %}" controls></audio>#}
-                                <audio class="audio" src="{{ podcast.file.url }}" type="audio/mpeg" controls></audio>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+</div>
 
 
+{% include 'include/footer.html' %}
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+<script>
 
-
-
-{#        <div class="slider">#}
-{#            <div class="slider__first">#}
-{#                <div class="slider__first__header">#}
-{#                    <div class="slider_first__title">#}
-{#                        <h1>ПОДКАСТЫ</h1>#}
-{#                    </div>#}
-{#                    <div class="slider_first__btn">#}
-{#                        <a href="#">Перейти к подкасту</a>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="first_slider__content">#}
-{#                    <div class="slider__first_img" style="background-image: url({% static 'img/bgpodcast.svg' %});"></div>#}
-{#                    <div class="slider__first_text">#}
-{#                        <div class="slider__first_title">#}
-{#                            <h2>Бежать</h2>#}
-{#                        </div>#}
-{#                        <div class="slider__first_subtitle">#}
-{#                            <h3>Автор: Абадихин Игорь & Студия Main post</h3>#}
-{#                        </div>#}
-{#                        <div class="slider__first_endtitle">#}
-{#                            <h4>Это подкаст о мире, где беженцев сегодня больше, чем во времена Второй мировой. И о#}
-{#                                людях, которые ищут в этом мире пристанище. В каждом эпизоде мы рассказываем историю#}
-{#                                очередного беглеца. Кто-то сбежал от гражданской войны в Европу. Кто-то — из Европы в#}
-{#                                Россию. А кто-то уехал из России, потому что не смог обрести здесь дом.</h4>#}
-{#                        </div>#}
-{#                        <div class="slider_links_wrap">#}
-{#                            <div class="first_slider_links__title">#}
-{#                                <h3>Доступно на:</h3>#}
-{#                            </div>#}
-{#                            <div class="first_slider__links">#}
-{#                                <div class="first_slider__link">#}
-{#                                    <a href="#"><img src="./img/image1.svg" alt="link"></a>#}
-{#                                </div>#}
-{#                                <div class="first_slider__link">#}
-{#                                    <a href="#"><img src="./img/image2.svg" alt="link"></a>#}
-{#                                </div>#}
-{#                                <div class="first_slider__link">#}
-{#                                    <a href="#"><img src="./img/image3.svg" alt="link"></a>#}
-{#                                </div>#}
-{#                                <div class="first_slider__link">#}
-{#                                    <a href="#"><img src="./img/icon_add1.svg" alt="link"></a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="first_slider__audio">#}
-{#                            <div class="first_slider__audio__title">#}
-{#                                <h3>Эпизоды:</h3>#}
-{#                            </div>#}
-{#                            <div class="audio_main__block">#}
-{#                                <div class="first_slider__audio__subtitle">#}
-{#                                    <h3>Эпизод I. Архипелаг Бежлаг</h3>#}
-{#                                </div>#}
-{#                                <audio class="audio" src="./audios/Eminem - Godzilla.flac" controls></audio>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-
-
-    {% include 'include/footer.html' %}
-
-    <script>
-        /* Открыть, когда кто-то нажимает на элемент span */
-        function openNav() {
-            document.getElementById("myNav").style.width = "100%";
-            document.body.style.overflowY = 'hidden'
+    $('#see-more-categories').on('click', function () {
+        {#let seeMoreCategories = $('.redact_item').attr('data-articleid')#}
+        let seeMoreCategories = $('.last-article').attr('data-articleid')
+        let data = {
+            seeMoreCategories: seeMoreCategories
         }
-
-        /* Закрыть, когда кто-то нажимает на символ "x" внутри наложения */
-        function closeNav() {
-            document.getElementById("myNav").style.width = "0%";
-            document.body.style.overflowY = 'scroll'
-        }
-    </script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-            <!-- Swiper JS -->
-            <script src="./scripts/swiper.js"></script>
-
-            <!-- Initialize Swiper -->
-            <script>
-                var swiper = new Swiper(".swiper-container", {
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
+        $('.redact_item').removeClass('last-article')
+        $('.redact_item').removeAttr('data-articleid')
+        $.ajax({
+            method: "GET",
+            dataType: "json",
+            data: data,
+            url: "{% url 'see-more-categories' %}",
+            success: function (data){
+                let result = data['data']
+                console.log("****************" + result)
+                    if (!result){
+                        $('.see-more').css('display', 'none')
+                    } else {
+                        $.each(result, function (key, obj){
+                            if (obj['last-article']){
+                                $('.redact__content').append(
+                                '<div class="redact_item last-article" data-articleid="'+ obj.id +'">'+
+                                '<div class="redact_left"> <div class="redact_left__logo" style="background-image: url('+ obj.image +');"> </div> <div class="redact_left__text"> <div class="redact_date">'+
+                                            '<h3>'+ obj.date_created +'</h3> </div> <div class="redact_title">'+
+                                            '<a href="'+ obj.slug +'">'+
+                                                '<h2>'+ obj.title +'</h2></a> </div> <div class="redact_subtitle">'+
+                                            '<h3>'+ obj.short_description +'</h3> </div> </div> </div> <div class="redact_right"> <div class="redact_right__logo">'+
+                                        '<a href="'+ obj.slug +'"><img' +
+                                                'src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a> </div> <div class="redact_ending" style="min-width: 125px">'+
+                                        '<a href="#'+ obj.category_url +'"><h3'+
+                                                'style="display: flex; justify-content: center">'+ obj.category +'</h3> </a> </div> </div> </div>'
+                                )
+                            } else {
+                                $('.redact__content').append(
+                                    '<div class="redact_item" data-articleid="'+ obj.id +'">'+
+                                    '<div class="redact_left"> <div class="redact_left__logo" style="background-image: url('+ obj.image +');"> </div> <div class="redact_left__text"> <div class="redact_date">'+
+                                    '<h3>'+ obj.date_created +'</h3> </div> <div class="redact_title">'+
+                                    '<a href="'+ obj.slug +'">'+
+                                    '<h2>'+ obj.title +'</h2></a> </div> <div class="redact_subtitle">'+
+                                    '<h3>'+ obj.short_description +'</h3> </div> </div> </div> <div class="redact_right"> <div class="redact_right__logo">'+
+                                    '<a href="'+ obj.slug +'"><img' +
+                                    'src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a> </div> <div class="redact_ending" style="min-width: 125px">'+
+                                    '<a href="#'+ obj.category_url +'"><h3'+
+                                    'style="display: flex; justify-content: center">'+ obj.category +'</h3> </a> </div> </div> </div>'
+                                )
+                            }
+                        })
                     }
-                });
+                {#console.log(result['id'])#}
 
-            </script>
+            }
+        })
+        {#console.log(seeMoreCategories)#}
+
+    })
+
+
+
+
+</script>
+
+
+
+
+
+<script>
+    /* Открыть, когда кто-то нажимает на элемент span */
+    function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+        document.body.style.overflowY = 'hidden'
+    }
+
+    /* Закрыть, когда кто-то нажимает на символ "x" внутри наложения */
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+        document.body.style.overflowY = 'scroll'
+    }
+</script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Swiper JS -->
+{#<script src="scripts/swiper.js"></script>#}
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".swiper-container", {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    });
+
+</script>
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+{#                                    '<div class="redact_item last-article" data-articleid="' + obj['id'] + '">' +#}
+{#                                    '<div class="redact_left__logo"'+#}
+{#                                         'style="background-image: url('+ obj['image'] +');">'+#}
+{#                                    '</div>'+#}
+{#                                    '<div class="redact_left__text">'+#}
+{#                                        '<div class="redact_date">'+#}
+{#                                            '<h3>'+ obj['date_created'] +'</h3>'+#}
+{#                                        '</div>'+#}
+{#                                        '<div class="redact_title">'+#}
+{#                                            '<a href="{% url 'article_detail' article.slug %}">'+#}
+{#                                                '<h2>{{ article.title }}</h2></a>'+#}
+{#                                        '</div>'+#}
+{#                                        '<div class="redact_subtitle">'+#}
+{#                                            '<h3>{{ article.short_description }}</h3>'+#}
+{#                                        '</div>'+#}
+{#                                    '</div>'+#}
+{#                                '</div>'+#}
+{#                                '<div class="redact_right">'+#}
+{#                                    '<div class="redact_right__logo">'+#}
+{#                                        '<a href="{% url 'article_detail' article.slug %}"><img'+#}
+{#                                                'src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a>'+#}
+{#                                    '</div>'+#}
+{#                                    '<div class="redact_ending" style="min-width: 125px">'+#}
+{#                                        '<a href="#{{ article.categories.url }}"><h3'+#}
+{#                                                'style="display: flex; justify-content: center">{{ article.categories }}</h3>'+#}
+{#                                        '</a>'+#}
+{#                                    '</div>'+#}
+{#                                '</div>'+#}
+{#                            '</div>'#}
+
+
+
+

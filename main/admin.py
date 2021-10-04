@@ -74,7 +74,8 @@ class UzbNewsAdmin(TranslationAdmin):
     list_display = ('short_title', 'title', )
     form = UzbNewsAdminForm
     save_on_top = True
-    readonly_fields = ('date_created', 'views', )
+    # readonly_fields = ('date_created', 'views', )
+    readonly_fields = ('views', )
     save_as = True
 
 
@@ -165,6 +166,11 @@ class PodcastsAdmin(TranslationAdmin):
     save_on_top = True
 
 # admin.site.register(MainBlock)
+
+
+
+
+
 
 
 admin.site.site_title = "Управление новостным сайтом"

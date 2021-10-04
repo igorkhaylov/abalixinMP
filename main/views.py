@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import Ticker, MainBlock, Articles, UzbNews, Video, Tests, WorldNews, Categories, Podcasts
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import random
+from datetime import datetime, timedelta
+from django.views import View
+from django.http import JsonResponse
 
 
 def index(request):
@@ -9,8 +12,13 @@ def index(request):
     firstArticle = Articles.objects.filter(id=mainBlock.firstArticle.id)
     secondArticle = Articles.objects.filter(id=mainBlock.secondArticle.id)
     thirdArticle = Articles.objects.filter(id=mainBlock.thirdArticle.id)
-
-    news = UzbNews.objects.all()[:6]
+    now = datetime.now()
+    before = now - timedelta(weeks=1)
+    news = UzbNews.objects.filter(date_created__gte=str(before.date()))
+    try:
+        news = random.choices(news, k=6)
+    except:
+        news = []
 
     article1 = Articles.objects.filter(id=mainBlock.article1.id)
     article2 = Articles.objects.filter(id=mainBlock.article2.id)
@@ -110,7 +118,7 @@ def categories(request):
     mainBlock = MainBlock.objects.first()
     bestArticle = Articles.objects.get(id=mainBlock.bestArticle.id)
     categories = Categories.objects.all()
-    articles = Articles.objects.all()
+    articles = Articles.objects.all()[:2]
     tests = Tests.objects.all()
     podcast = Podcasts.objects.get(id=mainBlock.podcast.id)
     paginator = Paginator(articles, 3)
@@ -143,7 +151,7 @@ def category_view(request, slug):
         page_obj = paginator.page(paginator.num_pages)
     return render(request, "main/category.html", {"category": category,
                                                   "categories": categories_list,
-                                                  # "articles": articles,
+                                                  "articles": articles,
                                                   "page_obj": page_obj,
                                                   })
 
@@ -155,3 +163,37 @@ def podcasts(request):
 
 def news(request):
     return render(request, "main/news.html", )
+
+
+class DynamicArticles(View):
+    def get(self, request, *args, **kwargs):
+        last_article_id = request.GET.get('seeMoreCategories')
+        articles = Articles.objects.filter(pk__lt=int(last_article_id))[:2]
+        data = []
+        if "/ru/" in request.path:
+            lang_link = "/ru/"
+        else:
+            lang_link = "/uz"
+        print("**********************************************************", request.path)
+        if not articles:
+            return JsonResponse({'data': False})
+        for article in articles:
+            obj = {
+                'id': article.id,
+                'title': article.title,
+                'image': article.image.url,
+                'date_created': article.date_created.strftime("%d %B %Y"),
+                'slug': lang_link + "article_detail/" + article.slug,
+                'short_description': article.short_description,
+                'category': article.categories.name,
+                'category_url': article.categories.url,
+            }
+            data.append(obj)
+        data[-1]['last-article'] = True
+        print("**************", data)
+        return JsonResponse({'data': data})
+
+
+
+
+
