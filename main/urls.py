@@ -12,5 +12,6 @@ urlpatterns = [
     path("article_detail/<slug:slug>/", views.article_detail, name="article_detail"),
     path("worldnews/<int:id>/", views.article_detail, name="world_news_detail"),
     path("uzbnews/<int:id>/", views.article_detail, name="uzb_news_detail"),
-    path("see-more-categories/", views.DynamicArticles.as_view(), name="see-more-categories")
+    path("see-more-categories/", views.DynamicArticles.as_view(), name="see-more-categories"),
+    path("see-more-category/", views.dynamic_category, name="see-more-category"),
 ]

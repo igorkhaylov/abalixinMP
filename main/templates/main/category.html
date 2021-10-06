@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" href="{% static 'css/paginator.css' %}">
+    <link rel="stylesheet" href="{% static 'css/button_more.css' %}">
 
     <link rel="icon" href="{% static 'img/sitelogo.svg' %}">
 </head>
@@ -31,7 +32,8 @@
 
                     {% for category in categories %}
 {#                        <div class="left_sidebar__link"><a href="{% url 'category_view' category.url %}">{{ category.name }}</a></div>#}
-                        <div class="left_sidebar__link"><a style="border-bottom: 1px solid black;" href="{% url 'category_view' category.url %}">{{ category.name }}</a></div>
+{#                        <div class="left_sidebar__link"><a style="border-bottom: 1px solid black;" href="{% url 'category_view' category.url %}">{{ category.name }}</a></div>#}
+                        <div class="left_sidebar__link"><a href="{% url 'category_view' category.url %}">{{ category.name }}</a></div>
                     {% endfor %}
 {#                    <div class="left_sidebar__link"><a style="border-bottom: 1px solid black;" href="./forth.html">Люди</a></div>#}
 {#                    <div class="left_sidebar__link"><a href="./forth2.html">Развлечения</a></div>#}
@@ -63,13 +65,17 @@
                         <div class="redact__title">
     
                         </div>
-                        <div class="redact__content">
+                        <div class="redact__content all-articles">
 
-{#                            {% for article in articles %}#}
-                        {% for article in page_obj %}
+                            {% for article in articles %}
+{#                        {% for article in page_obj %}#}
+                                {% if forloop.last %}
+                                    <div class="redact_item article last-article" data-article-date="{{ article.date_created|date:"Y-m-d H:i:s" }}" category-id="{{ article.categories_id }}">
+                                    {% else %}
+                                    <div class="redact_item article">
+                                {% endif %}
 
 
-                            <div class="redact_item">
                                 <div class="redact_left">
                                     <div class="redact_left__logo"
                                          style="background-image: url({{ article.image.url }});">
@@ -107,33 +113,39 @@
                         </div>
                     </div>
 
-                    {% if page_obj.has_other_pages %}
-                        <nav aria-label="main-navigation" class="paginate wrapper">
-                            <ul>
-                                {% if page_obj.has_previous %}
-                                    <li><a href="?page={{ page_obj.previous_page_number }}">&lang;</a></li>
-                                {% else %}
-                                    <li>
-                                        <span class="page-link">&lang;</span>
-                                    </li>
-                                {% endif %}
-                                {% for i in page_obj.paginator.page_range %}
-                                    {% if page_obj.number == i %}
-                                        <li><a href="" class="active">{{ i }}</a></li>
-                                    {% elif i > page_obj.number|add:-3 and i < page_obj.number|add:3 %}
-                                        <li><a href="?page={{ i }}">{{ i }}</a></li>
-
-                                    {% endif %}
-                                {% endfor %}
-                                {% if page_obj.has_next %}
-                                    <li><a href="?page={{ page_obj.next_page_number }}">&rang;</a></li>
-                                {% else %}
-                                    <li>
-                                        <span class="page-link">&rang;</span>
-                                    </li>
-                                {% endif %}
-                            </ul>
-                        </nav>
+{#                    {% if page_obj.has_other_pages %}#}
+{#                        <nav aria-label="main-navigation" class="paginate wrapper">#}
+{#                            <ul>#}
+{#                                {% if page_obj.has_previous %}#}
+{#                                    <li><a href="?page={{ page_obj.previous_page_number }}">&lang;</a></li>#}
+{#                                {% else %}#}
+{#                                    <li>#}
+{#                                        <span class="page-link">&lang;</span>#}
+{#                                    </li>#}
+{#                                {% endif %}#}
+{#                                {% for i in page_obj.paginator.page_range %}#}
+{#                                    {% if page_obj.number == i %}#}
+{#                                        <li><a href="" class="active">{{ i }}</a></li>#}
+{#                                    {% elif i > page_obj.number|add:-3 and i < page_obj.number|add:3 %}#}
+{#                                        <li><a href="?page={{ i }}">{{ i }}</a></li>#}
+{##}
+{#                                    {% endif %}#}
+{#                                {% endfor %}#}
+{#                                {% if page_obj.has_next %}#}
+{#                                    <li><a href="?page={{ page_obj.next_page_number }}">&rang;</a></li>#}
+{#                                {% else %}#}
+{#                                    <li>#}
+{#                                        <span class="page-link">&rang;</span>#}
+{#                                    </li>#}
+{#                                {% endif %}#}
+{#                            </ul>#}
+{#                        </nav>#}
+{#                    {% endif %}#}
+                    {% if articles.count >= 2 %}
+                        <div class="see-more-container">
+                            <button type="button" class="see-more noselect" id="see-more-category">Показать еще...
+                            </button>
+                        </div>
                     {% endif %}
 {#                    <div class="eshe">#}
 {#                        <a href="#"><h3 style="text-decoration: underline;">Показать ещё ˅</h3></a> #}
@@ -144,6 +156,69 @@
     </div>
 
     {% include 'include/footer.html' %}
+
+     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+             crossorigin="anonymous"></script>
+     <script>
+         $("#see-more-category").on('click', function (){
+             let seeMoreCategory = $('.last-article').attr('data-article-date')
+             let categoryId = $('.last-article').attr('category-id')
+             {#console.log(seeMoreCategory)#}
+             let data = {
+                 seeMoreCategory: seeMoreCategory,
+                 categoryId: categoryId,
+             }
+             $('.redact_item').removeClass('last-article')
+             $('.redact_item').removeAttr('data-article-date')
+             $.ajax({
+                 method: "GET",
+                 dataType: "json",
+                 data: data,
+                 url: "{% url 'see-more-category' %}",
+                 success: function (data){
+                     let result = data['data']
+                     console.log("Hello, how's life !!! "+result)
+                     if (!result) {
+                         $(".see-more").css('display', 'none')
+                     } else {
+                         $.each(result, function (key, obj){
+                             if (obj['last-article']){
+                                 $('.all-articles').append(
+                                     '<div class="redact_item article last-article" data-article-date="'+ obj['date_for'] +'"  category-id="'+ obj['cat-id'] +'">' +
+                                     '<div class="redact_left"> <div class="redact_left__logo" style="background-image: url('+ obj['image'] +');">'+
+                                 '</div> <div class="redact_left__text"> <div class="redact_date"> <h3>'+ obj['date_created'] +'</h3> </div>'+
+                                     '<div class="redact_title"> <a href="'+ obj['article_detail'] +'">'+
+                                             '<h2>'+ obj['title'] +'</h2></a> </div> <div class="redact_subtitle">'+
+                                         '<h3>'+ obj['short_description']+'</h3> </div> </div> </div>'+
+                             '<div class="redact_right"> <div class="redact_right__logo"> <a href="#"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a> </div>'+
+                             '<div class="redact_ending"> <a href="#"><h3>'+ obj['category'] +'</h3></a> </div> </div> </div>'
+                                 )
+                             } else {
+                                 $('.all-articles').append(
+                                 '<div class="redact_item article">'+
+                                 '<div class="redact_left"> <div class="redact_left__logo" style="background-image: url('+ obj['image'] +');">'+
+                                 '</div> <div class="redact_left__text"> <div class="redact_date"> <h3>'+ obj['date_created'] +'</h3> </div>'+
+                                 '<div class="redact_title"> <a href="'+ obj['article_detail'] +'">'+
+                                 '<h2>'+ obj['title'] +'</h2></a> </div> <div class="redact_subtitle">'+
+                                 '<h3>'+ obj['short_description']+'</h3> </div> </div> </div>'+
+                                 '<div class="redact_right"> <div class="redact_right__logo"> <a href="#"><img src="{% static 'img/ic_arrow-up-right12.svg' %}" alt="arrow"></a> </div>'+
+                                 '<div class="redact_ending"> <a href="#"><h3>'+ obj['category'] +'</h3></a> </div> </div> </div>'
+                                 )
+                             }
+                         })
+
+                     }
+                     console.log("Ajax Work Currently")
+                     {#console.log(result)#}
+                     {#alert(result)#}
+
+                 }
+             })
+
+         })
+
+
+     </script>
 
         
     <script>

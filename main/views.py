@@ -5,6 +5,7 @@ import random
 from datetime import datetime, timedelta
 from django.views import View
 from django.http import JsonResponse
+from . import my_date
 
 
 def index(request):
@@ -141,7 +142,7 @@ def category_view(request, slug):
     page = request.GET.get('page', 1)
     category = get_object_or_404(Categories, url=slug)
     categories_list = Categories.objects.all()
-    articles = Articles.objects.filter(categories_id=category.id)
+    articles = Articles.objects.filter(categories_id=category.id)[:2]
     paginator = Paginator(articles, 3)
     try:
         page_obj = paginator.page(page)
@@ -165,6 +166,44 @@ def news(request):
     return render(request, "main/news.html", )
 
 
+def dynamic_category(request, *args, **kwargs):
+    print("\n***********************************************************************", request.method)
+    last_date = request.GET.get('seeMoreCategory')
+    categoryId = int(request.GET.get('categoryId'))
+    # print("\n***********************************************************************", categoryId)
+    date_filter = datetime.strptime(last_date, "%Y-%m-%d %H:%M:%S")
+    articles = Articles.objects.filter(date_created__lte=date_filter, categories_id=categoryId).order_by('-date_created')[:2]
+    data = []
+    if "/ru/" in request.path:
+        lang_link = "/ru/"
+    else:
+        lang_link = "/uz"
+    if not articles:
+        return JsonResponse({'data': False})
+    for article in articles:
+        obj = {
+            "id": article.id,
+            "date_for": article.date_created.strftime("%Y-%m-%d %H:%M:%S"),
+            "image": article.image.url,
+            "date_created": my_date.my_month_ru(article.date_created) if "/ru/" in request.path else my_date.my_month_uz(article.date_created),
+            "article_detail": lang_link + "article_detail/" + article.slug,
+            "title": article.title,
+            "short_description": article.short_description,
+            "category": article.categories.name,
+            "cat-id": article.categories_id,
+        }
+        data.append(obj)
+    data[-1]['last-article'] = True
+    print(data)
+
+    # print(articles)
+    # print(last_date)
+    # my = datetime.now()
+    # print(my.strftime("%Y-%m-%d %H:%M:%S"))
+    return JsonResponse({'data': data})
+
+
+
 class DynamicArticles(View):
     def get(self, request, *args, **kwargs):
         last_article_id = request.GET.get('seeMoreCategories')
@@ -174,7 +213,7 @@ class DynamicArticles(View):
             lang_link = "/ru/"
         else:
             lang_link = "/uz"
-        print("**********************************************************", request.path)
+        # print("**********************************************************", request.path)
         if not articles:
             return JsonResponse({'data': False})
         for article in articles:
@@ -182,7 +221,8 @@ class DynamicArticles(View):
                 'id': article.id,
                 'title': article.title,
                 'image': article.image.url,
-                'date_created': article.date_created.strftime("%d %B %Y"),
+                # 'date_created': article.date_created.strftime("%d %B %Y"),
+                'date_created': my_date.my_month_ru(article.date_created) if "/ru/" in request.path else my_date.my_month_uz(article.date_created),
                 'slug': lang_link + "article_detail/" + article.slug,
                 'short_description': article.short_description,
                 'category': article.categories.name,
@@ -190,7 +230,7 @@ class DynamicArticles(View):
             }
             data.append(obj)
         data[-1]['last-article'] = True
-        print("**************", data)
+        # print("**************", data)
         return JsonResponse({'data': data})
 
 
