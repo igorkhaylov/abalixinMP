@@ -1,9 +1,5 @@
-import datetime
-
 from django.utils import timezone
 from django.db import models
-# from ckeditor.fields import RichTextField
-# from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Articles(models.Model):
@@ -133,7 +129,6 @@ class MainBlock(models.Model):
 
     bestArticle = models.ForeignKey("Articles", verbose_name="Лучшая статья", related_name="bestArticle", on_delete=models.PROTECT)
 
-
     def __str__(self):
         return "Главная страница"
 
@@ -192,3 +187,18 @@ class Podcasts(models.Model):
     class Meta:
         verbose_name = "Подкаст"
         verbose_name_plural = "Подкасты"
+
+
+# class NewsPage(models.Model):
+#     main_news = models.ForeignKey("UzbNews", verbose_name="Главная новость", related_name="main_news", on_delete=models.PROTECT)
+#
+#     def __str__(self):
+#         return "Страница новостей"
+#
+#     class Meta:
+#         verbose_name = "Станица новостей"
+#         verbose_name_plural = "Станица новостей"
+
+
+
+

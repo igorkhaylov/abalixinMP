@@ -163,7 +163,14 @@ def podcasts(request):
 
 
 def news(request):
-    return render(request, "main/news.html", )
+    main_news = WorldNews.objects.all()[:1]
+    main_news = random.choice(main_news)
+    uzb_news3 = UzbNews.objects.all()[:3]
+    uzb_news2 = UzbNews.objects.all()[3:6]
+    return render(request, "main/news.html", {"main_news": main_news,
+                                              "uzb_news3": uzb_news3,
+                                              "uzb_news2": uzb_news2,
+                                              })
 
 
 def dynamic_category(request, *args, **kwargs):

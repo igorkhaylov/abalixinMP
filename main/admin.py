@@ -63,40 +63,40 @@ class ArticlesAdmin(TranslationAdmin):
             'fields': ('date_created', 'author',)
         }),
     )
-    readonly_fields = ('date_created', )
-    prepopulated_fields = {'slug': ('title', )}
+    readonly_fields = ('date_created',)
+    prepopulated_fields = {'slug': ('title',)}
     save_on_top = True
     save_as = True
 
 
 @admin.register(UzbNews)
 class UzbNewsAdmin(TranslationAdmin):
-    list_display = ('short_title', 'title', )
+    list_display = ('short_title', 'title',)
     form = UzbNewsAdminForm
     save_on_top = True
     # readonly_fields = ('date_created', 'views', )
-    readonly_fields = ('views', )
+    readonly_fields = ('views',)
     save_as = True
 
 
 @admin.register(WorldNews)
 class WorldNewsAdmin(TranslationAdmin):
-    list_display = ('short_title', 'title', )
+    list_display = ('short_title', 'title',)
     form = UzbNewsAdminForm
     save_on_top = True
-    readonly_fields = ('date_created', 'views', )
+    readonly_fields = ('date_created', 'views',)
     save_as = True
 
 
 @admin.register(Author)
 class AuthorAdmin(TranslationAdmin):
-    list_display = ('name', )
+    list_display = ('name',)
 
 
 @admin.register(Categories)
 class CategoriesAdmin(TranslationAdmin):
-    list_display = ('name', )
-    prepopulated_fields = {'url': ('name', )}
+    list_display = ('name',)
+    prepopulated_fields = {'url': ('name',)}
 
 
 @admin.register(MainBlock)
@@ -119,7 +119,7 @@ class MainBlockAdmin(admin.ModelAdmin):
             'fields': ('article7', 'article8', 'article9',
                        'article10', 'article11', 'article12',)
         }),
-        )
+    )
 
     def has_add_permission(self, request):
         return False
@@ -132,7 +132,7 @@ class MainBlockAdmin(admin.ModelAdmin):
 class VideoAdmin(TranslationAdmin):
     fieldsets = (
         ("Видео 1", {
-            'fields': ('title1', 'link1', )
+            'fields': ('title1', 'link1',)
         }),
         ("Видео 2", {
             'fields': ('title2', 'link2',)
@@ -154,7 +154,7 @@ class VideoAdmin(TranslationAdmin):
 
 @admin.register(Tests)
 class TestsAdmin(TranslationAdmin):
-    list_display = ('title', )
+    list_display = ('title',)
     save_as = True
     save_on_top = True
 
@@ -165,14 +165,14 @@ class PodcastsAdmin(TranslationAdmin):
     save_as = True
     save_on_top = True
 
+
+# @admin.register(NewsPage)
+# class NewsPageAdmin(admin.ModelAdmin):
+#     list_display = ("main_news", )
+
+
 # admin.site.register(MainBlock)
-
-
-
-
-
 
 
 admin.site.site_title = "Управление новостным сайтом"
 admin.site.site_header = "Main Post"
-
