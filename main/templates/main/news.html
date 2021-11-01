@@ -1,4 +1,4 @@
-{% load static thumbnail %}
+{% load static thumbnail humanize %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +72,7 @@
                         {#                        <a href="#"><h3>В Узбекистане вновь начали обновлять список красивых...</h3></a>#}
                     </div>
                     <div class="uzb_item__subtext">
-                        <a href="#"><h4>{{ uzb_news.date_created }}</h4></a>
+                        <a href="#"><h4>{{ uzb_news.date_created|naturalday }}</h4></a>
                     </div>
                     </div>
 
@@ -83,209 +83,108 @@
                 </div>
             </div>
         </div>
-        <div class="world_news">
-            <div class="world_container">
-                <div class="title">
-                    <h2>МИРОВЫЕ НОВОСТИ</h2>
-                </div>
-                <div class="world_content">
-                    <div class="content__left">
-                        <div class="content_left__top">
-                            <div class="world__item"
-                                 style="background-image: url('{% static 'img/Rectangle 433.png' %}');">
-                                <div class="world_item__title">
-                                    <a href="#"><h3>Львица напала на дрессировщика в Новосибирской области</h3></a>
-                                </div>
-                                <div class="world_item__subtitle">
-                                    <h4>Львица напала на дрессировщика</h4>
-                                </div>
-                            </div>
-                            <div class="world__item"
-                                 style="background-image: url('{% static 'img/Rectangle 433.png' %}');">
-                                <div class="world_item__title">
-                                    <a href="#"><h3>Львица напала на дрессировщика в Новосибирской области</h3></a>
-                                </div>
-                                <div class="world_item__subtitle">
-                                    <h4>Львица напала на дрессировщика</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content_left__top">
-                            <div class="world__item"
-                                 style="background-image: url('{% static 'img/Rectangle 433.png' %}');">
-                                <div class="world_item__title">
-                                    <a href="#"><h3>Львица напала на дрессировщика в Новосибирской области</h3></a>
-                                </div>
-                                <div class="world_item__subtitle">
-                                    <h4>Львица напала на дрессировщика</h4>
-                                </div>
-                            </div>
-                            <div class="world__item"
-                                 style="background-image: url('{% static 'img/Rectangle 433.png' %}');">
-                                <div class="world_item__title">
-                                    <a href="#"><h3>Львица напала на дрессировщика в Новосибирской области</h3></a>
-                                </div>
-                                <div class="world_item__subtitle">
-                                    <h4>Львица напала на дрессировщика</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content__right" style="background-image: url('{% static 'img/Rectangle 433.png' %}');">
-                        <div class="content_right__title">
-                            <a href="#"><h3>Львица напала на дрессировщика в Новосибирской области</h3></a>
-                        </div>
-                        <div class="content_right__subtitle">
-                            <h4>Львица напала на дрессировщика</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {#        <div class="world_news">#}
+        {#            <div class="world_container">#}
+        {#                <div class="title">#}
+        {#                    <h2>МИРОВЫЕ НОВОСТИ</h2>#}
+        {#                </div>#}
+        {#                <div class="world_content">#}
+        {#                    <div class="content__left">#}
+        {#                        <div class="content_left__top">#}
+        {#                            <div class="world__item"#}
+        {#                                 style="background-image: url('{% static 'img/Rectangle 433.png' %}');">#}
+        {#                                <div class="world_item__title">#}
+        {#                                    <a href="#"><h3>Львица напала на дрессировщика в Новосибирской области</h3></a>#}
+        {#                                </div>#}
+        {#                                <div class="world_item__subtitle">#}
+        {#                                    <h4>Львица напала на дрессировщика</h4>#}
+        {#                                </div>#}
+        {#                            </div>#}
+        {#                            <div class="world__item"#}
+        {#                                 style="background-image: url('{% static 'img/Rectangle 433.png' %}');">#}
+        {#                                <div class="world_item__title">#}
+        {#                                    <a href="#"><h3>Львица напала на дрессировщика в Новосибирской области</h3></a>#}
+        {#                                </div>#}
+        {#                                <div class="world_item__subtitle">#}
+        {#                                    <h4>Львица напала на дрессировщика</h4>#}
+        {#                                </div>#}
+        {#                            </div>#}
+        {#                        </div>#}
+        {#                        <div class="content_left__top">#}
+        {#                            <div class="world__item"#}
+        {#                                 style="background-image: url('{% static 'img/Rectangle 433.png' %}');">#}
+        {#                                <div class="world_item__title">#}
+        {#                                    <a href="#"><h3>Львица напала на дрессировщика в Новосибирской области</h3></a>#}
+        {#                                </div>#}
+        {#                                <div class="world_item__subtitle">#}
+        {#                                    <h4>Львица напала на дрессировщика</h4>#}
+        {#                                </div>#}
+        {#                            </div>#}
+        {#                            <div class="world__item"#}
+        {#                                 style="background-image: url('{% static 'img/Rectangle 433.png' %}');">#}
+        {#                                <div class="world_item__title">#}
+        {#                                    <a href="#"><h3>Львица напала на дрессировщика в Новосибирской области</h3></a>#}
+        {#                                </div>#}
+        {#                                <div class="world_item__subtitle">#}
+        {#                                    <h4>Львица напала на дрессировщика</h4>#}
+        {#                                </div>#}
+        {#                            </div>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                    <div class="content__right" style="background-image: url('{% static 'img/Rectangle 433.png' %}');">#}
+        {#                        <div class="content_right__title">#}
+        {#                            <a href="#"><h3>Львица напала на дрессировщика в Новосибирской области</h3></a>#}
+        {#                        </div>#}
+        {#                        <div class="content_right__subtitle">#}
+        {#                            <h4>Львица напала на дрессировщика</h4>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#        </div>#}
         <div class="recent_news">
             <div class="recent__container">
                 <div class="title">
                     <h2>НЕДАВНИЕ НОВОСТИ</h2>
                 </div>
                 <div class="recent_line">
-                    <div class="recent_item active">
-{#                        <button><h3><a href="#">Сегодня</a></h3></button>#}
-{#                        <button><h3><a href="#">{{ main_news.date_created|timesince }}</a></h3></button>#}
-{#                        <button><h3><a href="#">{{ main_news.date_created|timeuntil }}</a></h3></button>#}
-                        <button><h3><a href="#">{% now "N" %}</a></h3></button>
-                    </div>
-                    <div class="recent_item">
-                        <button><h3><a href="#">Вчера</a></h3></button>
-                    </div>
-                    <div class="recent_item">
-                        <button><h3><a href="#">24 июня</a></h3></button>
-                    </div>
-                    <div class="recent_item">
-                        <button><h3><a href="#">23 июня</a></h3></button>
-                    </div>
-                    <div class="recent_item">
-                        <button><h3><a href="#">22 июня</a></h3></button>
-                    </div>
-                    <div class="recent_item">
-                        <button><h3><a href="#">21 июня</a></h3></button>
-                    </div>
-                    <div class="recent_item">
-                        <button><h3><a href="#">20 июня</a></h3></button>
-                    </div>
-                    <div class="recent_item">
-                        <button><h3><a href="#">19 июня</a></h3></button>
-                    </div>
-                    <div class="recent_item">
-                        <button><h3><a href="#">18 июня</a></h3></button>
-                    </div>
-                    <div class="recent_item">
-                        <button><h3><a href="#">17 июня</a></h3></button>
-                    </div>
+                    {% for date in dates %}
+
+                        <div class="recent_item {% cycle "active" "" "" "" "" "" "" "" "" "" "" %}">
+                            <button type="submit"
+                                    value="{{ date|date:"Y-m-d" }}"
+                                    {#                                    data-year="{{ date|date:"Y" }}"#}
+                                    {#                                    data-month="{{ date|date:"m" }}"#}
+                                    {#                                    data-day="{{ date|date:"d" }}"#}
+                            >
+                                <h3>{{ date|naturalday:"F d"|capfirst }}</h3>
+                            </button>
+                        </div>
+
+                    {% endfor %}
                 </div>
                 <div class="recent_content">
-                    <div class="recent_content__item">
-                        <div class="recent__image">
-                            <img class="imgg" src="{% static 'img/Rectangle 433.png' %}" alt="dada">
+
+                    {% for news in today_news %}
+
+                        <div class="recent_content__item">
+                            <div class="recent__image">
+                                {% if news.image %}
+                                    <img class="imgg" src="{{ news.image.url }}" alt="dada">
+                                {% else %}
+                                    <img class="imgg" src="{% static 'img/Rectangle 433.png' %}" alt="dada">
+                                {% endif %}
+                            </div>
+                            <div class="recent_text">
+                                <h2>{{ news.short_title }}</h2>
+                                <h3>{{ news.title }}</h3>
+                                <button class="look"><a href="#">Читать дальше</a></button>
+                            </div>
                         </div>
-                        <div class="recent_text">
-                            <h2>Британские ученые опровергли один из физических законов</h2>
-                            <h3>А ещё диаграммы связей могут быть ограничены исключительно образом мышления. Значимость
-                                этих
-                                проблем настолько очевидна, что внедрение...</h3>
-                            <button class="look"><a href="#">Читать дальше</a></button>
-                        </div>
-                    </div>
-                    <div class="recent_content__item">
-                        <div class="recent__image">
-                            {#                        <img class="imgg" src="./images/Rectangle 433.png" alt="dada">#}
-                            <img class="imgg" src="{% static 'img/Rectangle 433.png' %}" alt="dada">
-                        </div>
-                        <div class="recent_text">
-                            <h2>Британские ученые опровергли один из физических законов</h2>
-                            <h3>А ещё диаграммы связей могут быть ограничены исключительно образом мышления. Значимость
-                                этих
-                                проблем настолько очевидна, что внедрение...</h3>
-                            <button class="look"><a href="#">Читать дальше</a></button>
-                        </div>
-                    </div>
-                    <div class="recent_content__item">
-                        <div class="recent__image">
-                            {#                        <img class="imgg" src="./images/Rectangle 433.png" alt="dada">#}
-                            <img class="imgg" src="{% static 'img/Rectangle 433.png' %}" alt="dada">
-                        </div>
-                        <div class="recent_text">
-                            <h2>Британские ученые опровергли один из физических законов</h2>
-                            <h3>А ещё диаграммы связей могут быть ограничены исключительно образом мышления. Значимость
-                                этих
-                                проблем настолько очевидна, что внедрение...</h3>
-                            <button class="look"><a href="#">Читать дальше</a></button>
-                        </div>
-                    </div>
-                    <div class="recent_content__item">
-                        <div class="recent__image">
-                            {#                        <img class="imgg" src="./images/Rectangle 433.png" alt="dada">#}
-                            <img class="imgg" src="{% static 'img/Rectangle 433.png' %}" alt="dada">
-                        </div>
-                        <div class="recent_text">
-                            <h2>Британские ученые опровергли один из физических законов</h2>
-                            <h3>А ещё диаграммы связей могут быть ограничены исключительно образом мышления. Значимость
-                                этих
-                                проблем настолько очевидна, что внедрение...</h3>
-                            <button class="look"><a href="#">Читать дальше</a></button>
-                        </div>
-                    </div>
-                    <div class="recent_content__item">
-                        <div class="recent__image">
-                            {#                        <img class="imgg" src="./images/Rectangle 433.png" alt="dada">#}
-                            <img class="imgg" src="{% static 'img/Rectangle 433.png' %}" alt="dada">
-                        </div>
-                        <div class="recent_text">
-                            <h2>Британские ученые опровергли один из физических законов</h2>
-                            <h3>А ещё диаграммы связей могут быть ограничены исключительно образом мышления. Значимость
-                                этих
-                                проблем настолько очевидна, что внедрение...</h3>
-                            <button class="look"><a href="#">Читать дальше</a></button>
-                        </div>
-                    </div>
-                    <div class="recent_content__item">
-                        <div class="recent__image">
-                            {#                        <img class="imgg" src="./images/Rectangle 433.png" alt="dada">#}
-                            <img class="imgg" src="{% static 'img/Rectangle 433.png' %}" alt="dada">
-                        </div>
-                        <div class="recent_text">
-                            <h2>Британские ученые опровергли один из физических законов</h2>
-                            <h3>А ещё диаграммы связей могут быть ограничены исключительно образом мышления. Значимость
-                                этих
-                                проблем настолько очевидна, что внедрение...</h3>
-                            <button class="look"><a href="#">Читать дальше</a></button>
-                        </div>
-                    </div>
-                    <div class="recent_content__item">
-                        <div class="recent__image">
-                            {#                        <img class="imgg" src="./images/Rectangle 433.png" alt="dada">#}
-                            <img class="imgg" src="{% static 'img/Rectangle 433.png' %}" alt="dada">
-                        </div>
-                        <div class="recent_text">
-                            <h2>Британские ученые опровергли один из физических законов</h2>
-                            <h3>А ещё диаграммы связей могут быть ограничены исключительно образом мышления. Значимость
-                                этих
-                                проблем настолько очевидна, что внедрение...</h3>
-                            <button class="look"><a href="#">Читать дальше</a></button>
-                        </div>
-                    </div>
-                    <div class="recent_content__item">
-                        <div class="recent__image">
-                            {#                        <img class="imgg" src="./images/Rectangle 433.png" alt="dada">#}
-                            <img class="imgg" src="{% static 'img/Rectangle 433.png' %}" alt="dada">
-                        </div>
-                        <div class="recent_text">
-                            <h2>Британские ученые опровергли один из физических законов</h2>
-                            <h3>А ещё диаграммы связей могут быть ограничены исключительно образом мышления. Значимость
-                                этих
-                                проблем настолько очевидна, что внедрение...</h3>
-                            <button class="look"><a href="#">Читать дальше</a></button>
-                        </div>
-                    </div>
+
+                    {% endfor %}
+
+
                 </div>
             </div>
         </div>
@@ -294,6 +193,37 @@
         </div>
 
         {% include 'include/footer.html' %}
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+                integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+                crossorigin="anonymous"></script>
+        <script>
+            $(".recent_item>button").on('click', function () {
+                let newsDate = this.value
+                let data = {
+                    newsDate: newsDate,
+                }
+                $(".recent_item").removeClass('active')
+                console.log(this.parentElement())
+
+
+                {#this.addClass("active")#}
+                $.ajax({
+                    method: "GET",
+                    dataType: "json",
+                    data: data,
+                    url: "{% url 'news-update' %}",
+                    success: function (data){
+                        let result = data[data]
+                        console.log("hello, how's life "+result)
+                    }
+                })
+
+
+                console.log("Эта кнопка работает", this.value)
+            })
+
+        </script>
+
 
 </body>
 </html>

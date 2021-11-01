@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'sorl.thumbnail',
     'main',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [

@@ -70,7 +70,9 @@
                             {% for article in articles %}
 {#                        {% for article in page_obj %}#}
                                 {% if forloop.last %}
-                                    <div class="redact_item article last-article" data-article-date="{{ article.date_created|date:"Y-m-d H:i:s" }}" category-id="{{ article.categories_id }}">
+                                    <div class="redact_item article last-article"
+                                         data-article-date="{{ article.date_created|date:"Y-m-d H:i:s" }}"
+                                         category-id="{{ article.categories_id }}">
                                     {% else %}
                                     <div class="redact_item article">
                                 {% endif %}

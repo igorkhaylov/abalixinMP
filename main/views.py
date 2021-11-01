@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 from django.views import View
 from django.http import JsonResponse
 from . import my_date
+from .my_date_for_news import dates
 
 
 def index(request):
@@ -167,10 +168,42 @@ def news(request):
     main_news = random.choice(main_news)
     uzb_news3 = UzbNews.objects.all()[:3]
     uzb_news2 = UzbNews.objects.all()[3:6]
+
+    date = datetime.now()
+    # today_news = UzbNews.objects.filter(date_updated=dates[1])
+    today_news = UzbNews.objects.filter(date_created__year=date.year,
+                                        date_created__month=date.month,
+                                        date_created__day=date.day)
+    print(dates[2])
+
     return render(request, "main/news.html", {"main_news": main_news,
                                               "uzb_news3": uzb_news3,
                                               "uzb_news2": uzb_news2,
+                                              "today_news": today_news,
+                                              "dates": dates,
                                               })
+
+
+def news_update(request, *args, **kwargs):
+    print("\n***********************************************************************", request.method)
+    date = request.GET.get('newsDate')
+    year, month, day = date.split("-")
+    # print(year,month,day,sep="\n")
+    news = UzbNews.objects.filter(date_created__year=year,
+                                  date_created__month=month,
+                                  date_created__day=day)
+    # print(date.split("-"))
+    print(news)
+    data = []
+    if not data:
+        return JsonResponse({'data': False})
+    for n in news:
+        obj = {
+            "id": n.id,
+        }
+        data.append(obj)
+    return JsonResponse({'data': data})
+
 
 
 def dynamic_category(request, *args, **kwargs):
@@ -208,7 +241,6 @@ def dynamic_category(request, *args, **kwargs):
     # my = datetime.now()
     # print(my.strftime("%Y-%m-%d %H:%M:%S"))
     return JsonResponse({'data': data})
-
 
 
 class DynamicArticles(View):
