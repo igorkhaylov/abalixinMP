@@ -203,18 +203,27 @@
                     newsDate: newsDate,
                 }
                 $(".recent_item").removeClass('active')
-                console.log(this.parentElement())
-
-
-                {#this.addClass("active")#}
+                $(this).parent('.recent_item').addClass('active')
                 $.ajax({
                     method: "GET",
                     dataType: "json",
                     data: data,
                     url: "{% url 'news-update' %}",
                     success: function (data){
-                        let result = data[data]
-                        console.log("hello, how's life "+result)
+                        let result = data['data']
+                        console.log("hello, how's life " + result)
+                        $(".recent_content__item").css('display', 'none')
+                        $.each(result, function (key, obj){
+                            console.log("Это работает", obj)
+                            $('.recent_content').append(
+
+                                '<div class="recent_content__item"> <div class="recent__image"> <img class="imgg" src="{% static 'img/Rectangle 433.png' %}" alt="dada"> </div>'+
+                                    '<div class="recent_text"> <h2>'+ obj['title'] +'</h2>'+
+                                        '<h3>'+ obj['short_title'] +'</h3>'+
+                                        '<button class="look"><a href="#">Читать дальше</a></button> </div> </div>'
+
+                            )
+                        })
                     }
                 })
 

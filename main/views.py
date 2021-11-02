@@ -6,7 +6,6 @@ from datetime import datetime, timedelta
 from django.views import View
 from django.http import JsonResponse
 from . import my_date
-from .my_date_for_news import dates
 
 
 def index(request):
@@ -174,8 +173,8 @@ def news(request):
     today_news = UzbNews.objects.filter(date_created__year=date.year,
                                         date_created__month=date.month,
                                         date_created__day=date.day)
-    print(dates[2])
 
+    from .my_date_for_news import dates
     return render(request, "main/news.html", {"main_news": main_news,
                                               "uzb_news3": uzb_news3,
                                               "uzb_news2": uzb_news2,
@@ -193,17 +192,20 @@ def news_update(request, *args, **kwargs):
                                   date_created__month=month,
                                   date_created__day=day)
     # print(date.split("-"))
-    print(news)
+    # print(news)
     data = []
-    if not data:
+    if not news:
         return JsonResponse({'data': False})
     for n in news:
         obj = {
             "id": n.id,
+            "image": n.image.url if n.image else None,
+            "title": n.title,
+            "short_title": n.short_title,
         }
         data.append(obj)
+    # print("This is a data ", data)
     return JsonResponse({'data': data})
-
 
 
 def dynamic_category(request, *args, **kwargs):
